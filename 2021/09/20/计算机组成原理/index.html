@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>计算机组成原理 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="本笔记为中国大学MOOC 华中科技大学计算机组成原理 第一章 概述计算机系统性能评价从非时间指标  非时间指标  机器字长：机器一次能处理的二进制位数（一般与内部寄存器的位数相等）  总线宽度：数据总线一次能并行传送的最大信息位数  主存容量：一台计算机主存所包含的存储单元总数 存储带宽：单位时间内与主存交换的二进制信息量，常用单位B&#x2F;s（字节每秒）    时间指标  主频f&#x2F;时钟周期T：主频&#x3D;外">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理">
+<meta property="og:url" content="https://wan-nan.github.io/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="本笔记为中国大学MOOC 华中科技大学计算机组成原理 第一章 概述计算机系统性能评价从非时间指标  非时间指标  机器字长：机器一次能处理的二进制位数（一般与内部寄存器的位数相等）  总线宽度：数据总线一次能并行传送的最大信息位数  主存容量：一台计算机主存所包含的存储单元总数 存储带宽：单位时间内与主存交换的二进制信息量，常用单位B&#x2F;s（字节每秒）    时间指标  主频f&#x2F;时钟周期T：主频&#x3D;外">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/00db5687ff054b98ae0b73674506ce30.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/61b0e40c407b44408d97efb32d7d7856.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/567485642f4544cdaef65e683666be55.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a5c76eb31b9740cf8ea9aadc9c69130a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/579de67966894dd3825918e3ca2d75ce.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5aa542c46e0a46c1846391b1089516e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/70d4b744df394445900dc25e79cc5e01.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fd728ecf3aa24876a4c65bca7a16183f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9c253f3881ab4858800b9b2bc7ca86f8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/729bf931dece470b9ea21c6dd0617917.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5a9416e05da84a17a9cf2454582745b1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2a5d45af9d9b49e79ddf6ceb5b0b3cb0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/23d8ca71498b473786f7d6617458dc11.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3b21b491964e45a3abfe4bda52c486bf.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/269717c005204e19bed40c690e239fc6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/34a07477070f4c74ae59591e20889b0f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/56b85d9c5a5b416287367c4d073cd7ed.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/71e24a11c84c44f2b6f292ff1c77d3c6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2021-09-20T08:14:09.000Z">
+<meta property="article:modified_time" content="2021-09-20T11:27:56.476Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="专业课">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/00db5687ff054b98ae0b73674506ce30.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">12</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">18</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">第一章 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7"><span class="toc-number">1.1.</span> <span class="toc-text">计算机系统性能评价</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">第二章 数据表示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E6%95%B0%E5%8F%8A%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">机器数及特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E4%B8%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.2.</span> <span class="toc-text">定点与浮点数据表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">2.3.</span> <span class="toc-text">数据校验的基本原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C"><span class="toc-number">2.4.</span> <span class="toc-text">奇偶校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C"><span class="toc-number">2.5.</span> <span class="toc-text">CRC循环冗余校验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82CRC%E7%BC%96%E7%A0%815%E6%AD%A5"><span class="toc-number">2.5.1.</span> <span class="toc-text">求CRC编码5步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CRC%E6%A3%80%E9%94%99"><span class="toc-number">2.5.2.</span> <span class="toc-text">CRC检错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CRC%E7%BA%A0%E9%94%99"><span class="toc-number">2.5.3.</span> <span class="toc-text">CRC纠错</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%B7%E6%98%8E%E6%A0%A1%E9%AA%8C"><span class="toc-number">2.6.</span> <span class="toc-text">海明校验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E4%BD%8D%E5%92%8C%E6%95%B0%E6%8D%AE%E4%BD%8D%E5%88%86%E5%B8%83%E4%BD%8D%E7%BD%AE"><span class="toc-number">2.6.1.</span> <span class="toc-text">校验位和数据位分布位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%B7%E6%98%8E%E7%A0%81%E7%89%B9%E7%82%B9"><span class="toc-number">2.6.2.</span> <span class="toc-text">海明码特点</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">计算机组成原理</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-09-20 16:14:09" itemprop="dateCreated datePublished" datetime="2021-09-20T16:14:09+08:00">2021-09-20</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">690</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">2m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">专业课</span></a><a class="tag-item" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">计算机组成原理</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>本笔记为中国大学MOOC <a target="_blank" rel="noopener" href="https://www.icourse163.org/course/HUST-1003159001">华中科技大学计算机组成原理</a></p>
+<h1 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h1><h2 id="计算机系统性能评价"><a href="#计算机系统性能评价" class="headerlink" title="计算机系统性能评价"></a>计算机系统性能评价</h2><p>从非时间指标</p>
+<ul>
+<li><p>非时间指标</p>
+<ul>
+<li><p>机器字长：机器一次能处理的二进制位数（一般与内部寄存器的位数相等）</p>
+</li>
+<li><p>总线宽度：数据总线一次能并行传送的最大信息位数</p>
+</li>
+<li><p>主存容量：一台计算机主存所包含的存储单元总数</p>
+<p>存储带宽：单位时间内与主存交换的二进制信息量，常用单位B/s（字节每秒）</p>
+</li>
+</ul>
+</li>
+<li><p>时间指标</p>
+<ul>
+<li><p>主频f/时钟周期T：主频=外频*倍频</p>
+</li>
+<li><p><strong>CPI</strong>：（Clock Cycles Per Instruction）执行一条指令（平均）需要的时钟周期数，即T的个数</p>
+<p>单条指令CPI，一段程序中所有指令的CPI，指令系统中某一类指令的CPI等</p>
+</li>
+<li><p>IPC：CPI的倒数</p>
+</li>
+<li><p>MIPS（Million Instructions Per Second）：每秒钟CPU能执行的指令总条数（单位：百万条/秒）</p>
+<img src="https://img-blog.csdnimg.cn/00db5687ff054b98ae0b73674506ce30.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="MIPS" style="zoom:50%;" / loading="lazy"></li>
+<li><p>CPU时间</p>
+<img src="https://img-blog.csdnimg.cn/61b0e40c407b44408d97efb32d7d7856.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CPU时间" style="zoom:50%;" / loading="lazy">
+
+<br/></li>
+</ul>
+<img src="https://img-blog.csdnimg.cn/567485642f4544cdaef65e683666be55.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="影响性能的指标" style="zoom:50%;" / loading="lazy"></li>
+</ul>
+<h1 id="第二章-数据表示"><a href="#第二章-数据表示" class="headerlink" title="第二章 数据表示"></a>第二章 数据表示</h1><h2 id="机器数及特点"><a href="#机器数及特点" class="headerlink" title="机器数及特点"></a>机器数及特点</h2><ul>
+<li><p>真值：符号用“+”“-”表示</p>
+</li>
+<li><p>机器数：符号数值化，用0，1表示符号</p>
+<ul>
+<li><p>原码</p>
+</li>
+<li><p>反码</p>
+</li>
+<li><p>补码</p>
+</li>
+<li><p>移码</p>
+<img src="https://img-blog.csdnimg.cn/a5c76eb31b9740cf8ea9aadc9c69130a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="移码" style="zoom: 67%;" / loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<h2 id="定点与浮点数据表示"><a href="#定点与浮点数据表示" class="headerlink" title="定点与浮点数据表示"></a>定点与浮点数据表示</h2><ul>
+<li><p>IEEE 754格式</p>
+<img src="https://img-blog.csdnimg.cn/579de67966894dd3825918e3ca2d75ce.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="IEEE 754格式" style="zoom: 50%;" / loading="lazy"></li>
+</ul>
+<h2 id="数据校验的基本原理"><a href="#数据校验的基本原理" class="headerlink" title="数据校验的基本原理"></a>数据校验的基本原理</h2><p>增加冗余码（校验位）</p>
+<p><strong>码距</strong>：同一编码中，任意两个合法编码之间不同二进制位数的最小值</p>
+<p>校验码中 增加冗余项 的目的就是为了增大码距</p>
+<ul>
+<li><p>码距与检错纠错能力的关系</p>
+<img src="https://img-blog.csdnimg.cn/5aa542c46e0a46c1846391b1089516e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="码距与检错纠错能力的关系" style="zoom:80%;" / loading="lazy"></li>
+<li><p>选择码距要考虑的因素</p>
+<img src="https://img-blog.csdnimg.cn/70d4b744df394445900dc25e79cc5e01.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="选择码距要考虑的因素" style="zoom:80%;" / loading="lazy"></li>
+</ul>
+<h2 id="奇偶校验"><a href="#奇偶校验" class="headerlink" title="奇偶校验"></a>奇偶校验</h2><ul>
+<li>编码与检错简单</li>
+<li>编码效率高</li>
+<li>不能检测偶数位错误，是一种错误检测码</li>
+<li><strong>不具备纠错能力</strong></li>
+<li>改进的奇偶校验：<ul>
+<li>交叉奇偶校验</li>
+</ul>
+</li>
+</ul>
+<h2 id="CRC循环冗余校验"><a href="#CRC循环冗余校验" class="headerlink" title="CRC循环冗余校验"></a>CRC循环冗余校验</h2><p>“循环”指模2运算得到的余数循环</p>
+<img src="https://img-blog.csdnimg.cn/fd728ecf3aa24876a4c65bca7a16183f.png" alt="CRC" style="zoom:50%;" / loading="lazy">
+
+<p>r位校验位可以表示2^r种状态，减去一种没有错误的状态，剩余2^r-1种错误</p>
+<img src="https://img-blog.csdnimg.cn/9c253f3881ab4858800b9b2bc7ca86f8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="常见的生成多项式" style="zoom:67%;" / loading="lazy">
+
+<p><strong>模2运算规则</strong></p>
+<img src="https://img-blog.csdnimg.cn/729bf931dece470b9ea21c6dd0617917.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="模2运算规则ab" style="zoom:67%;" / loading="lazy">
+
+<img src="https://img-blog.csdnimg.cn/5a9416e05da84a17a9cf2454582745b1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="模2运算规则c" style="zoom:67%;" / loading="lazy">
+
+<h3 id="求CRC编码5步"><a href="#求CRC编码5步" class="headerlink" title="求CRC编码5步"></a>求CRC编码5步</h3><img src="https://img-blog.csdnimg.cn/2a5d45af9d9b49e79ddf6ceb5b0b3cb0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="求CRC123" style="zoom:67%;" / loading="lazy">
+
+<img src="https://img-blog.csdnimg.cn/23d8ca71498b473786f7d6617458dc11.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="求CRC编码45" style="zoom:67%;" / loading="lazy">
+
+<h3 id="CRC检错"><a href="#CRC检错" class="headerlink" title="CRC检错"></a>CRC检错</h3><img src="https://img-blog.csdnimg.cn/3b21b491964e45a3abfe4bda52c486bf.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC检错与纠错" style="zoom:67%;" / loading="lazy">
+
+<p>不同位出错，模2除运算得到的余数不同</p>
+<p>采用不同的多项式，对应的相同位出错时，得到的余数不一定相同</p>
+<img src="https://img-blog.csdnimg.cn/269717c005204e19bed40c690e239fc6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC纠错" style="zoom:50%;" / loading="lazy">
+
+<h3 id="CRC纠错"><a href="#CRC纠错" class="headerlink" title="CRC纠错"></a>CRC纠错</h3><img src="https://img-blog.csdnimg.cn/34a07477070f4c74ae59591e20889b0f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC纠错" style="zoom:63%;" / loading="lazy">
+
+<h2 id="海明校验"><a href="#海明校验" class="headerlink" title="海明校验"></a>海明校验</h2><p>有效信息k位，校验信息r位，应满足N=k+r&lt;=2^r-1</p>
+<h3 id="校验位和数据位分布位置"><a href="#校验位和数据位分布位置" class="headerlink" title="校验位和数据位分布位置"></a>校验位和数据位分布位置</h3><img src="https://img-blog.csdnimg.cn/56b85d9c5a5b416287367c4d073cd7ed.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="海明校验校验位分布" style="zoom:67%;" / loading="lazy">
+
+<img src="https://img-blog.csdnimg.cn/71e24a11c84c44f2b6f292ff1c77d3c6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="海明" style="zoom:67%;" / loading="lazy">
+
+<p><strong>Pi由Pi所检验的位 异或 得到</strong></p>
+<p><strong>Gi由Pi和Pi所校验的位 异或 得到的</strong></p>
+<h3 id="海明码特点"><a href="#海明码特点" class="headerlink" title="海明码特点"></a>海明码特点</h3><ul>
+<li>指错字全为0不一定无错</li>
+<li>不一定能区别一位错和两位错</li>
+</ul>
+<p>可以通过在海明校验的基础上增加一位奇偶校验位，来区分是一位错还是两位错</p>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理">https://wan-nan.github.io/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/09/18/CSP%E8%AE%A4%E8%AF%81%E8%80%83%E8%AF%95%E6%9D%BF%E5%AD%90/" rel="next" title="CSP认证考试——STL总结&amp;算法模板"><span class="post-nav-text">CSP认证考试——STL总结&amp;算法模板</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
