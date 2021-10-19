@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>1 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="前言openGauss中用到的几种较为关键的查询重写技术有  常量表达式化简 子查询提升 谓词下推  本文主要对这几种查询重写技术做概括性的介绍  SQL引擎-查询重写技术-子查询提升（一）关于子查询当一个查询是另一个查询的子部分时，称之为子查询（查询语句中嵌套有查询语句）。 下面这些sql都含有子查询： 12select * from t1 where a in (select a from t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1">
+<meta property="og:url" content="https://wan-nan.github.io/2021/10/19/SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="前言openGauss中用到的几种较为关键的查询重写技术有  常量表达式化简 子查询提升 谓词下推  本文主要对这几种查询重写技术做概括性的介绍  SQL引擎-查询重写技术-子查询提升（一）关于子查询当一个查询是另一个查询的子部分时，称之为子查询（查询语句中嵌套有查询语句）。 下面这些sql都含有子查询： 12select * from t1 where a in (select a from t">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2135c50dd9e4437ca035b469d9247324.gif">
+<meta property="article:published_time" content="2021-10-19T11:55:42.000Z">
+<meta property="article:modified_time" content="2021-10-19T11:57:04.105Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="openGauss">
+<meta property="article:tag" content="代码评注">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2135c50dd9e4437ca035b469d9247324.gif"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">20</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">24</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF-%E5%AD%90%E6%9F%A5%E8%AF%A2%E6%8F%90%E5%8D%87"><span class="toc-number">2.</span> <span class="toc-text">SQL引擎-查询重写技术-子查询提升</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8E%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.</span> <span class="toc-text">（一）关于子查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E8%83%8C%E6%99%AF"><span class="toc-number">2.2.</span> <span class="toc-text">（二）背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%85%B3%E4%BA%8E%E5%AD%90%E6%9F%A5%E8%AF%A2%E6%8F%90%E5%8D%87"><span class="toc-number">2.3.</span> <span class="toc-text">（三）关于子查询提升</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF-%E8%B0%93%E8%AF%8D%E4%B8%8B%E6%8E%A8"><span class="toc-number">3.</span> <span class="toc-text">SQL引擎-查询重写技术-谓词下推</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8E%E8%B0%93%E8%AF%8D"><span class="toc-number">3.1.</span> <span class="toc-text">（一）关于谓词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%85%B3%E4%BA%8E%E8%B0%93%E8%AF%8D%E4%B8%8B%E6%8E%A8"><span class="toc-number">3.2.</span> <span class="toc-text">（二）关于谓词下推</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E6%B5%81%E7%A8%8B"><span class="toc-number">3.3.</span> <span class="toc-text">（三）流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF-%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%96%E7%AE%80"><span class="toc-number">4.</span> <span class="toc-text">SQL引擎-查询重写技术-常量表达式化简</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-number">5.</span> <span class="toc-text">结束语</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2021/10/19/SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">1</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-10-19 19:55:42" itemprop="dateCreated datePublished" datetime="2021-10-19T19:55:42+08:00">2021-10-19</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">1.7k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">6m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%BB%BF%E7%9B%9F%E6%9D%AF/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">绿盟杯</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/openGauss/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">openGauss</span></a><a class="tag-item" href="/tags/%E4%BB%A3%E7%A0%81%E8%AF%84%E6%B3%A8/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">代码评注</span></a><a class="tag-item" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">数据库</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>openGauss</code>中用到的几种较为关键的查询重写技术有</p>
+<ul>
+<li>常量表达式化简</li>
+<li>子查询提升</li>
+<li>谓词下推</li>
+</ul>
+<p>本文主要对这几种查询重写技术做概括性的介绍</p>
+<hr>
+<h1 id="SQL引擎-查询重写技术-子查询提升"><a href="#SQL引擎-查询重写技术-子查询提升" class="headerlink" title="SQL引擎-查询重写技术-子查询提升"></a>SQL引擎-查询重写技术-子查询提升</h1><h2 id="（一）关于子查询"><a href="#（一）关于子查询" class="headerlink" title="（一）关于子查询"></a>（一）关于子查询</h2><p>当一个查询是另一个查询的子部分时，称之为子查询（查询语句中嵌套有查询语句）。</p>
+<p>下面这些sql都含有子查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> t1 <span class="keyword">where</span> a <span class="keyword">in</span> (<span class="keyword">select</span> a <span class="keyword">from</span> t2);</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> t1) <span class="keyword">as</span> t;</span><br></pre></td></tr></table></figure>
+
+<h2 id="（二）背景"><a href="#（二）背景" class="headerlink" title="（二）背景"></a>（二）背景</h2><p>由于子查询表示的结构更清晰，符合人的阅读理解习惯，用户输入的SQL语句往往包含了大量的子查询。</p>
+<p>在数据库实现早期，查询优化器对子查询一般采用嵌套执行的方式，即父查询中的每一行，都要执行一次子查询，这样子查询会执行很多次，执行效率非常低。</p>
+<h2 id="（三）关于子查询提升"><a href="#（三）关于子查询提升" class="headerlink" title="（三）关于子查询提升"></a>（三）关于子查询提升</h2><ul>
+<li><p>子查询提升通过对子查询进行优化，可能带来==几个数量级==的查询效率的提高。子查询转变成为连接操作之后，会得到如下好处：</p>
+<ol>
+<li><p>子查询不用执行很多次。</p>
+</li>
+<li><p>优化器可以根据统计信息来选择不同的连接方法和不同的连接顺序。</p>
+</li>
+</ol>
+<p>   子查询中的连接条件、过滤条件分别变成了父查询的连接条件、过滤条件，优化器可以对这些条件进行下推，以提高执行效率。</p>
+</li>
+<li><p><strong>半连接（semi-join）</strong>：</p>
+<ul>
+<li><p>半连接操作，是关系代数规定的扩展操作符之一。对于“R semi-join S”其语义为：连接后的结果中，只包括R与S在公共属性上的交集所限定的R中的部分元组。</p>
+</li>
+<li><p>对于子查询，其子查询部分相对于父表的每个符合条件的元组，都要把子查询执行一轮。效率低下。用半连接操作优化子查询，是把子查询上拉到父查询中，这样子查询的表和父查询中的表是并列关系，父表的每个符合条件的元组，只需要在子表中找符合条件的元组即可，不需要“父表的每个符合条件的元组，都要把子查询执行一轮”，所以效率提高。这种优化方式，也称为“<u>上拉/扁平化</u>”。</p>
+</li>
+<li><p>通过将子查询优化为“<code>Semi Join</code>”的形式。可以在优化规划时选择其它的执行方法，可以有效地提高执行效率。</p>
+</li>
+<li><p>例如SQL语句“<code>SELECT * FROM t1 WHERE t1.a in (SELECT t2.a FROM t2);</code> ”，就可以通过<code>Semi Join</code>的方式重写为“<code>SELECT * FROM t1 LEFT SEMI JOIN t2 ON t1.a=t2.a</code>”语句</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="SQL引擎-查询重写技术-谓词下推"><a href="#SQL引擎-查询重写技术-谓词下推" class="headerlink" title="SQL引擎-查询重写技术-谓词下推"></a>SQL引擎-查询重写技术-谓词下推</h1><h2 id="（一）关于谓词"><a href="#（一）关于谓词" class="headerlink" title="（一）关于谓词"></a>（一）关于谓词</h2><ul>
+<li><p>谓词，用来描述或判定客体性质、特征或者客体之间关系的词项。根据《现代汉语》的定义汉语的谓词包括动词和形容词。</p>
+</li>
+<li><p>英文中的谓词为<code>predicate</code>，SQL语句中谓词的英文定义如下：</p>
+<blockquote>
+<p>A predicate is a function that returns bool (or something that can be implicitly converted to bool）</p>
+</blockquote>
+<p>也就是说，谓词下推概念中的谓词是指：返回bool值即true和false的函数，或是隐式转换为bool的函数。</p>
+<p>如SQL中的谓词主要有 LIKE、BETWEEN、IS NULL、IS NOT NULL、IN、EXISTS。</p>
+</li>
+<li><p>在SQL语句中，谓词(Predicate)，通常为SQL语句中的条件，例如“<code>SELECT * FROM t1 WHERE t1.a=1;</code> ”语句中的“<code>t1.a=1</code>”即为谓词。</p>
+</li>
+</ul>
+<h2 id="（二）关于谓词下推"><a href="#（二）关于谓词下推" class="headerlink" title="（二）关于谓词下推"></a>（二）关于谓词下推</h2><ul>
+<li><p>什么是谓词下推？</p>
+<p>谓词下推的含义：<strong>predicate pushdown</strong> ，指SQL语句中的部分语句( <strong>predicates</strong> 谓词部分) 可以被 “<strong>pushed</strong>” 下推到数据源或者靠近数据源的部分。通过尽早过滤掉数据，来大大减少查询或处理所消耗的时间。</p>
+</li>
+<li><p>谓词下推的基本思想即：</p>
+<p><strong>将过滤表达式尽可能移动至靠近数据源的位置，以使真正执行时能直接跳过无关的数据。</strong></p>
+</li>
+<li><p><u>谓词下推是数据库的一种经典优化手段，在MySQL、Spark SQL中都应用了谓词下推对SQL查询进行优化。</u></p>
+<p><u><code>openGauss</code>同样使用了这项技术，这使得其优化效率并不逊色于上述的几种引擎</u></p>
+</li>
+</ul>
+<h2 id="（三）流程"><a href="#（三）流程" class="headerlink" title="（三）流程"></a>（三）流程</h2><p>谓词下推的目的就是通过将一些过滤条件尽可能的在最底层执行可以减少每一层交互的数据量，从而提升性能，如下例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="number">1</span>) <span class="keyword">from</span> A <span class="keyword">Join</span> B <span class="keyword">on</span> A.id <span class="operator">=</span> B.id <span class="keyword">where</span> A.a <span class="operator">&gt;</span> <span class="number">10</span> <span class="keyword">and</span> B.b <span class="operator">&lt;</span> <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在处理Join操作之前需要首先对A和B执行<code>TableScan</code>操作，然后再进行Join，再执行过滤，最后计算聚合函数返回，但是如果把过滤条件A.a &gt; 10和B.b &lt; 100分别移到A表的<code>TableScan</code>和B表的<code>TableScan</code>的时候执行，可以大大降低Join操作的输入数据。</p>
+<p>优化后的语句如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="number">1</span>) <span class="keyword">from</span> (<span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> A  <span class="keyword">where</span> a<span class="operator">&gt;</span><span class="number">10</span>)A1 <span class="keyword">Join</span> (<span class="keyword">select</span> <span class="operator">*</span>  <span class="keyword">from</span> B  <span class="keyword">where</span> b<span class="operator">&lt;</span><span class="number">100</span>)B1 <span class="keyword">on</span> A1.id <span class="operator">=</span> B1.id;</span><br></pre></td></tr></table></figure>
+
+<p>在<code>openGauss</code>中，引入等价类的概念：等价类（Equivalent-Class）是指等价的属性、实体等对象的集合</p>
+<p>例如“<code>WHERE t1.a=t2.a</code>”语句中，t1.a和t2.a互相等价，组成一个等价类<code>&#123;t1.a,t2.a&#125;</code>。利用等价类推理（又称作传递闭包），我们可以生成新的谓词条件，从而达到减小数据量和最大化利用索引的目的。</p>
+<p>这里举一个例子来说明谓词下推的威力。假设有两个表t1、t2；它们分别包含[1,2,3,…100]共100行数据，那么查询语句“<code>SELECT * FROM t1 JOIN t2 ON t1.a=t2.a WHERE t1.a=1</code>”的逻辑计划在经过查询重写前后的对比如下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/2135c50dd9e4437ca035b469d9247324.gif" alt="谓词下推" loading="lazy"></p>
+<hr>
+<h1 id="SQL引擎-查询重写技术-常量表达式化简"><a href="#SQL引擎-查询重写技术-常量表达式化简" class="headerlink" title="SQL引擎-查询重写技术-常量表达式化简"></a>SQL引擎-查询重写技术-常量表达式化简</h1><ul>
+<li><p>常量表达式即用户输入SQL语句中包含运算结果为常量的表达式，分为<strong>算数表达式</strong>、逻辑运算表达式、<strong>函数表达式</strong>。</p>
+<p>查询重写可以对常量表达式预先计算以提升效率。例如“<code>SELECT * FROM table WHERE a=1+1;</code> ”语句被重写为“<code>SELECT * FROM table WHERE a=2</code>”语句。</p>
+</li>
+<li><p>常量表达式化简在各种编译器中都比较常见，也对提高处理查询语句的效率有一定帮助</p>
+</li>
+</ul>
+<hr>
+<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><ul>
+<li><p>本文对<code>openGauss</code>中3种关键的查询重写技术做了笼统的介绍，可以帮助读者了解<code>openGauss</code>在查询重写效率提升中应用的技术，以及起到的效果</p>
+</li>
+<li><p>后续将对查询重写部分的源码做出解读分析，敬请期待</p>
+</li>
+<li><p>本文的PDF附在附件中供读者交流。</p>
+<p>感谢阅读。</p>
+</li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2021/10/19/SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF/" title="1">https://wan-nan.github.io/2021/10/19/SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99%E6%8A%80%E6%9C%AF/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/10/18/SQL%E5%BC%95%E6%93%8E-%E6%9F%A5%E8%AF%A2%E9%87%8D%E5%86%99-%E7%BB%BC%E8%BF%B0/" rel="next" title="SQL引擎-查询重写-综述"><span class="post-nav-text">SQL引擎-查询重写-综述</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
