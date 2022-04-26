@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>社会网络复习 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="每一章后面的要点，对照“要点”回顾内容1~3章 图论 联系 三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。 两个人的共同朋友越多，则他们成为朋友的可能性越高 两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高  三元闭包的衡量标准——节点的聚集系数：A的任意两个朋友之间也是朋友的概率 聚集系数计算方法   强三元闭包原理（假设） 如果A-B和A-C之间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="社会网络复习">
+<meta property="og:url" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="每一章后面的要点，对照“要点”回顾内容1~3章 图论 联系 三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。 两个人的共同朋友越多，则他们成为朋友的可能性越高 两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高  三元闭包的衡量标准——节点的聚集系数：A的任意两个朋友之间也是朋友的概率 聚集系数计算方法   强三元闭包原理（假设） 如果A-B和A-C之间">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422210853627.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422211010609.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422213004688.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422213526237.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424195815788.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424200036121.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210621145952792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424200700693.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424200842125.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424201141837.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210621150112259.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210621150253693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424210542669.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424212219952.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424212235274.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424212249070.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210621151820435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222649092.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221136600.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221430369.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221501645.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221520952.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221814427.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222543825.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222732113.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222842762.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222924861.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425103705527.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104052496.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104106939.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104251004.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104326659.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104442018.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105157909.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105328811.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105412617.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105450712.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165059972.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165353510.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165517931.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165630758.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165720107.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425183651673.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425183543836.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425193834070.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425204151861.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425204946633.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425212201436.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425210254768.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425210929309.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425210940530.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425211913707.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425211957604.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425221357324.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425222253141.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140043764.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426141440270.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140425592.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140225081.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140908587.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140603484.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140638144.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426141013413.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426183025669.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426183611263.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426184030015.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426184218709.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190108540.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190321069.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190415762.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190759340.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426195208286.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426195254994.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426200937474.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426202136749.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426201818211.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426203315712.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426204316779.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426204716071.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426214519478.png">
+<meta property="article:published_time" content="2022-04-26T13:33:52.000Z">
+<meta property="article:modified_time" content="2022-04-26T13:47:11.837Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="专业课">
+<meta property="article:tag" content="社会网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422210853627.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">34</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">32</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%8F%E4%B8%80%E7%AB%A0%E5%90%8E%E9%9D%A2%E7%9A%84%E8%A6%81%E7%82%B9%EF%BC%8C%E5%AF%B9%E7%85%A7%E2%80%9C%E8%A6%81%E7%82%B9%E2%80%9D%E5%9B%9E%E9%A1%BE%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">每一章后面的要点，对照“要点”回顾内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3%E7%AB%A0-%E5%9B%BE%E8%AE%BA-%E8%81%94%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">1~3章 图论 联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E7%AB%A0-%E5%90%8C%E8%B4%A8%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">4章 同质性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E7%AB%A0-%E7%BB%93%E6%9E%84%E5%B9%B3%E8%A1%A1-%E6%AD%A3%E8%B4%9F%E5%85%B3%E7%B3%BB"><span class="toc-number">4.</span> <span class="toc-text">5章 结构平衡 正负关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E7%AB%A0-%E5%8D%9A%E5%BC%88"><span class="toc-number">5.</span> <span class="toc-text">6章 博弈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E7%AB%A0-%E8%BF%9B%E5%8C%96%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="toc-number">6.</span> <span class="toc-text">7章 进化博弈论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="toc-number">7.</span> <span class="toc-text">8章 网络流量博弈论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E7%AB%A0-%E6%8B%8D%E5%8D%96%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="toc-number">8.</span> <span class="toc-text">9章 拍卖博弈论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%E7%AB%A0-%E5%8C%B9%E9%85%8D%E5%B8%82%E5%9C%BA"><span class="toc-number">9.</span> <span class="toc-text">10章 匹配市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11%E7%AB%A0-%E4%B8%AD%E9%97%B4%E5%95%86%E5%B8%82%E5%9C%BA"><span class="toc-number">10.</span> <span class="toc-text">11章 中间商市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12%E7%AB%A0-%E7%A4%BE%E4%BA%A4%E5%85%B3%E7%B3%BB%E4%BB%B7%E5%80%BC%E7%9A%84%E5%9D%87%E8%A1%A1"><span class="toc-number">11.</span> <span class="toc-text">12章 社交关系价值的均衡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13%E7%AB%A0-%E4%B8%87%E7%BB%B4%E7%BD%91%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">12.</span> <span class="toc-text">13章 万维网信息的结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E7%9A%84%E9%93%BE%E6%8E%A5%E4%BF%A1%E6%81%AF"><span class="toc-number">13.</span> <span class="toc-text">14章 网络信息的链接信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15%E7%AB%A0-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B8%AD%E7%9A%84%E5%B9%BF%E5%91%8A%E5%B8%82%E5%9C%BA"><span class="toc-number">14.</span> <span class="toc-text">15章 搜索引擎中的广告市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18%E7%AB%A0-%E5%B9%82%E5%BE%8B%E4%B8%8E%E5%AF%8C%E8%80%85%E6%9B%B4%E5%AF%8C"><span class="toc-number">15.</span> <span class="toc-text">18章 幂律与富者更富</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20%E7%AB%A0-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">16.</span> <span class="toc-text">20章 小世界现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21%E7%AB%A0-%E4%BC%A0%E6%9F%93%E7%97%85%E7%9A%84%E7%BD%91%E7%BB%9C%E5%AE%A3%E4%BC%A0%E6%A8%A1%E5%9E%8B"><span class="toc-number">17.</span> <span class="toc-text">21章 传染病的网络宣传模型</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">社会网络复习</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-04-26 21:33:52" itemprop="dateCreated datePublished" datetime="2022-04-26T21:33:52+08:00">2022-04-26</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">3.3k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">11m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-tag"><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">专业课</span></a><a class="tag-item" href="/tags/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">社会网络</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="每一章后面的要点，对照“要点”回顾内容"><a href="#每一章后面的要点，对照“要点”回顾内容" class="headerlink" title="每一章后面的要点，对照“要点”回顾内容"></a>每一章后面的<strong>要点</strong>，对照“要点”回顾内容</h2><h2 id="1-3章-图论-联系"><a href="#1-3章-图论-联系" class="headerlink" title="1~3章 图论 联系"></a>1~3章 图论 联系</h2><ul>
+<li><p>三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。</p>
+<p>两个人的共同朋友越多，则他们成为朋友的可能性越高</p>
+<p>两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高</p>
+</li>
+<li><p>三元闭包的衡量标准——<strong>节点</strong>的聚集系数：A的任意两个朋友之间也是朋友的概率</p>
+<p>聚集系数计算方法</p>
+<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422210853627.png" alt="image-20220422210853627" loading="lazy"></p>
+</li>
+<li><p>强三元闭包原理（假设）</p>
+<p>如果A-B和A-C之间的关系为强关系；则B-C 之间形成边的可能性应该很高；</p>
+</li>
+<li><p>桥、<strong>捷径</strong>的定义</p>
+<p>捷径：</p>
+<p>若边A-B的端点A和B没有共同的朋友，则称边A-B为<strong>捷径</strong></p>
+<p>若删除该边，A和B的距离增加至2以上，则该边为捷径</p>
+<p>捷径的<strong>跨度</strong>为改变两端点在没有该边情况下的实际距离</p>
+</li>
+<li><p>证明：（反证法）在社交网络中，若节点A满足强三元闭包性质，并至少两个强联系边与之相连，则与其相连的任何捷径均为弱联系</p>
+</li>
+<li><p><strong>边（A,B）</strong>的邻里重叠度</p>
+<p>捷径 = 邻里重叠度为0的边</p>
+<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422211010609.png" alt="image-20220422211010609" loading="lazy"></p>
+</li>
+<li><p>结构洞</p>
+</li>
+<li><p>划分图：</p>
+<ul>
+<li><p>介数：</p>
+<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422213004688.png" alt="image-20220422213004688" loading="lazy"></p>
+</li>
+<li><p>通过每次删去图中介数最大的边，来实现对图的划分</p>
+</li>
+<li><p>介数计算的一种方法：</p>
+<ul>
+<li>从一个节点（A）开始，做宽度优先搜索，将节点分层（以便于下面的步骤）</li>
+<li>确定从A到其他每个节点的最短路径的条数</li>
+<li>确定当从节点A沿最短路径向其他所有节点发送1个单位流量时，经过每条边的流量。</li>
+</ul>
+<p>对每一个节点，重复上述过程，累计，除以2，即得每条边的介数。</p>
+<p>例子：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422213526237.png" alt="image-20220422213526237" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<h2 id="4章-同质性"><a href="#4章-同质性" class="headerlink" title="4章 同质性"></a>4章 同质性</h2><ul>
+<li><p>同质性：</p>
+<p>定义：我们和自己的朋友间往往会有相同的特点，即社交网路中互相连接的人倾向于相似</p>
+<p>量化标准：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424195815788.png" alt="image-20220424195815788" style="zoom: 67%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424200036121.png" alt="image-20220424200036121" style="zoom:67%;" loading="lazy">
+
+<img src="https://img-blog.csdnimg.cn/20210621145952792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:67%;" loading="lazy"></li>
+<li><p>三种闭包：三元闭包、会员闭包、社团闭包</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424200700693.png" alt="image-20220424200700693" style="zoom:67%;" loading="lazy">
+
+<ul>
+<li><p>例子：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424200842125.png" alt="image-20220424200842125" style="zoom:67%;" loading="lazy">
+
+<p>A加入W可能性更高，因为有两个好友D,E都在W</p>
+</li>
+</ul>
+</li>
+<li><p>朋友间相似的原因：选择（selection），影响（influence）</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424201141837.png" alt="image-20220424201141837" style="zoom:67%;" loading="lazy">
+
+<p>如下图：选择对应社团闭包，影响对应会员闭包</p>
+<img src="https://img-blog.csdnimg.cn/20210621150112259.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70" alt="img" style="zoom:67%;" loading="lazy"></li>
+<li><p>隔离：同质化影响下发生的过程</p>
+<p>谢林模型：隔离的一种空间模型</p>
+<p>同质性影响结果：<u>固有特质相同-&gt;可变特质趋同</u></p>
+</li>
+</ul>
+<h2 id="5章-结构平衡-正负关系"><a href="#5章-结构平衡-正负关系" class="headerlink" title="5章 结构平衡 正负关系"></a>5章 结构平衡 正负关系</h2><ul>
+<li><p>边的正负性</p>
+<img src="https://img-blog.csdnimg.cn/20210621150253693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:67%;" loading="lazy">
+
+<p>只有<code>+++</code>和<code>+--</code>两种关系是稳定的</p>
+</li>
+<li><p>社会网络的结构平衡：（完全）图的结构是平衡的，若其中所有三角关系都是平衡的（即每个三角关系要么3＋，要么1＋和2－）。</p>
+<ul>
+<li><p><strong>平衡定理</strong></p>
+<p>如果一个标记的完全图是平衡的，则要么它的所有节点两两都是朋友，<strong>要么它的节点可以被分为两个组X和Y，其中X组内的节点两两都是朋友，Y组内的节点两两也是朋友，而X组中的每个节点都是Y组中每个节点的敌人</strong></p>
+</li>
+</ul>
+</li>
+<li><p>非完全网络（允许一些边的缺失）中的结构平衡;</p>
+<ul>
+<li>可以通过补充缺失的边（带符号），成一个平衡网络（这和完全图的平衡定义一致）</li>
+<li>节点可以分成两组（组内边为＋，跨组为－）<br>这和平衡定理中给出的宏观结论一致（两个阵营）</li>
+</ul>
+<p>两个定义是等价的：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424210542669.png" alt="image-20220424210542669" style="zoom:67%;" loading="lazy"></li>
+<li><p>网络是否平衡的一个判断方法：一个标注图是平衡的，当且仅当它<strong>不包含有奇数个负关系的边的圈</strong></p>
+</li>
+<li><p>将每个联通子图抽象为<strong>超结点</strong>，超结点之间以<code>-</code>连接</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424212219952.png" alt="image-20220424212219952" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424212235274.png" alt="image-20220424212235274" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424212249070.png" alt="image-20220424212249070" style="zoom:67%;" loading="lazy">
+
+<p><strong>图中存在奇数长度圈，当且仅当广度优先搜索结果中存在同层的边</strong></p>
+</li>
+</ul>
+<h2 id="6章-博弈"><a href="#6章-博弈" class="headerlink" title="6章 博弈"></a>6章 博弈</h2><p>博弈三要素：参与人，策略（概率），收益</p>
+<ul>
+<li><p>几种经典的模型：考试-报告博弈，囚徒困境，兴奋剂博弈，营销博弈</p>
+</li>
+<li><p>最佳应对-占优策略（严格/不严格）：</p>
+<img src="https://img-blog.csdnimg.cn/20210621151820435.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Njg0MTM3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:67%;" loading="lazy">
+
+<p><strong>占优策略的概念是相对于对方所有策略而言的，而最佳应对是针对单个策略而言。</strong></p>
+</li>
+<li><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222649092.png" alt="image-20220424222649092" style="zoom:67%;" loading="lazy"></li>
+<li><p><strong>无占优策略</strong>例子（三客户博弈）</p>
+<p>引出<strong>纳什均衡</strong>：<u>两个策略互为最佳应对</u></p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221136600.png" alt="image-20220424221136600" style="zoom:67%;" loading="lazy"></li>
+<li><p>多重均衡（存在多组纳什均衡）-协调博弈</p>
+<p>例子：PPT制作（对等）</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221430369.png" alt="image-20220424221430369" style="zoom:67%;" loading="lazy">
+
+<ul>
+<li><p>不对等协调博弈：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221501645.png" alt="image-20220424221501645" style="zoom:67%;" loading="lazy"></li>
+<li><p>两人喜好不同时：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221520952.png" alt="image-20220424221520952" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p>猎鹿博弈：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424221814427.png" alt="image-20220424221814427" style="zoom:67%;" loading="lazy">
+
+<p>要在高收益和由于另一方不合作而造成损失之间进行权衡。</p>
+</li>
+<li><p>鹰鸽博弈：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222543825.png" alt="image-20220424222543825" style="zoom:67%;" loading="lazy"></li>
+<li><p><strong>一般来说，纳什均衡的概念能有助于缩小预测范围，但它不一定能给出唯一的预测</strong></p>
+</li>
+<li><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222732113.png" alt="image-20220424222732113" style="zoom:67%;" loading="lazy"></li>
+<li><p>硬币博弈—零和博弈（不存在纳什均衡）</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222842762.png" alt="image-20220424222842762" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220424222924861.png" alt="image-20220424222924861" style="zoom:67%;" loading="lazy"></li>
+<li><p>混合策略，引入概率</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425103705527.png" alt="image-20220425103705527" style="zoom:67%;" loading="lazy">
+
+<p><u>混合策略互为最佳应对的必要条件</u></p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104052496.png" alt="image-20220425104052496" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104106939.png" alt="image-20220425104106939" style="zoom:67%;" loading="lazy">
+
+<p>再来一个混合策略均衡的例子：持球抛球博弈：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104251004.png" alt="image-20220425104251004" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104326659.png" alt="image-20220425104326659" style="zoom:67%;" loading="lazy">
+
+<p>讨论：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425104442018.png" alt="image-20220425104442018" style="zoom:67%;" loading="lazy">
+
+<p>【兼具纯策略和混合策略均衡的博弈】</p>
+<p><strong>好的概率策略是使对方不知道用那个纯策略更好的策略</strong></p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105157909.png" alt="image-20220425105157909" style="zoom:67%;" loading="lazy">
+
+<ul>
+<li><p>没有混合策略均衡的纯策略博弈：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105328811.png" alt="image-20220425105328811" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p><strong>双人双策略博弈均衡的一般求法</strong></p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105412617.png" alt="image-20220425105412617" style="zoom:67%;" loading="lazy"></li>
+<li><p>一组策略选择是社会最优的（或社会福利最大化），若它使<strong>参与者的回报之和</strong>（总收益）最大。</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425105450712.png" alt="image-20220425105450712" style="zoom:50%;" loading="lazy">
+
+<p>社会最优和纳什均衡有可能一致，此时是理想系统</p>
+</li>
+</ul>
+<h2 id="7章-进化博弈论"><a href="#7章-进化博弈论" class="headerlink" title="7章 进化博弈论"></a>7章 进化博弈论</h2><p>这章不太懂</p>
+<p>对博弈论的推广——进化博弈论</p>
+<ul>
+<li><p>囚徒困境：</p>
+<ul>
+<li><p>均衡出现在双方采用某一种相同的策略</p>
+</li>
+<li><p>对应社会最优的策略组不是均衡，因为参与人之一有动机改变策略</p>
+</li>
+</ul>
+</li>
+<li><p>鹰鸽博弈：</p>
+<ul>
+<li>均衡出现在双方采用不同的策略</li>
+</ul>
+</li>
+</ul>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165059972.png" alt="image-20220425165059972" style="zoom:67%;" loading="lazy">
+
+<ul>
+<li><p><strong>进化稳定策略</strong>考察例子：</p>
+<p>还是引入概率，计算期望</p>
+<ul>
+<li><p>甲虫1：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165353510.png" alt="image-20220425165353510" style="zoom:67%;" loading="lazy"></li>
+<li><p>甲虫2：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165517931.png" alt="image-20220425165517931" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p>生物学家认为在自然界中存在具有囚徒困境结构的进化博弈现象</p>
+<p>例如<u>病毒之间的进化博弈</u>，类似囚徒困境</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165630758.png" alt="image-20220425165630758" style="zoom:67%;" loading="lazy"></li>
+<li><p>进化博弈论小结:</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425165720107.png" alt="image-20220425165720107" style="zoom:67%;" loading="lazy"></li>
+</ul>
+<h2 id="8章-网络流量博弈论"><a href="#8章-网络流量博弈论" class="headerlink" title="8章 网络流量博弈论"></a>8章 网络流量博弈论</h2><ul>
+<li><p>均衡的流量，布雷斯悖论</p>
+</li>
+<li><p>根据潜能的概念，借助动态规划</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425183651673.png" alt="image-20220425183651673" style="zoom: 50%;" loading="lazy"></li>
+<li><p>要点：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425183543836.png" alt="image-20220425183543836" style="zoom:67%;" loading="lazy"></li>
+</ul>
+<h2 id="9章-拍卖博弈论"><a href="#9章-拍卖博弈论" class="headerlink" title="9章 拍卖博弈论"></a>9章 拍卖博弈论</h2><ul>
+<li><p>四种拍卖：英式拍卖（买家从低到高报价），荷兰式拍卖（卖家从高到低出价）</p>
+<p>次价密封拍卖，首价密封拍卖</p>
+</li>
+<li><p>在次价密封拍卖中，<strong>按照自己的估值出价</strong>最优</p>
+<p>一个按照自己估值出价的人不可能通过改变策略得到更大的回报，无论别人出价策略如何。</p>
+<p>因此，我们可以说：“次价支付规则”<u>鼓励真实报价</u>。</p>
+</li>
+<li><p>而首价封闭拍卖中，没有这种性质</p>
+</li>
+</ul>
+<h2 id="10章-匹配市场"><a href="#10章-匹配市场" class="headerlink" title="10章 匹配市场"></a>10章 匹配市场</h2><ul>
+<li><p>匹配市场基本模型：二部图</p>
+</li>
+<li><p><strong>匹配市场操作的一般过程</strong>：卖方根据买家的需求调整自己的价格</p>
+<p>出价-涨价-出价-涨价…直到买卖双方都满足</p>
+<p>步骤：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425193834070.png" alt="image-20220425193834070" style="zoom:67%;" loading="lazy"></li>
+<li><p><strong>受限组的定义</strong>：首先，取二部图右边任何一组节点S，将<strong>左边通过边与其相连的节点</strong>称为S的邻居，用N(S)表示所有S邻居的集合，如果S比N(S)的数量大，即S比N(S)包含更多的节点，那么右边的S就受到限制</p>
+<p>买方受限组：即在组中，买方的个数多于卖方的个数，需求大于供给</p>
+<p>买方受限组是从买方连到卖方的</p>
+</li>
+<li><p>一定能按照上述步骤得出一个结果</p>
+<p>最终卖方的结果不唯一，但<strong>一定是社会最优</strong></p>
+</li>
+</ul>
+<h2 id="11章-中间商市场"><a href="#11章-中间商市场" class="headerlink" title="11章 中间商市场"></a>11章 中间商市场</h2><ul>
+<li><p>垄断和竞争：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425204151861.png" alt="image-20220425204151861" style="zoom:67%;" loading="lazy"></li>
+<li><p>社会福利及其最优问题：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425204946633.png" alt="image-20220425204946633" style="zoom: 50%;" loading="lazy"></li>
+</ul>
+<h2 id="12章-社交关系价值的均衡"><a href="#12章-社交关系价值的均衡" class="headerlink" title="12章 社交关系价值的均衡"></a>12章 社交关系价值的均衡</h2><ul>
+<li><p>定义“结果”：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425212201436.png" alt="image-20220425212201436" style="zoom:50%;" loading="lazy"></li>
+<li><p>稳定结果：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425210254768.png" alt="image-20220425210254768" style="zoom:50%;" loading="lazy"></li>
+<li><p>平衡结果：</p>
+<p>不稳定因素：<strong>不在结果中的一条边，其两端节点的价值之和小于1</strong></p>
+<p><strong>纳什议价解</strong></p>
+<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425210929309.png" alt="image-20220425210929309" style="zoom:50%;" loading="lazy"> <img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425210940530.png" alt="image-20220425210940530" style="zoom:50%;" loading="lazy"></p>
+</li>
+<li><p><strong>外部选项</strong>：放弃当前的匹配关系后所能得到的最大好处，即退路的价值</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425211913707.png" alt="image-20220425211913707" style="zoom:50%;" loading="lazy"></li>
+<li><p>平衡结果：（判断<strong>结果</strong>是否平衡的步骤：求出外部选项-&gt;计算结果中每条边的交换是否平衡）</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425211957604.png" alt="image-20220425211957604" style="zoom:50%;" loading="lazy"></li>
+<li><p>三个概念的包含关系：【结果【稳定结果【平衡结果】】】</p>
+</li>
+</ul>
+<h2 id="13章-万维网信息的结构"><a href="#13章-万维网信息的结构" class="headerlink" title="13章 万维网信息的结构"></a>13章 万维网信息的结构</h2><ul>
+<li><p>Web信息结构的模型：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425221357324.png" alt="image-20220425221357324" style="zoom: 50%;" loading="lazy"></li>
+<li><p>Web信息结构的概貌：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220425222253141.png" alt="image-20220425222253141" style="zoom:50%;" loading="lazy"></li>
+<li><p>给定一个节点，如何确定包含它的强连通分量？</p>
+<p>广度优先搜索</p>
+</li>
+</ul>
+<h2 id="14章-网络信息的链接信息"><a href="#14章-网络信息的链接信息" class="headerlink" title="14章 网络信息的链接信息"></a>14章 网络信息的链接信息</h2><ul>
+<li><p>当向搜索引擎中查询一个词时，是什么决定了网页的排名？</p>
+<p>一个网页的链入数越多，排名应该越靠前</p>
+<p>有效利用链接关系蕴含的信息，是搜索引擎超越传统信息检索系统、技术进步的最重要标志</p>
+</li>
+<li><p>网页的中枢性，与权威性</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140043764.png" alt="image-20220426140043764" style="zoom: 33%;" loading="lazy">
+
+<p>HITS算法：</p>
+<p><strong>权威更新规则</strong>：对于每个网页p，以所有<strong>指向该网页</strong>的网页<strong>中枢值之和</strong>更新这个网页的权威值</p>
+<p><strong>中枢更新规则</strong>：对于每个网页p，以所有<strong>该网页指向</strong>的网页<strong>权威值之和</strong>更新这个网页的中枢值</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426141440270.png" alt="image-20220426141440270" style="zoom: 67%;" loading="lazy"></li>
+<li><p>通过PageRank计算网页的重要性：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140425592.png" alt="image-20220426140425592" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140225081.png" alt="image-20220426140225081" style="zoom:50%;" loading="lazy">
+
+<p>迭代的例子：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140908587.png" alt="image-20220426140908587" style="zoom:50%;" loading="lazy">
+
+<p>为了避免一些自私的节点只吸收别人的价值，不向外传递，即只被指向，不指向别人，无限次迭代之后</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140603484.png" alt="image-20220426140603484" style="zoom:50%;" loading="lazy">
+
+<ul>
+<li><p>引入同比缩减与统一补偿原则：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426140638144.png" alt="image-20220426140638144" style="zoom:50%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p><strong>随机游走</strong>：PageRank的另一种等价理解：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426141013413.png" alt="image-20220426141013413" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="15章-搜索引擎中的广告市场"><a href="#15章-搜索引擎中的广告市场" class="headerlink" title="15章 搜索引擎中的广告市场"></a>15章 搜索引擎中的广告市场</h2><ul>
+<li><p>一些概念：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426183025669.png" alt="image-20220426183025669" style="zoom: 50%;" loading="lazy">
+
+<p>根据点击率和点击收入可以计算出估值，再结合匹配市场中的方法</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426183611263.png" alt="image-20220426183611263" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426184030015.png" alt="image-20220426184030015" style="zoom:50%;" loading="lazy">
+
+<p>采用拍卖的方式，GSP：单品次价拍卖机制的一种“自然”推广</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426184218709.png" alt="image-20220426184218709" style="zoom:50%;" loading="lazy">
+
+<p>在多个商品同时拍卖的情形，如此推广的一种次价拍卖规则（GSP）没有单品次价拍卖（鼓励真实报价）的优良性质</p>
+</li>
+<li><p>改进：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190108540.png" alt="image-20220426190108540" style="zoom:50%;" loading="lazy">
+
+<p><strong>一个例子</strong></p>
+<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190321069.png" alt="image-20220426190321069" style="zoom:50%;" loading="lazy"> <img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190415762.png" alt="image-20220426190415762" style="zoom:50%;" loading="lazy"></p>
+<ul>
+<li><p>执行步骤</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426190759340.png" alt="image-20220426190759340" style="zoom:50%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p>VCG价格机制的优良特性：</p>
+<p>鼓励“讲真话”：<strong>按照真实估值出价是每个竞拍者的占优策略</strong></p>
+<p>即没有理由故意让出价偏离估值（无论别人如何出价）</p>
+<p>换言之，<strong>大家都按照估值报价是一个纳什均衡</strong></p>
+<p><strong>社会最优：买方估值总和最大</strong></p>
+<p>按照机制执行的定义，当大家都“讲真话”时，所得到的广告位分配就是估值总和最大的</p>
+</li>
+<li><p>但实际中，VCG不好懂，<u>GSP用的更多</u></p>
+</li>
+</ul>
+<h2 id="18章-幂律与富者更富"><a href="#18章-幂律与富者更富" class="headerlink" title="18章 幂律与富者更富"></a>18章 幂律与富者更富</h2><ul>
+<li><p>幂律：流行度的一种主导规律</p>
+<p>图形表示：</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426195208286.png" alt="image-20220426195208286" style="zoom:50%;" loading="lazy">
+
+<p>幂律的基本特性：</p>
+<ul>
+<li>不受观察尺度影响</li>
+<li>平均不等于典型</li>
+</ul>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426195254994.png" alt="image-20220426195254994" style="zoom:50%;" loading="lazy">
+
+<p>Scale free，意味着从任何一个比例尺度（数据）上看到的函数特征都一样</p>
+</li>
+<li><p>“长尾”有利于经营利基产品：除了top-K外，利基产品的总市场占有率随max增加，K是固定的。</p>
+<p>二八定律：“销量排前20%的书的销量之和占总销量的80%”，max增加，比例不变。</p>
+</li>
+</ul>
+<h2 id="20章-小世界现象"><a href="#20章-小世界现象" class="headerlink" title="20章 小世界现象"></a>20章 小世界现象</h2><ul>
+<li><p>社会网络中两节点间包含丰富的短路径</p>
+<p>通过“有意识的转发”能够“自动地”找到这些短路径</p>
+</li>
+<li><p>模型推导过程中：</p>
+<p>记 d(v,w) 为v到w的距离（网格步数），则产生一条从v到w的随机边的概率与 d(v,w)^-q^ 成正比</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426200937474.png" alt="image-20220426200937474" style="zoom:50%;" loading="lazy"></li>
+<li><p>但是，在线社会网络如何体现均匀地理位置关系？<br>不同节点的同“距离”圈中的节点数相同</p>
+<p><strong>rank的定义：节点w在节点v眼里的排名，rank(w)，等于网络中比w离v近的节点的个数</strong></p>
+<p>把社会网络中的<strong>rank</strong>与地理距离中的d^2^类比</p>
+<p>rank小的在圆内==面积小的在圆内</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426202136749.png" alt="image-20220426202136749" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426201818211.png" alt="image-20220426201818211" style="zoom: 50%;" loading="lazy"></li>
+<li><p>互联网的地域性——虚拟空间距离与现实空间距离的等价性</p>
+<p><strong>远程相邻节点的数量在同距离节点数中的占比随距离的平方减少</strong></p>
+</li>
+<li><p>另一个社会网络中的距离概念：社会距离</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426203315712.png" alt="image-20220426203315712" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="21章-传染病的网络宣传模型"><a href="#21章-传染病的网络宣传模型" class="headerlink" title="21章 传染病的网络宣传模型"></a>21章 传染病的网络宣传模型</h2><p>树形模型（分支结构），SIR模型</p>
+<ul>
+<li><p>基本再生数：R<del>0</del>=概率p×遇到的人数k，<u>由单一个体引起的新发病例数期望值</u></p>
+<p>如果R<del>0</del>&lt;1，则疾病将以概率1在有限的过程后消失。如果 R<del>0</del>&gt; 1，则疾病持续在每一波以一定的概率至少感染一个人</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426204316779.png" alt="image-20220426204316779" style="zoom: 67%;" loading="lazy"></li>
+<li><p>SIR模型</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426204716071.png" alt="image-20220426204716071" style="zoom:50%;" loading="lazy">
+
+<p>与分支结构不同，这里不再有k这个参数。而是靠网络结构和时间步数来表达传染的过程。</p>
+<p>一条边表示，“在特定的时候，他们有接触”</p>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426214519478.png" alt="image-20220426214519478" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/" title="社会网络复习">https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/03/30/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="vue学习笔记"><span class="post-nav-text">vue学习笔记</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么？</span><br></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
