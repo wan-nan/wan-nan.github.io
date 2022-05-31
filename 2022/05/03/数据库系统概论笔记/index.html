@@ -22,12 +22,12 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="视频链接mark一下链接 课程介绍: 网页链接      数据库系统概述:网页链接 数据模型:    CH01-2 数据模型 数据库系统的结构：    CH01-3 数据库系统的结构 关系模式的数据结构和完整性约束规则:    CH02-Part1 关系模式的数据结构… 关系代数：    CH02-Part2 关系代数 SQL概述及数据定义语句:    CH03 SQL-part1 简单查询及多表">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="视频链接mark一下链接 课程介绍: 网页链接      数据库系统概述:网页链接 数据模型: CH01-2 数据模型 数据库系统的结构： CH01-3 数据库系统的结构 关系模式的数据结构和完整性约束规则: CH02-Part1 关系模式的数据结构… 关系代数： CH02-Part2 关系代数 SQL概述及数据定义语句: CH03 SQL-part1 简单查询及多表连接查询: CH03 SQL-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库系统概论笔记">
 <meta property="og:url" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="风物">
-<meta property="og:description" content="视频链接mark一下链接 课程介绍: 网页链接      数据库系统概述:网页链接 数据模型:    CH01-2 数据模型 数据库系统的结构：    CH01-3 数据库系统的结构 关系模式的数据结构和完整性约束规则:    CH02-Part1 关系模式的数据结构… 关系代数：    CH02-Part2 关系代数 SQL概述及数据定义语句:    CH03 SQL-part1 简单查询及多表">
+<meta property="og:description" content="视频链接mark一下链接 课程介绍: 网页链接      数据库系统概述:网页链接 数据模型: CH01-2 数据模型 数据库系统的结构： CH01-3 数据库系统的结构 关系模式的数据结构和完整性约束规则: CH02-Part1 关系模式的数据结构… 关系代数： CH02-Part2 关系代数 SQL概述及数据定义语句: CH03 SQL-part1 简单查询及多表连接查询: CH03 SQL-">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525195055120.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525202211390.png">
@@ -46,30 +46,114 @@
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525234511038.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525235250624.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525235339295.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531101407643.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531101602274.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102311076.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102343074.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102459416.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102744364.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531110926397.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531111001397.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531111013391.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531111200601.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531151349843.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531151505484.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531151639841.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152021867.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152151227.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152246936.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152619856.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152653987.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531153442438.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531153946977.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531154036340.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531154346149.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531160243447.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531160325244.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531160858336.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161005134.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161201911.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161545750.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161600479.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161657359.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531163205987.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531163940912.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531163954676.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531164537266.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531164743293.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165038902.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165144440.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165431075.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165654152.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531184230166.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531184324293.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185013078.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185029973.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185052296.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531184829707.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185128653.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185249563.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185259597.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185339927.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190319630.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190420922.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190450714.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190557580.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190635898.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531191739470.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192208849.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192333625.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192520207.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192621811.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192712818.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192932506.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531193037704.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531193123154.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531193204058.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194222808.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194350451.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194453378.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194644465.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194949997.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195027285.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195051264.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195938765.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195951966.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200002026.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200027871.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200116746.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200327945.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200512073.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200600535.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200746468.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200803072.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531201111858.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531201127937.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531201219031.png">
 <meta property="article:published_time" content="2022-05-03T08:37:27.000Z">
-<meta property="article:modified_time" content="2022-05-25T16:01:51.835Z">
+<meta property="article:modified_time" content="2022-05-31T12:20:06.118Z">
 <meta property="article:author" content="wan_nan">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="专业课">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525195055120.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">39</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">36</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">视频链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">主要内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="toc-number"></span> <span class="toc-text">第一章 绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number"></span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">概念模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">逻辑模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E6%88%90%E8%A6%81%E7%B4%A0"><span class="toc-number">3.</span> <span class="toc-text">组成要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-R%E5%9B%BE%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.</span> <span class="toc-text">E-R图实例</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">数据库系统概论笔记</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-05-03 16:37:27" itemprop="dateCreated datePublished" datetime="2022-05-03T16:37:27+08:00">2022-05-03</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2022-05-26 00:01:51" itemprop="dateModified" datetime="2022-05-26T00:01:51+08:00">2022-05-26</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">1.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">3m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">数据库</span></a><a class="tag-item" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">专业课</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h3 id="视频链接"><a href="#视频链接" class="headerlink" title="视频链接"></a>视频链接</h3><p>mark一下链接</p>
+<meta name="twitter:image" content="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525195055120.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">39</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">36</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">视频链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">主要内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="toc-number"></span> <span class="toc-text">第一章 绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number"></span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">概念模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">逻辑模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E6%88%90%E8%A6%81%E7%B4%A0"><span class="toc-number">3.</span> <span class="toc-text">组成要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E-R%E5%9B%BE%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.</span> <span class="toc-text">E-R图实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">层次模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.</span> <span class="toc-text">网状模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">7.</span> <span class="toc-text">关系模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number"></span> <span class="toc-text">数据库系统的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">模式结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">用户角度看数据库系统的结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number"></span> <span class="toc-text">第二章 关系数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number"></span> <span class="toc-text">关系数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">关系中的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">关系模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">关系数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C"><span class="toc-number"></span> <span class="toc-text">关系操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">关系的完整性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">实体完整性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">参照完整性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">用户定义的完整性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="toc-number"></span> <span class="toc-text">关系代数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">传统的集合运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E9%97%A8%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-number">3.</span> <span class="toc-text">专门的关系运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">例题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL"><span class="toc-number"></span> <span class="toc-text">第三章 SQL</span></a></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">数据库系统概论笔记</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-05-03 16:37:27" itemprop="dateCreated datePublished" datetime="2022-05-03T16:37:27+08:00">2022-05-03</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2022-05-31 20:20:06" itemprop="dateModified" datetime="2022-05-31T20:20:06+08:00">2022-05-31</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">2.7k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">9m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">数据库</span></a><a class="tag-item" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">专业课</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h3 id="视频链接"><a href="#视频链接" class="headerlink" title="视频链接"></a>视频链接</h3><p>mark一下链接</p>
 <p>课程介绍: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d7411173x?p=3">网页链接</a>      数据库系统概述:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d7411173x?p=2">网页链接</a></p>
-<p>数据模型: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d7411173x?p=1">   CH01-2 数据模型</a></p>
-<p>数据库系统的结构： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19741117qH/">   CH01-3 数据库系统的结构</a></p>
-<p>关系模式的数据结构和完整性约束规则: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1W7411C71F/">   CH02-Part1 关系模式的数据结构…</a></p>
-<p>关系代数： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1P7411D71x/">   CH02-Part2 关系代数</a></p>
-<p>SQL概述及数据定义语句: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ug4y1b7tc/">   CH03 SQL-part1</a></p>
-<p>简单查询及多表连接查询: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gg4y1a7Rs/">   CH03 SQL-part2</a></p>
-<p>嵌套查询: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vt4y127w7/">   CH03 SQL-part3</a></p>
-<p>实践课SQL Server示范:  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1EK411j7Ls/">   MSSQL实践示范</a></p>
-<p>实践课MySQL 示范： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rg4y187nm/">   MySQL实践示范</a></p>
-<p>关系数据理论-函数依赖与公理系统: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xi4y1t7kx/">   CH06 关系数据理论1-upd1</a></p>
-<p>关系数据理论-最小覆盖、正则覆盖、范式与多值依赖: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xe411s7xG/">   CH06 关系数据理论2</a></p>
-<p>关系数据理论-无损连接、保持函数依赖与模式分解: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411o7Fi/">   CH06 关系数据理论3-upd1</a></p>
-<p>关系查询处理与优化： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1n5411s7gF/">   CH09 关系查询处理和查询优化</a></p>
-<p>数据库恢复技术:  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wk4y1z7vT/">   CH10 数据库恢复技术</a></p>
-<p>并发控制:  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xg4y1i71V/">   CH11 并发控制</a> </p>
+<p>数据模型: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d7411173x?p=1">CH01-2 数据模型</a></p>
+<p>数据库系统的结构： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19741117qH/">CH01-3 数据库系统的结构</a></p>
+<p>关系模式的数据结构和完整性约束规则: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1W7411C71F/">CH02-Part1 关系模式的数据结构…</a></p>
+<p>关系代数： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1P7411D71x/">CH02-Part2 关系代数</a></p>
+<p>SQL概述及数据定义语句: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ug4y1b7tc/">CH03 SQL-part1</a></p>
+<p>简单查询及多表连接查询: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gg4y1a7Rs/">CH03 SQL-part2</a></p>
+<p>嵌套查询: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vt4y127w7/">CH03 SQL-part3</a></p>
+<p>实践课SQL Server示范:  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1EK411j7Ls/">MSSQL实践示范</a></p>
+<p>实践课MySQL 示范： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rg4y187nm/">MySQL实践示范</a></p>
+<p>关系数据理论-函数依赖与公理系统: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xi4y1t7kx/">CH06 关系数据理论1-upd1</a></p>
+<p>关系数据理论-最小覆盖、正则覆盖、范式与多值依赖: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xe411s7xG/">CH06 关系数据理论2</a></p>
+<p>关系数据理论-无损连接、保持函数依赖与模式分解: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411o7Fi/">CH06 关系数据理论3-upd1</a></p>
+<p>关系查询处理与优化： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1n5411s7gF/">CH09 关系查询处理和查询优化</a></p>
+<p>数据库恢复技术:  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wk4y1z7vT/">CH10 数据库恢复技术</a></p>
+<p>并发控制:  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xg4y1i71V/">CH11 并发控制</a> </p>
 <h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220525195055120.png" alt="image-20220525195055120" loading="lazy"></p>
 <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
 <li><p>数据是数据库中存储的基本对象，数据与其语义密不可分</p>
@@ -148,6 +232,292 @@
 <p>酒和厂家之间是<strong>一对多</strong>的联系，上图<strong>只需要两个表</strong>，与上面的学生选修课程的类似也是两个实体+一个联系，但选修课程需要三个表，因为选修课程是多对多的N:N关系，而这个是一对多的1:N的关系</p>
 <p>只需要在一对多的“多”那一端多加一个属性（一端的主码）即可</p>
 </blockquote>
+<hr>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531101407643.png" alt="image-20220531101407643" style="zoom:50%;" loading="lazy">
+
+<p>上图中食物的“评分”和“价格”并非其独有属性，应该是“供应”这个联系的属性</p>
+<p>如下图所示：（包含实现需要用的表的结构）</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531101602274.png" alt="image-20220531101602274" style="zoom: 50%;" loading="lazy">
+
+<hr>
+<p>演员-电影-制片公司</p>
+<p><strong>根据语义取舍</strong>E-R图的结构</p>
+<p>要求：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102311076.png" alt="image-20220531102311076" style="zoom:50%;" loading="lazy">
+
+<p>以下两种E-R图都可行，要根据语义取舍</p>
+<ul>
+<li><p>A:需要五个关系</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102343074.png" alt="image-20220531102343074" style="zoom:50%;" loading="lazy"></li>
+<li><p>B:只需要四个关系</p>
+<p>可以储存制片公司和演员之间的信息，例如：“一个演员的片酬如何由相应的制片公司分摊”</p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102459416.png" alt="image-20220531102459416" loading="lazy"></p>
+<blockquote>
+<p>三个实体之间的三元联系和两两之间的二元联系是不等价的，其各自表达的语义也不相同</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>多对多联系和实体之间是可以互相转化的</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531102744364.png" alt="image-20220531102744364" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h3 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h3><p>结点的双亲是唯一的</p>
+<p>层次模型只能处理<strong>一对多</strong>的联系</p>
+<p>其数据结构就是普通的树</p>
+<p>多对多的联系在层次模型中 采用间接表达，多对多分解成一对多</p>
+<p>层次模型是数据库系统中最早出现的数据模型</p>
+<h3 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h3><ul>
+<li><p>允许一个以上的结点没有双亲</p>
+<p>一个结点可以有多余一个的双亲（否定了树形结构）</p>
+</li>
+</ul>
+<p>同样只能直接处理一对多的实体联系，多对多要间接处理</p>
+<h3 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h3><ul>
+<li>最重要的一种数据模型，也是目前主流的数据模型</li>
+<li>关系模型的数据结构是一张<strong>二维表</strong>，由行和列组成</li>
+</ul>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531110926397.png" alt="image-20220531110926397" style="zoom:50%;" loading="lazy">
+
+<p>冗余的列信息表达彼此之间的联系</p>
+<ul>
+<li><p>一些概念：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531111001397.png" alt="image-20220531111001397" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531111013391.png" alt="image-20220531111013391" style="zoom:50%;" loading="lazy">
+
+<p>关系模式举例：<code>学生（学号，姓名，年龄，性别，系，年级）</code></p>
+<p>举例：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531111200601.png" alt="image-20220531111200601" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="数据库系统的结构"><a href="#数据库系统的结构" class="headerlink" title="数据库系统的结构"></a>数据库系统的结构</h2><p>三级模式结构</p>
+<p>二级映象功能与数据独立性</p>
+<p>从用户角度看数据库系统的结构</p>
+<h3 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h3><blockquote>
+<p>也就是</p>
+<p>内模式（数据<strong>物理结构</strong>和存储方式）</p>
+<p>↓</p>
+<p>模式（数据<strong>逻辑结构</strong>和特征）</p>
+<p>↓</p>
+<p>外模式（<strong>局部</strong>数据的逻辑结构和特征）</p>
+</blockquote>
+<ul>
+<li><p>模式</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531151349843.png" alt="image-20220531151349843" style="zoom:50%;" loading="lazy"></li>
+<li><p>外模式</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531151505484.png" alt="image-20220531151505484" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531151639841.png" alt="image-20220531151639841" style="zoom:50%;" loading="lazy">
+
+<p>外模式与应用的关系：<strong>一对多</strong></p>
+<p>外模式是保证数据库安全的有效措施</p>
+</li>
+<li><p>内模式：存储模式、物理模式</p>
+<p>一个数据库只有一个内模式</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152021867.png" alt="image-20220531152021867" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<p>结构图：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152151227.png" alt="image-20220531152151227" style="zoom:50%;" loading="lazy">
+
+<ul>
+<li><p>外模式/模式映象</p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152246936.png" alt="image-20220531152246936" loading="lazy"></p>
+<p>用途：保证数据的逻辑独立性</p>
+</li>
+<li><p>模式/内模式映象</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152619856.png" alt="image-20220531152619856" style="zoom:50%;" loading="lazy">
+
+<p>用途：保证数据的物理独立性</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531152653987.png" alt="image-20220531152653987" style="zoom:50%;" loading="lazy"></li>
+<li><p>模式结构实操</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531153442438.png" alt="image-20220531153442438" style="zoom:67%;" loading="lazy"></li>
+</ul>
+<h3 id="用户角度看数据库系统的结构"><a href="#用户角度看数据库系统的结构" class="headerlink" title="用户角度看数据库系统的结构"></a>用户角度看数据库系统的结构</h3><ul>
+<li><p>单用户数据库系统</p>
+<p>整个数据库系统（应用程序、DBMS、数据）装在一台计算机上，为一个用户独占，不同机器之间不能共享数据</p>
+</li>
+<li><p>主从式结构的数据库系统</p>
+<p>一个主机带多个终端</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531153946977.png" alt="image-20220531153946977" style="zoom:50%;" loading="lazy"></li>
+<li><p>分布式结构</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531154036340.png" alt="image-20220531154036340" style="zoom:50%;" loading="lazy"></li>
+<li><p>客户/服务器结构（C/S结构）</p>
+<p>应用程序需要安装</p>
+<p>启动独立的窗口</p>
+<p>示意图：某些主机安装DBMS成为数据库服务器，另外的安装客户应用程序</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531154346149.png" alt="image-20220531154346149" style="zoom:50%;" loading="lazy"></li>
+<li><p>浏览器/服务器结构（B/S结构）</p>
+<p>不需要安装</p>
+</li>
+</ul>
+<h1 id="第二章-关系数据库"><a href="#第二章-关系数据库" class="headerlink" title="第二章 关系数据库"></a>第二章 关系数据库</h1><p>关系模型的三大要素：数据结构、数据操作、完整性约束规则</p>
+<p>关系数据操作语言：关系代数语言、关系演算语言和<strong>结构化查询语言</strong>（SQL）</p>
+<h2 id="关系数据结构"><a href="#关系数据结构" class="headerlink" title="关系数据结构"></a>关系数据结构</h2><h3 id="关系中的概念"><a href="#关系中的概念" class="headerlink" title="关系中的概念"></a>关系中的概念</h3><ul>
+<li><p>域：一组具有相同数据类型的值的集合</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531160243447.png" alt="image-20220531160243447" style="zoom:50%;" loading="lazy"></li>
+<li><p>笛卡尔积：所有域所有可能取值的组合</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531160325244.png" alt="image-20220531160325244" style="zoom:50%;" loading="lazy">
+
+<p>元组和分量</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531160858336.png" alt="image-20220531160858336" style="zoom: 50%;" loading="lazy">
+
+<p>基数</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161005134.png" alt="image-20220531161005134" style="zoom:50%;" loading="lazy"></li>
+<li><p>关系：</p>
+<p><strong>关系是笛卡尔积中有意义的子集</strong></p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161201911.png" alt="image-20220531161201911" style="zoom:50%;" loading="lazy">
+
+<p>关系中不同的列可以对应相同的域，但每一列都必须有各自的属性</p>
+<p>n目关系必有n个属性</p>
+<blockquote>
+<p>例如：一个关系中既有出生日期，也有参加工作的日期，这是两个属性，但他们都来自日期域</p>
+</blockquote>
+<p><strong>候选码-全码-主码-外码</strong></p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161545750.png" alt="image-20220531161545750" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161600479.png" alt="image-20220531161600479" style="zoom:67%;" loading="lazy">
+
+<p><strong>主码和对应的外码可以不同名，但语义应该相同</strong></p>
+<p>举例：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531161657359.png" alt="image-20220531161657359" style="zoom:50%;" loading="lazy">
+
+<p>“成绩”关系中主码由两个属性“学号”和“课号”组成</p>
+</li>
+<li><p>三类关系</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531163205987.png" alt="image-20220531163205987" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h3 id="关系模式"><a href="#关系模式" class="headerlink" title="关系模式"></a>关系模式</h3><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531163940912.png" alt="image-20220531163940912" style="zoom:67%;" loading="lazy">
+
+<h3 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h3><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531163954676.png" alt="image-20220531163954676" style="zoom:67%;" loading="lazy">
+
+<h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><ul>
+<li><p>关系代数-关系演算-SQL</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531164537266.png" alt="image-20220531164537266" style="zoom: 50%;" loading="lazy"></li>
+</ul>
+<h2 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h2><h3 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h3><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531164743293.png" alt="image-20220531164743293" style="zoom:50%;" loading="lazy">
+
+<p>主属性不能取空值，所有的主属性都不能取空值</p>
+<h3 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h3><p><strong>主码和对应的外码可以不同名，但语义应该相同</strong></p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165038902.png" alt="image-20220531165038902" style="zoom:50%;" loading="lazy">
+
+<p>但是在下面的例子中</p>
+<blockquote>
+<p>由于“选修”关系中，“学号”和“课程号”既是外码，也是主码，既要遵循实体完整性，又要遵循参照完整性，所以两个属性不能取空值</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165144440.png" alt="image-20220531165144440" style="zoom:50%;" loading="lazy">
+</blockquote>
+<h3 id="用户定义的完整性"><a href="#用户定义的完整性" class="headerlink" title="用户定义的完整性"></a>用户定义的完整性</h3><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165431075.png" alt="image-20220531165431075" style="zoom: 67%;" loading="lazy">
+
+<hr>
+<p>举例：</p>
+<p>下图中AD可以，BCE不可以插入</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531165654152.png" alt="image-20220531165654152" style="zoom:67%;" loading="lazy">
+
+<h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>关系代数是一种抽象的查询语言，用对关系的运算来表达查询</p>
+<p>运算对象和结果都是关系，运算符有：集合、关系、比较、逻辑</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531184230166.png" alt="image-20220531184230166" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531184324293.png" alt="image-20220531184324293" style="zoom:67%;" loading="lazy">
+
+<h3 id="传统的集合运算"><a href="#传统的集合运算" class="headerlink" title="传统的集合运算"></a>传统的集合运算</h3><p>注意关系代数表达</p>
+<ul>
+<li><p>并：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185013078.png" alt="image-20220531185013078" style="zoom:50%;" loading="lazy"></li>
+<li><p>差：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185029973.png" alt="image-20220531185029973" style="zoom:50%;" loading="lazy">
+
+<p>差运算不满足交换律</p>
+</li>
+<li><p>交：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185052296.png" alt="image-20220531185052296" style="zoom:50%;" loading="lazy"></li>
+<li><p>元组的连接</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531184829707.png" alt="image-20220531184829707" style="zoom:50%;" loading="lazy"></li>
+<li><p>笛卡尔积</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185128653.png" alt="image-20220531185128653" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h3 id="专门的关系运算"><a href="#专门的关系运算" class="headerlink" title="专门的关系运算"></a>专门的关系运算</h3><p>几个记号</p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185249563.png" alt="image-20220531185249563" style="zoom: 33%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185259597.png" alt="image-20220531185259597" style="zoom: 33%;" loading="lazy"></p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531185339927.png" alt="image-20220531185339927" style="zoom: 67%;" loading="lazy">
+
+<p>【象集】的实例：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190319630.png" alt="image-20220531190319630" style="zoom:67%;" loading="lazy">
+
+<hr>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190420922.png" alt="image-20220531190420922" style="zoom: 67%;" loading="lazy">
+
+<hr>
+<ul>
+<li><p>选择$\sigma$</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190450714.png" alt="image-20220531190450714" style="zoom:50%;" loading="lazy">
+
+<p>举例：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190557580.png" alt="image-20220531190557580" style="zoom:50%;" loading="lazy">
+
+<p>且有下面的式子</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531190635898.png" alt="image-20220531190635898" style="zoom:50%;" loading="lazy">
+
+<p>要能根据查询需求写出关系代数的式子</p>
+</li>
+<li><p>投影$\pi$</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531191739470.png" alt="image-20220531191739470" style="zoom:50%;" loading="lazy">
+
+<p>“从R(U)中选择出若干属性列组成新的关系”</p>
+<p><strong>投影的结果要去掉相同的行</strong></p>
+<p><strong>通常情况下投影和选择不满足交换律</strong></p>
+</li>
+<li><p>投影与选择的区别</p>
+<p>选择是对行的筛选，投影是对列的筛选</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192208849.png" alt="image-20220531192208849" style="zoom:50%;" loading="lazy"></li>
+<li><p>连接$\theta$</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192333625.png" alt="image-20220531192333625" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192520207.png" alt="image-20220531192520207" style="zoom:50%;" loading="lazy">
+
+<p><strong>等值连接</strong>、<strong>自然连接</strong></p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192621811.png" alt="image-20220531192621811" style="zoom:50%;" loading="lazy">
+
+<hr>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192712818.png" alt="image-20220531192712818" loading="lazy"></p>
+<p>R和S中都有叫做B的属性，为了以示区别，要使用R.B和S.B</p>
+<p><strong>等值连接</strong>：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531192932506.png" alt="image-20220531192932506" style="zoom:50%;" loading="lazy">
+
+<p><strong>上述连接结果中R.B和S.B两列属性完全相同，将相同的属性去重，即得到自然连接的结果</strong>（自然连接要连接所有的相同属性）</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531193037704.png" alt="image-20220531193037704" style="zoom:50%;" loading="lazy"></li>
+<li><p>外连接</p>
+<p>悬浮元祖：被丢弃的元组</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531193123154.png" alt="image-20220531193123154" style="zoom:50%;" loading="lazy">
+
+<p>例如下图：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531193204058.png" alt="image-20220531193204058" style="zoom:50%;" loading="lazy">
+
+<p>自然连接可以用基本的关系运算表达：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194222808.png" alt="image-20220531194222808" style="zoom:50%;" loading="lazy"></li>
+<li><p>除</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194350451.png" alt="image-20220531194350451" style="zoom:50%;" loading="lazy">
+
+<p>例子：</p>
+<p>R÷S的结果一定来自<strong>R中除了（R和S共有属性）之外的属性</strong>，即属性A</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194453378.png" alt="image-20220531194453378" style="zoom:50%;" loading="lazy">
+
+<hr>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194644465.png" alt="image-20220531194644465" style="zoom:50%;" loading="lazy">
+
+<p>一般用来选择：“选修了所有选修课的人”、“在所有案发现场都有踪迹的人”</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531194949997.png" alt="image-20220531194949997" style="zoom:50%;" loading="lazy">
+
+<p>用基础运算表达：</p>
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195027285.png" alt="image-20220531195027285" style="zoom:67%;" loading="lazy">
+
+<img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195051264.png" alt="image-20220531195051264" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195938765.png" alt="image-20220531195938765" loading="lazy"></p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531195951966.png" alt="image-20220531195951966" style="zoom: 50%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200002026.png" alt="image-20220531200002026" style="zoom: 50%;" loading="lazy"></p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200027871.png" alt="image-20220531200027871" style="zoom: 50%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200116746.png" alt="image-20220531200116746" style="zoom: 50%;" loading="lazy"></p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200327945.png" alt="image-20220531200327945" style="zoom: 50%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200512073.png" alt="image-20220531200512073" style="zoom: 50%;" loading="lazy"></p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200600535.png" alt="image-20220531200600535" style="zoom: 50%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200746468.png" alt="image-20220531200746468" style="zoom:50%;" loading="lazy"></p>
+<p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531200803072.png" alt="image-20220531200803072" style="zoom:50%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531201111858.png" alt="image-20220531201111858" style="zoom:50%;" loading="lazy"><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531201127937.png" alt="image-20220531201127937" style="zoom:50%;" loading="lazy"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/image-20220531201219031.png" alt="image-20220531201219031" loading="lazy"></p>
+<h1 id="第三章-SQL"><a href="#第三章-SQL" class="headerlink" title="第三章 SQL"></a>第三章 SQL</h1><p>SQL概述及数据定义语句: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ug4y1b7tc/">CH03 SQL-part1</a></p>
 </div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/" title="数据库系统概论笔记">https://wan-nan.github.io/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" rel="prev" title="计算机系统结构复习"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">计算机系统结构复习</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/05/03/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0/" rel="next" title="编译原理笔记"><span class="post-nav-text">编译原理笔记</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-07-03T00:00:00');
