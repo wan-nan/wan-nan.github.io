@@ -181,13 +181,13 @@
 <li><p>IPC：CPI的倒数</p>
 </li>
 <li><p>MIPS（Million Instructions Per Second）：每秒钟CPU能执行的指令总条数（单位：百万条/秒）</p>
-<img src="https://img-blog.csdnimg.cn/00db5687ff054b98ae0b73674506ce30.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="MIPS" style="zoom:50%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/00db5687ff054b98ae0b73674506ce30.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="MIPS" style="zoom:50%;" loading="lazy"></li>
 <li><p>CPU时间</p>
-<img src="https://img-blog.csdnimg.cn/61b0e40c407b44408d97efb32d7d7856.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CPU时间" style="zoom:50%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/61b0e40c407b44408d97efb32d7d7856.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CPU时间" style="zoom:50%;" loading="lazy">
 
-<br/></li>
+<br></li>
 </ul>
-<img src="https://img-blog.csdnimg.cn/567485642f4544cdaef65e683666be55.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="影响性能的指标" style="zoom:50%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/567485642f4544cdaef65e683666be55.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="影响性能的指标" style="zoom:50%;" loading="lazy"></li>
 </ul>
 <h1 id="第二章-数据表示"><a href="#第二章-数据表示" class="headerlink" title="第二章 数据表示"></a>第二章 数据表示</h1><h2 id="机器数及特点"><a href="#机器数及特点" class="headerlink" title="机器数及特点"></a>机器数及特点</h2><ul>
 <li><p>真值：符号用“+”“-”表示</p>
@@ -201,22 +201,22 @@
 <li><p>补码</p>
 </li>
 <li><p>移码</p>
-<img src="https://img-blog.csdnimg.cn/a5c76eb31b9740cf8ea9aadc9c69130a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="移码" style="zoom: 67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/a5c76eb31b9740cf8ea9aadc9c69130a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="移码" style="zoom: 67%;" loading="lazy"></li>
 </ul>
 </li>
 </ul>
 <h2 id="定点与浮点数据表示"><a href="#定点与浮点数据表示" class="headerlink" title="定点与浮点数据表示"></a>定点与浮点数据表示</h2><ul>
 <li><p>IEEE 754格式</p>
-<img src="https://img-blog.csdnimg.cn/579de67966894dd3825918e3ca2d75ce.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="IEEE 754格式" style="zoom: 50%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/579de67966894dd3825918e3ca2d75ce.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="IEEE 754格式" style="zoom: 50%;" loading="lazy"></li>
 </ul>
 <h2 id="数据校验的基本原理"><a href="#数据校验的基本原理" class="headerlink" title="数据校验的基本原理"></a>数据校验的基本原理</h2><p>增加冗余码（校验位）</p>
 <p><strong>码距</strong>：同一编码中，任意两个合法编码之间不同二进制位数的最小值</p>
 <p>校验码中 增加冗余项 的目的就是为了增大码距</p>
 <ul>
 <li><p>码距与检错纠错能力的关系</p>
-<img src="https://img-blog.csdnimg.cn/5aa542c46e0a46c1846391b1089516e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="码距与检错纠错能力的关系" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/5aa542c46e0a46c1846391b1089516e3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="码距与检错纠错能力的关系" style="zoom:80%;" loading="lazy"></li>
 <li><p>选择码距要考虑的因素</p>
-<img src="https://img-blog.csdnimg.cn/70d4b744df394445900dc25e79cc5e01.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="选择码距要考虑的因素" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/70d4b744df394445900dc25e79cc5e01.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="选择码距要考虑的因素" style="zoom:80%;" loading="lazy"></li>
 </ul>
 <h2 id="奇偶校验"><a href="#奇偶校验" class="headerlink" title="奇偶校验"></a>奇偶校验</h2><ul>
 <li>编码与检错简单</li>
@@ -229,32 +229,32 @@
 </li>
 </ul>
 <h2 id="CRC循环冗余校验"><a href="#CRC循环冗余校验" class="headerlink" title="CRC循环冗余校验"></a>CRC循环冗余校验</h2><p>“循环”指模2运算得到的余数循环</p>
-<img src="https://img-blog.csdnimg.cn/fd728ecf3aa24876a4c65bca7a16183f.png" alt="CRC" style="zoom:50%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/fd728ecf3aa24876a4c65bca7a16183f.png" alt="CRC" style="zoom:50%;" loading="lazy">
 
 <p>r位校验位可以表示2^r种状态，减去一种没有错误的状态，剩余2^r-1种错误</p>
-<img src="https://img-blog.csdnimg.cn/9c253f3881ab4858800b9b2bc7ca86f8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="常见的生成多项式" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/9c253f3881ab4858800b9b2bc7ca86f8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="常见的生成多项式" style="zoom:67%;" loading="lazy">
 
 <p><strong>模2运算规则</strong></p>
-<img src="https://img-blog.csdnimg.cn/729bf931dece470b9ea21c6dd0617917.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="模2运算规则ab" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/729bf931dece470b9ea21c6dd0617917.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="模2运算规则ab" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/5a9416e05da84a17a9cf2454582745b1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="模2运算规则c" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/5a9416e05da84a17a9cf2454582745b1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="模2运算规则c" style="zoom:67%;" loading="lazy">
 
-<h3 id="求CRC编码5步"><a href="#求CRC编码5步" class="headerlink" title="求CRC编码5步"></a>求CRC编码5步</h3><img src="https://img-blog.csdnimg.cn/2a5d45af9d9b49e79ddf6ceb5b0b3cb0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="求CRC123" style="zoom:67%;" / loading="lazy">
+<h3 id="求CRC编码5步"><a href="#求CRC编码5步" class="headerlink" title="求CRC编码5步"></a>求CRC编码5步</h3><img src="https://img-blog.csdnimg.cn/2a5d45af9d9b49e79ddf6ceb5b0b3cb0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="求CRC123" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/23d8ca71498b473786f7d6617458dc11.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="求CRC编码45" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/23d8ca71498b473786f7d6617458dc11.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="求CRC编码45" style="zoom:67%;" loading="lazy">
 
-<h3 id="CRC检错"><a href="#CRC检错" class="headerlink" title="CRC检错"></a>CRC检错</h3><img src="https://img-blog.csdnimg.cn/3b21b491964e45a3abfe4bda52c486bf.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC检错与纠错" style="zoom:67%;" / loading="lazy">
+<h3 id="CRC检错"><a href="#CRC检错" class="headerlink" title="CRC检错"></a>CRC检错</h3><img src="https://img-blog.csdnimg.cn/3b21b491964e45a3abfe4bda52c486bf.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC检错与纠错" style="zoom:67%;" loading="lazy">
 
 <p>不同位出错，模2除运算得到的余数不同</p>
 <p>采用不同的多项式，对应的相同位出错时，得到的余数不一定相同</p>
-<img src="https://img-blog.csdnimg.cn/269717c005204e19bed40c690e239fc6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC纠错" style="zoom:50%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/269717c005204e19bed40c690e239fc6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC纠错" style="zoom:50%;" loading="lazy">
 
-<h3 id="CRC纠错"><a href="#CRC纠错" class="headerlink" title="CRC纠错"></a>CRC纠错</h3><img src="https://img-blog.csdnimg.cn/34a07477070f4c74ae59591e20889b0f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC纠错" style="zoom:63%;" / loading="lazy">
+<h3 id="CRC纠错"><a href="#CRC纠错" class="headerlink" title="CRC纠错"></a>CRC纠错</h3><img src="https://img-blog.csdnimg.cn/34a07477070f4c74ae59591e20889b0f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CRC纠错" style="zoom:63%;" loading="lazy">
 
 <h2 id="海明校验"><a href="#海明校验" class="headerlink" title="海明校验"></a>海明校验</h2><p>有效信息k位，校验信息r位，应满足N=k+r&lt;=2^r-1</p>
-<h3 id="校验位和数据位分布位置"><a href="#校验位和数据位分布位置" class="headerlink" title="校验位和数据位分布位置"></a>校验位和数据位分布位置</h3><img src="https://img-blog.csdnimg.cn/56b85d9c5a5b416287367c4d073cd7ed.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="海明校验校验位分布" style="zoom:67%;" / loading="lazy">
+<h3 id="校验位和数据位分布位置"><a href="#校验位和数据位分布位置" class="headerlink" title="校验位和数据位分布位置"></a>校验位和数据位分布位置</h3><img src="https://img-blog.csdnimg.cn/56b85d9c5a5b416287367c4d073cd7ed.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="海明校验校验位分布" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/71e24a11c84c44f2b6f292ff1c77d3c6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="海明" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/71e24a11c84c44f2b6f292ff1c77d3c6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="海明" style="zoom:67%;" loading="lazy">
 
 <p><strong>Pi由Pi所检验的位 异或 得到</strong></p>
 <p><strong>Gi由Pi和Pi所校验的位 异或 得到的</strong></p>
@@ -277,103 +277,103 @@
 </ul>
 </li>
 </ul>
-<h2 id="定点数补码加减"><a href="#定点数补码加减" class="headerlink" title="定点数补码加减"></a>定点数补码加减</h2><h3 id="四位串行加-减法器设计"><a href="#四位串行加-减法器设计" class="headerlink" title="四位串行加/减法器设计"></a>四位串行加/减法器设计</h3><img src="https://img-blog.csdnimg.cn/f0c3777c3f094bb1b17fe58240d872cc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="四位串行加减法器" style="zoom:67%;" / loading="lazy">
+<h2 id="定点数补码加减"><a href="#定点数补码加减" class="headerlink" title="定点数补码加减"></a>定点数补码加减</h2><h3 id="四位串行加-减法器设计"><a href="#四位串行加-减法器设计" class="headerlink" title="四位串行加/减法器设计"></a>四位串行加/减法器设计</h3><img src="https://img-blog.csdnimg.cn/f0c3777c3f094bb1b17fe58240d872cc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="四位串行加减法器" style="zoom:67%;" loading="lazy">
 
-<h3 id="四位先行进位"><a href="#四位先行进位" class="headerlink" title="四位先行进位"></a>四位先行进位</h3><img src="https://img-blog.csdnimg.cn/1ce00b32b37a4011bb085d82fe967461.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="并行进位" style="zoom:67%;" / loading="lazy">
+<h3 id="四位先行进位"><a href="#四位先行进位" class="headerlink" title="四位先行进位"></a>四位先行进位</h3><img src="https://img-blog.csdnimg.cn/1ce00b32b37a4011bb085d82fe967461.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="并行进位" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/ea07827b018d4507be845e33e10c2dff.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="并行进位" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/ea07827b018d4507be845e33e10c2dff.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="并行进位" style="zoom:67%;" loading="lazy">
 
 <h2 id="原码一位乘法"><a href="#原码一位乘法" class="headerlink" title="原码一位乘法"></a>原码一位乘法</h2><p>举例：</p>
-<img src="https://img-blog.csdnimg.cn/e4e885fb6f244af4a4a54983c3cb3b38.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码一位乘法" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/e4e885fb6f244af4a4a54983c3cb3b38.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码一位乘法" style="zoom:67%;" loading="lazy">
 
-<h2 id="补码一位乘法"><a href="#补码一位乘法" class="headerlink" title="补码一位乘法"></a>补码一位乘法</h2><img src="https://img-blog.csdnimg.cn/49e75b906a9741edac02f251003e839e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码一位乘法" style="zoom:67%;" / loading="lazy">
+<h2 id="补码一位乘法"><a href="#补码一位乘法" class="headerlink" title="补码一位乘法"></a>补码一位乘法</h2><img src="https://img-blog.csdnimg.cn/49e75b906a9741edac02f251003e839e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码一位乘法" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/68bb801fd20d4171bde72b26b28d765d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码一位乘法" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/68bb801fd20d4171bde72b26b28d765d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码一位乘法" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/0a1ee275e31d400986bf22ae514edce8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="特殊问题" style="zoom:50%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/0a1ee275e31d400986bf22ae514edce8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="特殊问题" style="zoom:50%;" loading="lazy">
 
 <ul>
 <li>课本P74例题也可以参考</li>
-<li><img src="https://img-blog.csdnimg.cn/c4bb04ab26fc4e68a5d0f5ba4cbbfa15.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="2" style="zoom:60%;" / loading="lazy"> </li>
-<li> <img src="https://img-blog.csdnimg.cn/11763311664342748818315328e32e96.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="3" style="zoom:60%;" / loading="lazy"></li>
+<li><img src="https://img-blog.csdnimg.cn/c4bb04ab26fc4e68a5d0f5ba4cbbfa15.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="2" style="zoom:60%;" loading="lazy"> </li>
+<li> <img src="https://img-blog.csdnimg.cn/11763311664342748818315328e32e96.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="3" style="zoom:60%;" loading="lazy"></li>
 </ul>
-<h2 id="乘法运算器设计"><a href="#乘法运算器设计" class="headerlink" title="乘法运算器设计"></a>乘法运算器设计</h2><img src="https://img-blog.csdnimg.cn/dc0ea9c69d9945a480a5370ecad20d44.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码一位乘法器" style="zoom:67%;" / loading="lazy">
+<h2 id="乘法运算器设计"><a href="#乘法运算器设计" class="headerlink" title="乘法运算器设计"></a>乘法运算器设计</h2><img src="https://img-blog.csdnimg.cn/dc0ea9c69d9945a480a5370ecad20d44.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码一位乘法器" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/5d446b0cc5d64e86996a983c6fd57415.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_12,color_FFFFFF,t_70,g_se,x_16" alt="原码阵列乘法" style="zoom:60%;" / loading="lazy"> 
+<img src="https://img-blog.csdnimg.cn/5d446b0cc5d64e86996a983c6fd57415.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_12,color_FFFFFF,t_70,g_se,x_16" alt="原码阵列乘法" style="zoom:60%;" loading="lazy"> 
 
-<img src="https://img-blog.csdnimg.cn/b8ba5b1e8e6c445d99a5c53fdf447b24.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码阵列乘法器" style="zoom: 67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/b8ba5b1e8e6c445d99a5c53fdf447b24.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码阵列乘法器" style="zoom: 67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/03c2c59847ff494e8f23d288b1985961.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码一位乘法器" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/03c2c59847ff494e8f23d288b1985961.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码一位乘法器" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/b61f6ad51f924df0b8a5e3dc7b4fc0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码阵列乘法器" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/b61f6ad51f924df0b8a5e3dc7b4fc0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码阵列乘法器" style="zoom:67%;" loading="lazy">
 
 <ul>
-<li><img src="https://img-blog.csdnimg.cn/181673b647b84526a954f8951af2ccd3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="一道题" style="zoom:67%;" / loading="lazy">
+<li><img src="https://img-blog.csdnimg.cn/181673b647b84526a954f8951af2ccd3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="一道题" style="zoom:67%;" loading="lazy">
 
 <p><strong><u>y(n)=1,y(n+1)=0时，加的是[-x]补，所以A为取反电路，虚线为控制信号，实线为加一，[x]补取反加一即为[-x]补</u></strong></p>
 </li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/5481a7dc89114f6192678c482471b4c6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="一道题" style="zoom:67%;" / loading="lazy"> <img src="https://img-blog.csdnimg.cn/b61f6ad51f924df0b8a5e3dc7b4fc0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码阵列乘法器" style="zoom:67%;" / loading="lazy"></p>
-<h2 id="定点数除法"><a href="#定点数除法" class="headerlink" title="定点数除法"></a>定点数除法</h2><img src="https://img-blog.csdnimg.cn/8e3d2c0053a34155b14cbacb5b8e1697.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="手工除法运算不足" style="zoom:67%;" / loading="lazy">
+<p><img src="https://img-blog.csdnimg.cn/5481a7dc89114f6192678c482471b4c6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="一道题" style="zoom:67%;" loading="lazy"> <img src="https://img-blog.csdnimg.cn/b61f6ad51f924df0b8a5e3dc7b4fc0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="补码阵列乘法器" style="zoom:67%;" loading="lazy"></p>
+<h2 id="定点数除法"><a href="#定点数除法" class="headerlink" title="定点数除法"></a>定点数除法</h2><img src="https://img-blog.csdnimg.cn/8e3d2c0053a34155b14cbacb5b8e1697.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="手工除法运算不足" style="zoom:67%;" loading="lazy">
 
 <h3 id="原码恢复余数除法"><a href="#原码恢复余数除法" class="headerlink" title="原码恢复余数除法"></a>原码恢复余数除法</h3><ul>
 <li><p>方法：</p>
-<img src="https://img-blog.csdnimg.cn/8d037f9f55e6420288ddccc6370ee8e0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="恢复余数法方法" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/8d037f9f55e6420288ddccc6370ee8e0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="恢复余数法方法" style="zoom:67%;" loading="lazy"></li>
 <li><p>例子：</p>
-<img src="https://img-blog.csdnimg.cn/aa9f07f027c940eabda0b2a1a09e8f09.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="恢复余数" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/aa9f07f027c940eabda0b2a1a09e8f09.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="恢复余数" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/6615bd2fd860437e966992e428a1f61b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码恢复余数" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/6615bd2fd860437e966992e428a1f61b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="原码恢复余数" style="zoom:67%;" loading="lazy"></li>
 <li><p><strong>除法过程中对余数的左移是算术移位</strong></p>
 <p><strong>所上商要通过左移操作才能移到商寄存器中</strong></p>
-<img src="https://img-blog.csdnimg.cn/fddc6eb564e44351a8c7c1f50bf6e567.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="题目" style="zoom:60%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/fddc6eb564e44351a8c7c1f50bf6e567.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="题目" style="zoom:60%;" loading="lazy"></li>
 </ul>
-<h3 id="原码加减交替法（不恢复余数法）"><a href="#原码加减交替法（不恢复余数法）" class="headerlink" title="原码加减交替法（不恢复余数法）"></a>原码加减交替法（不恢复余数法）</h3><img src="https://img-blog.csdnimg.cn/756cdf8536684e2c80bc27c3a2e447f5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="不恢复余数法" style="zoom:67%;" / loading="lazy">
+<h3 id="原码加减交替法（不恢复余数法）"><a href="#原码加减交替法（不恢复余数法）" class="headerlink" title="原码加减交替法（不恢复余数法）"></a>原码加减交替法（不恢复余数法）</h3><img src="https://img-blog.csdnimg.cn/756cdf8536684e2c80bc27c3a2e447f5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="不恢复余数法" style="zoom:67%;" loading="lazy">
 
 <ul>
 <li><p>下例中，左移的次数和上商的次数都是确定的，而恢复余数法无法确定</p>
 <p>每次加Y/减Y比较后都要上商，结果大于零上1，结果小于零上0</p>
-<img src="https://img-blog.csdnimg.cn/9704574fa5154dfcbcfd5df91e099c64.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="不恢复余数法例子" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/9704574fa5154dfcbcfd5df91e099c64.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="不恢复余数法例子" style="zoom:67%;" loading="lazy"></li>
 <li><p><u>由上例，运算器的<strong>进位输出位</strong>和<strong>上商位</strong>相同，于是可以用进位输出当做上商位的控制信号</u></p>
 </li>
 </ul>
-<img src="https://img-blog.csdnimg.cn/f5954c9b52e34f9fa9f575e0a47df2e6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="电路实现" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/f5954c9b52e34f9fa9f575e0a47df2e6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="电路实现" style="zoom:67%;" loading="lazy">
 
 <ul>
 <li><p><u>如果是小数除法，要求被除数的绝对值小于除数的绝对值</u></p>
-<img src="https://img-blog.csdnimg.cn/62900c43eb774b488527ad9cb2556b25.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="题目" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/62900c43eb774b488527ad9cb2556b25.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="题目" style="zoom:67%;" loading="lazy"></li>
 </ul>
-<h3 id="阵列除法"><a href="#阵列除法" class="headerlink" title="阵列除法"></a>阵列除法</h3><img src="https://img-blog.csdnimg.cn/a420b14a2d6a4201bd282f7f744c282c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CAS单元" style="zoom:67%;" / loading="lazy">
+<h3 id="阵列除法"><a href="#阵列除法" class="headerlink" title="阵列除法"></a>阵列除法</h3><img src="https://img-blog.csdnimg.cn/a420b14a2d6a4201bd282f7f744c282c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CAS单元" style="zoom:67%;" loading="lazy">
 
 <ul>
 <li><p>阵列除法器**是将除数<u>右移</u>**，与手工除法相同，而不恢复余数法是将除数左移</p>
 <p>且右移是通过连接方式的错位连接实现，并未使用移位寄存器，不会占用时间去移位</p>
 </li>
 </ul>
-<img src="https://img-blog.csdnimg.cn/de38f3992478456b92efb01c681d77f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="阵列除法" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/de38f3992478456b92efb01c681d77f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="阵列除法" style="zoom:67%;" loading="lazy">
 
 <h3 id="补码交替除法"><a href="#补码交替除法" class="headerlink" title="补码交替除法"></a>补码交替除法</h3><ul>
 <li><p>一道题</p>
-<img src="https://img-blog.csdnimg.cn/fe7185b4efc740d191d717c5232bc6df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/fe7185b4efc740d191d717c5232bc6df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" style="zoom:67%;" loading="lazy"></li>
 </ul>
 <h2 id="浮点数加减运算"><a href="#浮点数加减运算" class="headerlink" title="浮点数加减运算"></a>浮点数加减运算</h2><ul>
 <li><p>规格化浮点数的尾数形式：00.1<strong><strong><strong><strong><strong><strong><strong><strong><strong>或11.0</strong></strong></strong></strong></strong></strong></strong></strong></strong></p>
 </li>
 <li><p>规格化方法：</p>
-<img src="https://img-blog.csdnimg.cn/6d16374680d541418457b7a955c14dbb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="浮点数规格化" style="zoom:50%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/6d16374680d541418457b7a955c14dbb.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="浮点数规格化" style="zoom:50%;" loading="lazy"></li>
 <li><p>运算步骤</p>
 <p><strong>阶码和尾数记得都要带双符号位</strong></p>
-<img src="https://img-blog.csdnimg.cn/2d64379536fd40cea32c1e12ba6f7e65.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="运算步骤" style="zoom:67%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/2d64379536fd40cea32c1e12ba6f7e65.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="运算步骤" style="zoom:67%;" loading="lazy">
 
-<img src="https://img-blog.csdnimg.cn/0efe1cf2255c44a38b9125729932fdd0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="运算步骤" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/0efe1cf2255c44a38b9125729932fdd0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="运算步骤" style="zoom:67%;" loading="lazy"></li>
 </ul>
-<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3>  <img src="https://img-blog.csdnimg.cn/cf82ebd59df945608721b2f17dfd19cd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="题目" style="zoom:67%;" / loading="lazy">
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3>  <img src="https://img-blog.csdnimg.cn/cf82ebd59df945608721b2f17dfd19cd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="题目" style="zoom:67%;" loading="lazy">
 
 <p><u>最终答案是D，会在<strong>尾数规格化</strong>的时候，尾数右移，阶码加一，导致阶码溢出（阶码从00111加一变为01000溢出）</u></p>
 <h1 id="第四章-存储系统"><a href="#第四章-存储系统" class="headerlink" title="第四章 存储系统"></a>第四章 存储系统</h1><h2 id="存储系统的层次结构"><a href="#存储系统的层次结构" class="headerlink" title="存储系统的层次结构"></a>存储系统的层次结构</h2><ul>
 <li><p>哈弗结构 （Harvard Architecture）是指：数据和指令分别存放</p>
 </li>
 <li><p><strong>存储体系层次化结构的理论基础</strong>：局部性原理</p>
-<img src="https://img-blog.csdnimg.cn/657c9fb285c3459abbd854aa1695c257.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="局部性原理" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/657c9fb285c3459abbd854aa1695c257.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="局部性原理" style="zoom:80%;" loading="lazy"></li>
 <li><p>存储系统层次结构由<strong>Cache</strong> 、<strong>主存</strong>、<strong>辅助存储器</strong>三级体系构成</p>
 </li>
 <li><p>加剧CPU和主存之间速度差异的原因：</p>
@@ -388,9 +388,9 @@
 </li>
 <li><p>数据存储与边界的关系：</p>
 <p>对于按边界对齐的数据存储：<code>int i,short k,double x,char c,short j</code></p>
-<img src="https://img-blog.csdnimg.cn/fa1a7be1dbeb4fdf96aed92b5f9b4834.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="边界对齐与存储地址之间的关系" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/fa1a7be1dbeb4fdf96aed92b5f9b4834.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="边界对齐与存储地址之间的关系" style="zoom:80%;" loading="lazy"></li>
 <li><p>大端 与 小端</p>
-<img src="https://img-blog.csdnimg.cn/2c9a36ec67cb45bf9c2e98dd6a85e6e4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="大端与小端" style="zoom:80%;" / loading="lazy">
+<img src="https://img-blog.csdnimg.cn/2c9a36ec67cb45bf9c2e98dd6a85e6e4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="大端与小端" style="zoom:80%;" loading="lazy">
 
 <p><img src="https://img-blog.csdnimg.cn/aa5403c0cfa74b449cca58ba2f7afab0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="大小端" loading="lazy"></p>
 </li>
@@ -402,9 +402,9 @@
 <p><code>对任何一个SRAM存储单元的读写,一定需要通过对应的行选通和列选通信号使与该存储单元对应的4个门控管都处于选通状态</code></p>
 </li>
 <li><p><strong>写过程</strong>：</p>
-<img src="https://img-blog.csdnimg.cn/4fd54635475045a6a6a7840d1651b3c4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="写过程" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/4fd54635475045a6a6a7840d1651b3c4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="写过程" style="zoom:80%;" loading="lazy"></li>
 <li><p><strong>读过程</strong>（根据电流放大器中的<strong>电流方向</strong>判断读出的是1还是0）</p>
-<img src="https://img-blog.csdnimg.cn/a2f044a400bb499d969a5d6ef98f38c5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="读过程" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/a2f044a400bb499d969a5d6ef98f38c5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="读过程" style="zoom:80%;" loading="lazy"></li>
 <li><p><strong>保持</strong>：</p>
 <p>X、Y撤销后，负载管T3、T4分别为工作管T1、T2提供工作电流，保持其稳定互锁状态不变</p>
 <p><u><strong>保存1时，T2、T4要导通</strong></u></p>
@@ -413,13 +413,13 @@
 </ul>
 <h3 id="静态存储器的结构"><a href="#静态存储器的结构" class="headerlink" title="静态存储器的结构"></a>静态存储器的结构</h3><ul>
 <li><p>单译码结构-双译码结构</p>
-<img src="https://img-blog.csdnimg.cn/9674e8c9e8904600adef9f8cb20fff88.png" alt="单译码结构-双译码结构" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/9674e8c9e8904600adef9f8cb20fff88.png" alt="单译码结构-双译码结构" style="zoom:80%;" loading="lazy"></li>
 <li><p>6116存储器：</p>
 <p>行列地址的位数要看内部结构</p>
-<img src="https://img-blog.csdnimg.cn/c07da23b7b1a4603b5a52136f41479f5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="6116" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/c07da23b7b1a4603b5a52136f41479f5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="6116" style="zoom:80%;" loading="lazy"></li>
 <li><p>2114存储器：</p>
 <p>2114的读写控制比6116更简单</p>
-<img src="https://img-blog.csdnimg.cn/601aeeca597c41af8f661f11b2e2d868.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="2114" style="zoom:80%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/601aeeca597c41af8f661f11b2e2d868.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="2114" style="zoom:80%;" loading="lazy"></li>
 </ul>
 <h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><ul>
 <li><p>t1：</p>
@@ -846,7 +846,7 @@
 <h4 id="跳跃寻址"><a href="#跳跃寻址" class="headerlink" title="跳跃寻址"></a>跳跃寻址</h4><p><img src="https://img-blog.csdnimg.cn/98c76286df8f45f9935a8cce764c191a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="跳跃寻址" loading="lazy"></p>
 <h1 id="第六章-中央处理器"><a href="#第六章-中央处理器" class="headerlink" title="第六章 中央处理器"></a>第六章 中央处理器</h1><ul>
 <li><p><strong>CPU概述</strong></p>
-<img src="https://img-blog.csdnimg.cn/0a44142dad1d43cda8304afc84742265.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CPU主要功能"  / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/0a44142dad1d43cda8304afc84742265.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="CPU主要功能" loading="lazy"></li>
 <li><p><strong>指令执行一般逻辑</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/add949d2686b4fec976730d1425bc6dc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="指令执行一般逻辑" loading="lazy"></p>
 </li>
@@ -932,7 +932,7 @@
 <h3 id="CPU总线结构实例"><a href="#CPU总线结构实例" class="headerlink" title="CPU总线结构实例"></a>CPU总线结构实例</h3><p><img src="https://img-blog.csdnimg.cn/f6c6cd1ff07d4bbcb86d489c68879942.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="单总线结构CPU" loading="lazy"></p>
 <p><img src="https://img-blog.csdnimg.cn/90e5e0c0c2d84da09372c789a61aa7bd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="多总线" loading="lazy"></p>
 <p><img src="https://img-blog.csdnimg.cn/4babdb4f5b0446a4ba8e9349351058b2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAd2FuX25hbg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="专用通路" loading="lazy"></p>
-<br/>
+<br>
 
 <ul>
 <li><strong>单总线结构下的MIPS还是需要程序状态寄存器的</strong></li>

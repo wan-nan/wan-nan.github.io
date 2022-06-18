@@ -22,12 +22,12 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="每一章后面的要点，对照“要点”回顾内容1~3章 图论 联系 三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。 两个人的共同朋友越多，则他们成为朋友的可能性越高 两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高  三元闭包的衡量标准——节点的聚集系数：A的任意两个朋友之间也是朋友的概率 聚集系数计算方法   强三元闭包原理（假设） 如果A-B和A-C之间">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="每一章后面的要点，对照“要点”回顾内容1~3章 图论 联系 三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。 两个人的共同朋友越多，则他们成为朋友的可能性越高 两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高  三元闭包的衡量标准——节点的聚集系数：A的任意两个朋友之间也是朋友的概率 聚集系数计算方法  强三元闭包原理（假设） 如果A-B和A-C之间的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="社会网络复习">
 <meta property="og:url" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="风物">
-<meta property="og:description" content="每一章后面的要点，对照“要点”回顾内容1~3章 图论 联系 三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。 两个人的共同朋友越多，则他们成为朋友的可能性越高 两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高  三元闭包的衡量标准——节点的聚集系数：A的任意两个朋友之间也是朋友的概率 聚集系数计算方法   强三元闭包原理（假设） 如果A-B和A-C之间">
+<meta property="og:description" content="每一章后面的要点，对照“要点”回顾内容1~3章 图论 联系 三元闭包理论：如果两人在社会网络中有一个共同的朋友，则他们俩将来成为朋友的可能性提高。 两个人的共同朋友越多，则他们成为朋友的可能性越高 两个人与共同朋友的关系越密切，则他们成为朋友的可能性越高  三元闭包的衡量标准——节点的聚集系数：A的任意两个朋友之间也是朋友的概率 聚集系数计算方法  强三元闭包原理（假设） 如果A-B和A-C之间的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422210853627.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422211010609.png">
@@ -127,8 +127,7 @@
 </li>
 <li><p><u>三元闭包的衡量标准</u>——<strong>节点</strong>的聚集系数：A的任意两个朋友之间也是朋友的概率</p>
 <p>聚集系数计算方法</p>
-<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422210853627.png" alt="image-20220422210853627" loading="lazy"></p>
-</li>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422210853627.png" class title="image-20220422210853627" loading="lazy"></li>
 <li><p>强三元闭包原理（假设）</p>
 <p>如果A-B和A-C之间的关系为强关系；则B-C 之间形成边的可能性应该很高；</p>
 </li>
@@ -143,16 +142,14 @@
 </li>
 <li><p><strong>边（A,B）</strong>的邻里重叠度</p>
 <p><strong>捷径 = 邻里重叠度为0的边</strong></p>
-<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422211010609.png" alt="image-20220422211010609" loading="lazy"></p>
-</li>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422211010609.png" class title="image-20220422211010609" loading="lazy"></li>
 <li><p>结构洞</p>
 </li>
 <li><p>划分图：</p>
 <p>一种是根据介数的划分方法：Newman方法,</p>
 <ul>
 <li><p>介数：</p>
-<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422213004688.png" alt="image-20220422213004688" loading="lazy"></p>
-</li>
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220422213004688.png" class title="image-20220422213004688" loading="lazy"></li>
 <li><p>通过<strong>每次删去图中介数最大的边</strong>，来实现<strong>对图的划分</strong>，介数最大的边，即为最关键的边。许多节点之间的的最短路径都要经过他</p>
 </li>
 <li><p>介数计算的一种方法：</p>
@@ -520,9 +517,11 @@
 <p>一条边表示，“在特定的时候，他们有接触”</p>
 <img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/image-20220426214519478.png" alt="image-20220426214519478" style="zoom:67%;" loading="lazy"></li>
 </ul>
-<h2 id="手写的笔记"><a href="#手写的笔记" class="headerlink" title="手写的笔记"></a>手写的笔记</h2><p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/IMG_20220429_104542.jpg" alt="IMG_20220429_104542" loading="lazy"></p>
-<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/IMG_20220429_104554.jpg" alt="IMG_20220429_104554" loading="lazy"></p>
-<p><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/IMG_20220429_104610.jpg" alt="IMG_20220429_104610" loading="lazy"></p>
+<h2 id="手写的笔记"><a href="#手写的笔记" class="headerlink" title="手写的笔记"></a>手写的笔记</h2><img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/IMG_20220429_104542.jpg" class title="IMG_20220429_104542" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/IMG_20220429_104554.jpg" class title="IMG_20220429_104554" loading="lazy">
+
+<img src="/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/IMG_20220429_104610.jpg" class title="IMG_20220429_104610" loading="lazy">
 </div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/" title="社会网络复习">https://wan-nan.github.io/2022/04/26/%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2022/05/03/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0/" rel="prev" title="编译原理笔记"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">编译原理笔记</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/03/30/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="vue学习笔记"><span class="post-nav-text">vue学习笔记</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-07-03T00:00:00');

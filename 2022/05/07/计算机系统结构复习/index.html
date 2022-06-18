@@ -22,12 +22,12 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="第一章 性能计算Amdahl定律和CPU时间时要将各个量都算清楚！！  以经常性事件为重点 Amdahl定律 CPU性能公式 程序的局部性原理 MIPS和程序执行时间Te  Amdahl定律系统性能加速比：   加速比依赖于两个因素： （两个因素都是用比例描述的）  改进后的总执行时间**Tn和系统加速比Sn**如下：   Sn、T0、Tn知二求一 Amdahl定律：一种性能改进的递减规则  CP">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="第一章 性能计算Amdahl定律和CPU时间时要将各个量都算清楚！！  以经常性事件为重点 Amdahl定律 CPU性能公式 程序的局部性原理 MIPS和程序执行时间Te  Amdahl定律系统性能加速比：   加速比依赖于两个因素： （两个因素都是用比例描述的）   改进后的总执行时间**Tn和系统加速比Sn**如下：   Sn、T0、Tn知二求一 Amdahl定律：一种性能改进的递减规则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机系统结构复习">
 <meta property="og:url" content="https://wan-nan.github.io/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="风物">
-<meta property="og:description" content="第一章 性能计算Amdahl定律和CPU时间时要将各个量都算清楚！！  以经常性事件为重点 Amdahl定律 CPU性能公式 程序的局部性原理 MIPS和程序执行时间Te  Amdahl定律系统性能加速比：   加速比依赖于两个因素： （两个因素都是用比例描述的）  改进后的总执行时间**Tn和系统加速比Sn**如下：   Sn、T0、Tn知二求一 Amdahl定律：一种性能改进的递减规则  CP">
+<meta property="og:description" content="第一章 性能计算Amdahl定律和CPU时间时要将各个量都算清楚！！  以经常性事件为重点 Amdahl定律 CPU性能公式 程序的局部性原理 MIPS和程序执行时间Te  Amdahl定律系统性能加速比：   加速比依赖于两个因素： （两个因素都是用比例描述的）   改进后的总执行时间**Tn和系统加速比Sn**如下：   Sn、T0、Tn知二求一 Amdahl定律：一种性能改进的递减规则">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509105055421.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509105223030.png">
@@ -178,13 +178,15 @@
 
 <p>加速比依赖于两个因素：</p>
 <p>（<strong>两个因素都是用比例描述的</strong>）</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509105223030.png" alt="image-20220509105223030" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509105223030.png" class title="image-20220509105223030" loading="lazy">
+
 <p>改进后的总执行时间**T<del>n</del><strong>和系统加速比</strong>S<del>n</del>**如下：</p>
 <img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509105420723.png" alt="image-20220509105420723" style="zoom: 80%;" loading="lazy">
 
 <p><strong>S<del>n</del>、T<del>0</del>、T<del>n</del>知二求一</strong></p>
 <p>Amdahl定律：一种性能改进的<strong>递减规则</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509110238790.png" alt="image-20220509110238790" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509110238790.png" class title="image-20220509110238790" loading="lazy">
+
 <h2 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h2><ul>
 <li><p><strong>CPU时间 = IC ×CPI ×时钟周期时间</strong> </p>
 <ul>
@@ -192,19 +194,21 @@
 <li>CPI：每条指令执行的平均时钟周期数（Cycles Per Instruction）</li>
 <li>时钟周期时间是系统时钟频率的倒数</li>
 </ul>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509163640612.png" alt="image-20220509163640612" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509163742466.png" alt="image-20220509163742466" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509163640612.png" class title="image-20220509163640612" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509163742466.png" class title="image-20220509163742466" loading="lazy"></li>
 </ul>
-<h2 id="MIPS-Te"><a href="#MIPS-Te" class="headerlink" title="MIPS/Te"></a>MIPS/Te</h2><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509171440628.png" alt="image-20220509171440628" loading="lazy"></p>
+<h2 id="MIPS-Te"><a href="#MIPS-Te" class="headerlink" title="MIPS/Te"></a>MIPS/Te</h2><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509171440628.png" class title="image-20220509171440628" loading="lazy">
+
 <h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><ul>
 <li><p>例1.4：</p>
 <p>要额外考虑的问题是：<strong>CPU2的程序量为CPU1的<br>70%，不能仅仅以比例的视角看CPU时间</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509170203630.png" alt="image-20220509170203630" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509170203630.png" class title="image-20220509170203630" loading="lazy"></li>
 </ul>
-<h3 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h3><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515104248190.png" alt="image-20220515104248190" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515104259810.png" alt="image-20220515104259810" loading="lazy"></p>
+<h3 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h3><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515104248190.png" class title="image-20220515104248190" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515104259810.png" class title="image-20220515104259810" loading="lazy">
+
 <h1 id="第三章-流水线"><a href="#第三章-流水线" class="headerlink" title="第三章 流水线"></a>第三章 流水线</h1><h2 id="时空图"><a href="#时空图" class="headerlink" title="时空图"></a>时空图</h2><p><strong>通过时间</strong>和<strong>排空时间</strong>见下图所示</p>
 <img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220509172549871.png" alt="image-20220509172549871" style="zoom:67%;" loading="lazy">
 
@@ -453,7 +457,8 @@
 <img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511210830148.png" alt="image-20220511210830148" style="zoom:67%;" loading="lazy"></li>
 <li><p>控制冲突 分支相关</p>
 <p>简单处理分支指令：分支成功的情况</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511211030946.png" alt="image-20220511211030946" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511211030946.png" class title="image-20220511211030946" loading="lazy">
+
 <p>等分支地址在MEM阶段计算完毕后，目标指令的IF阶段才能开始</p>
 <p>这个例子中分支延迟为3</p>
 </li>
@@ -468,8 +473,7 @@
 <ul>
 <li><p>预测不跳转</p>
 <p>允许分支指令后的指令继续在流水线中流动，就好像什么都没发生似的</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511213708013.png" alt="image-20220511213708013" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511213708013.png" class title="image-20220511213708013" loading="lazy"></li>
 <li><p>预测跳转</p>
 </li>
 <li><p>延迟分支（延迟槽）</p>
@@ -486,21 +490,29 @@
 </li>
 </ul>
 <h3 id="作业题"><a href="#作业题" class="headerlink" title="作业题"></a>作业题</h3><h3 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h3><p><strong>最后要排空流水线，最后一个任务耗时为$7\Delta t$</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515105854071.png" alt="image-20220515105854071" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515105955564.png" alt="image-20220515105955564" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515105854071.png" class title="image-20220515105854071" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515105955564.png" class title="image-20220515105955564" loading="lazy">
+
+
+
 <h4 id="3-11"><a href="#3-11" class="headerlink" title="3.11"></a>3.11</h4><p>注意读题</p>
 <blockquote>
 <p><strong>在一个时钟周期中对同一个寄存器的读操作和写操作可以通过寄存器“定向”</strong></p>
 </blockquote>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511234816944.png" alt="image-20220511234816944" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511215333334.png" alt="image-20220511215333334" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511234816944.png" class title="image-20220511234816944" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220511215333334.png" class title="image-20220511215333334" loading="lazy">
+
 <p>上面在3和4时刻插入两个气泡，</p>
 <hr>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512131636227.png" alt="image-20220512131636227" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512131636227.png" class title="image-20220512131636227" loading="lazy">
+
 <p><strong>load-use问题</strong>上一个指令是load指令，结果需要在MEM阶段结束才能得到，那么下一条指令要想在EX阶段获取操作数，就要插入一个气泡</p>
 <hr>
 <p>流水线插入气泡是同时全部阶段一起插入的，所以第二条和第三条指令插入气泡的时刻一样</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512132021894.png" alt="image-20220512132021894" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512132021894.png" class title="image-20220512132021894" loading="lazy">
+
 <hr>
 <p>想象流水寄存器的存在，上一条指令的结果在EX阶段得出</p>
 <p>如果是普通使用ALU的<strong>非分支指令</strong>，可以通过定向技术，直接将上一条指令ALU的结果定向到下一条指令的ALU的输入，避免插入气泡</p>
@@ -509,7 +521,8 @@
 
 <p>但<strong>分支指令需要在ID段就确定是否跳转以及跳转目标地址</strong></p>
 <p>那么需要插入一个气泡，等上一个指令在EX段将结果计算出后再【<strong>定向</strong>】到下一条指令的ID段</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512133144185.png" alt="image-20220512133144185" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512133144185.png" class title="image-20220512133144185" loading="lazy">
+
 <hr>
 <p>如果没有定向技术在，则要按照下面的情况考虑</p>
 <p>ID和EX冲突：插入一个气泡，编程ID和MEM冲突（一共需要两个气泡）</p>
@@ -528,7 +541,8 @@
 <li>但是在前述5段流水线中，这种方法没有意义，因为还是要在ID段结束才能知道跳转地址，才能获取分支目标地址的指令，还是会暂停一个周期</li>
 </ul>
 <hr>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512140632971.png" alt="image-20220512140632971" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512140632971.png" class title="image-20220512140632971" loading="lazy">
+
 <p><strong>3个点</strong>：</p>
 <p>load-use问题：要避免在load指令下面相邻就出现数据冲突</p>
 <p>（控制相关）分支指令问题：避免分支指令上面相邻就出现数据冲突</p>
@@ -549,7 +563,8 @@
 <li><p>分支目标缓冲器BTB</p>
 <p>将<strong>分支成功的分支指令的地址</strong>和<strong>它的分支目标地址</strong>都放到一个缓冲区中保存起来，缓冲区以<strong>分支指令的地址作为标识</strong></p>
 <p>BTB的执行流程：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512151538629.png" alt="image-20220512151538629" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512151538629.png" class title="image-20220512151538629" loading="lazy">
+
 <p>开销：</p>
 <img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512151641562.png" alt="image-20220512151641562" style="zoom:67%;" loading="lazy">
 
@@ -573,14 +588,15 @@
 <p>而可以通过在每个时钟周期内流出多条指令， 使CPI＜1，来降低前者，理想CPI</p>
 <ul>
 <li><p>多流出处理机有两种风格：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512155056266.png" alt="image-20220512155056266" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512155056266.png" class title="image-20220512155056266" loading="lazy"></li>
 </ul>
 <h3 id="基于静态调度的多流出技术"><a href="#基于静态调度的多流出技术" class="headerlink" title="基于静态调度的多流出技术"></a>基于静态调度的多流出技术</h3><p>假设：每个时钟周期流出两条指令：1条整数型指令＋1条浮点操作指令</p>
 <p>其中：把load指令、store指令、分支指令归类为整数型指令。 </p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512160305217.png" alt="image-20220512160305217" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512160305217.png" class title="image-20220512160305217" loading="lazy">
+
 <p>限制其性能发挥的障碍</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512160332193.png" alt="image-20220512160332193" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512160332193.png" class title="image-20220512160332193" loading="lazy">
+
 <h3 id="超流水处理机"><a href="#超流水处理机" class="headerlink" title="超流水处理机"></a>超流水处理机</h3><p>对于一台每个时钟周期能流出n条指令的超流水线计算机来说，这n条指令不是同时流出的，而是每隔1/n个时钟周期流出一条指令。</p>
 <p>实际上该超流水线计算机的流水线周期为<strong>1/n</strong>个时钟周期。 </p>
 <ul>
@@ -593,83 +609,95 @@
 <p>命中率为90%，则有10%的几率未命中，开销为3</p>
 <p>预测精度90%，则有**90%×10%**的几率命中并预测错误，开销为4</p>
 </blockquote>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512153308016.png" alt="image-20220512153308016" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512153308016.png" class title="image-20220512153308016" loading="lazy">
+
 <hr>
 <h3 id="5-9"><a href="#5-9" class="headerlink" title="5.9"></a>5.9</h3><p>实际CPI = 理想CPI==<strong>+</strong>==各种停顿拍数【加！】</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512153757321.png" alt="image-20220512153757321" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512153757321.png" class title="image-20220512153757321" loading="lazy">
+
 <hr>
-<h4 id="5-11"><a href="#5-11" class="headerlink" title="5.11"></a>5.11</h4><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512161920372.png" alt="image-20220512161920372" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512161927389.png" alt="image-20220512161927389" loading="lazy"></p>
+<h4 id="5-11"><a href="#5-11" class="headerlink" title="5.11"></a>5.11</h4><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512161920372.png" class title="image-20220512161920372" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512161927389.png" class title="image-20220512161927389" loading="lazy">
+
 <h1 id="第七章-存储系统"><a href="#第七章-存储系统" class="headerlink" title="第七章 存储系统"></a>第七章 存储系统</h1><h2 id="存储系统性能指标"><a href="#存储系统性能指标" class="headerlink" title="存储系统性能指标"></a>存储系统性能指标</h2><p>访问时间T、容量S、平均每位价格C</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163209216.png" alt="image-20220512163209216" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163209216.png" class title="image-20220512163209216" loading="lazy">
+
 <p><strong>整体的存储容量、每位价格、命中率、平均访问时间</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163405986.png" alt="image-20220512163405986" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163405986.png" class title="image-20220512163405986" loading="lazy">
+
 <p>命中率的定义：CPU访问存储系统时，在<strong>M1中</strong>找到所需信息的概率</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163449306.png" alt="image-20220512163449306" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163527530.png" alt="image-20220512163527530" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163449306.png" class title="image-20220512163449306" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512163527530.png" class title="image-20220512163527530" loading="lazy">
+
 <p><strong>先访问小的M1，再访问大的M2</strong><br>$$<br>T_A：平均访问时间\<br>不命中开销T_M：从向M_2发出访问请求到把整个数据块调入M_1中所需的时间\<br>T_A ＝ T_1+F·T_M\<br>T_M=T_2+T_B\<br>T_B:传送一个信息块所需的时间<br>$$</p>
 <h2 id="Cache基本知识"><a href="#Cache基本知识" class="headerlink" title="Cache基本知识"></a>Cache基本知识</h2><ul>
 <li><p>Cache基本工作原理</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512165752403.png" alt="image-20220512165752403" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512165752403.png" class title="image-20220512165752403" loading="lazy"></li>
 </ul>
 <h3 id="映象规则"><a href="#映象规则" class="headerlink" title="映象规则"></a>映象规则</h3><ul>
 <li><p>全相联：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512165940943.png" alt="image-20220512165940943" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512165940943.png" class title="image-20220512165940943" loading="lazy"></li>
 <li><p>直接相联：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512170025897.png" alt="image-20220512170025897" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171225407.png" alt="image-20220512171225407" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512170025897.png" class title="image-20220512170025897" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171225407.png" class title="image-20220512171225407" loading="lazy"></li>
 <li><p>组相联：</p>
 <p>“组”是Cache的概念</p>
 <p>n 路组相联：每组中有n个块 ( n＝M/G )</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171319591.png" alt="image-20220512171319591" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171414506.png" alt="image-20220512171414506" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171545134.png" alt="image-20220512171545134" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171319591.png" class title="image-20220512171319591" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171414506.png" class title="image-20220512171414506" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512171545134.png" class title="image-20220512171545134" loading="lazy"></li>
 </ul>
 <h3 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h3><p>我跳过了</p>
 <h3 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h3><ul>
 <li><p>写直达和写回</p>
 <p>写直达是<strong>两级都要写</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201235864.png" alt="image-20220512201235864" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201252307.png" alt="image-20220512201252307" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201235864.png" class title="image-20220512201235864" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201252307.png" class title="image-20220512201252307" loading="lazy"></li>
 <li><p>写操作时的调块</p>
 <p>按写分配在写不命中时需要<strong>将块调入cache</strong>再写入</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201404413.png" alt="image-20220512201404413" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201404413.png" class title="image-20220512201404413" loading="lazy"></li>
 </ul>
 <h3 id="Cache性能分析"><a href="#Cache性能分析" class="headerlink" title="Cache性能分析"></a>Cache性能分析</h3><ul>
 <li><p>==<strong>平均访存时间 ＝ 命中时间＋不命中率×不命中开销</strong>==</p>
 </li>
 <li><p>程序执行时间</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201528345.png" alt="image-20220512201528345" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512201528345.png" class title="image-20220512201528345" loading="lazy"></li>
 <li><p>例题：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512202041386.png" alt="image-20220512202041386" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512202047704.png" alt="image-20220512202047704" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512202041386.png" class title="image-20220512202041386" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512202047704.png" class title="image-20220512202047704" loading="lazy"></li>
 <li><p>Cache不命中对于一个CPI较小而时钟频率较高的CPU来说，影响是双重的（假设不命中代价（单位是时钟周期数）固定）</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512202232150.png" alt="image-20220512202232150" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512202232150.png" class title="image-20220512202232150" loading="lazy"></li>
 </ul>
-<h2 id="改进Cache性能"><a href="#改进Cache性能" class="headerlink" title="改进Cache性能"></a>改进Cache性能</h2><h3 id="伪相联cache"><a href="#伪相联cache" class="headerlink" title="伪相联cache"></a>伪相联cache</h3><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512212514069.png" alt="image-20220512212514069" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512212738206.png" alt="image-20220512212738206" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512212745444.png" alt="image-20220512212745444" loading="lazy"></p>
+<h2 id="改进Cache性能"><a href="#改进Cache性能" class="headerlink" title="改进Cache性能"></a>改进Cache性能</h2><h3 id="伪相联cache"><a href="#伪相联cache" class="headerlink" title="伪相联cache"></a>伪相联cache</h3><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512212514069.png" class title="image-20220512212514069" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512212738206.png" class title="image-20220512212738206" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512212745444.png" class title="image-20220512212745444" loading="lazy">
+
 <p>伪相联 Cache 具有<strong>一快一慢两种命中时间</strong>，它们分别对应于正常命中和伪命中的情况</p>
 <h2 id="减少cache不命中开销"><a href="#减少cache不命中开销" class="headerlink" title="减少cache不命中开销"></a>减少cache不命中开销</h2><h3 id="两级cache"><a href="#两级cache" class="headerlink" title="两级cache"></a>两级cache</h3><p><strong>平均访存时间</strong></p>
 <p><strong>全局不命中率和局部不命中率</strong></p>
 <p><strong>每条指令的平均访存停顿时间</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512213306567.png" alt="image-20220512213306567" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512213310884.png" alt="image-20220512213310884" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512213514501.png" alt="image-20220512213514501" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512213306567.png" class title="image-20220512213306567" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512213310884.png" class title="image-20220512213310884" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512213514501.png" class title="image-20220512213514501" loading="lazy">
+
 <h2 id="作业题-1"><a href="#作业题-1" class="headerlink" title="作业题"></a>作业题</h2><h3 id="例7-3"><a href="#例7-3" class="headerlink" title="例7.3"></a>例7.3</h3><p><strong>平均访存时间</strong></p>
 <p><strong>全局不命中率和局部不命中率</strong></p>
 <p><strong>每条指令的平均访存停顿时间</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512214441188.png" alt="image-20220512214441188" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512214458576.png" alt="image-20220512214458576" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512214441188.png" class title="image-20220512214441188" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512214458576.png" class title="image-20220512214458576" loading="lazy">
+
 <p><strong>求每次访存的平均停顿时间，还要用平均访存时间减去1，即平均访存时间减去第一级cache的命中时间</strong></p>
 <h3 id="7-10"><a href="#7-10" class="headerlink" title="7.10"></a>7.10</h3><p>平均访存时间和CPU时间</p>
 <p><strong>平均访存时间＝命中时间＋失效率×失效开销</strong></p>
@@ -677,11 +705,15 @@
 <p><strong>CPU<del>time</del>=（IC×CPI执行周期数+总访存失效次数×失效开销）×时钟周期=IC×（CPI执行×时钟周期+每条指令的访存次数<em>失效率</em>失效开销×时钟周期）</strong></p>
 <p><strong>平均访存时间不用×指令条数IC，而CPU时间需要×指令条数IC</strong></p>
 <p>选择时优先选择CPU时间更小的</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512211048501.png" alt="image-20220512211048501" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512211055786.png" alt="image-20220512211055786" loading="lazy"></p>
-<h3 id="7-11"><a href="#7-11" class="headerlink" title="7.11"></a>7.11</h3><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512233056939.png" alt="image-20220512233056939" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512211048501.png" class title="image-20220512211048501" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512211055786.png" class title="image-20220512211055786" loading="lazy">
+
+<h3 id="7-11"><a href="#7-11" class="headerlink" title="7.11"></a>7.11</h3><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512233056939.png" class title="image-20220512233056939" loading="lazy">
+
 <p>2路组相连的一路命中就是直接命中，一路未命中二路命中就是伪命中，一路二路都未命中就是未命中</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512233130195.png" alt="image-20220512233130195" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220512233130195.png" class title="image-20220512233130195" loading="lazy">
+
 <h3 id="7-14"><a href="#7-14" class="headerlink" title="7.14"></a>7.14</h3><p>写回法：写的时候不需要访存，只往cache里写</p>
 <p>写直达法：需要访存一次，cache和主存都要写</p>
 <hr>
@@ -689,7 +721,8 @@
 <p>按写分配：写不命中时，先把所写单元所在的块调入Cache，<br>再行写入</p>
 <p>不按写分配：写不命中时，直接写入下一级存储器而不调块</p>
 <hr>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513170610445.png" alt="image-20220513170610445" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513170610445.png" class title="image-20220513170610445" loading="lazy">
+
 <h1 id="第八章-I-O系统"><a href="#第八章-I-O系统" class="headerlink" title="第八章 I/O系统"></a>第八章 I/O系统</h1><p><strong>平均无故障时间MTTF（Mean Time To Failure）</strong>从开始投入工作，至产品失效的时间平均值</p>
 <p><strong>平均修复时间MTTR（Mean Time To Repair）</strong>设备处于故障状态时间的平均值</p>
 <p><strong>平均故障间隔时间MTBF（Mean Time Between Failures）</strong>两次故障间的时间平均值<br>$$<br>MTBF=MTTF+MTTR\<br>可用性=\frac{MTTF}{MTTF+MTTR}<br>$$<br><strong>MTTF越长越好，MTTR越短越好</strong></p>
@@ -714,20 +747,28 @@
 <li><p>系统的可信性：服务的质量。即在多大程度上可以合理地认为服务是可靠的。（不可以度量）</p>
 </li>
 </ul>
-<h2 id="可靠性框图-串并联系统"><a href="#可靠性框图-串并联系统" class="headerlink" title="可靠性框图/串并联系统"></a>可靠性框图/串并联系统</h2><h3 id="串联模型计算示意"><a href="#串联模型计算示意" class="headerlink" title="串联模型计算示意"></a>串联模型计算示意</h3><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194221235.png" alt="image-20220513194221235" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194253249.png" alt="image-20220513194253249" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194303160.png" alt="image-20220513194303160" loading="lazy"></p>
+<h2 id="可靠性框图-串并联系统"><a href="#可靠性框图-串并联系统" class="headerlink" title="可靠性框图/串并联系统"></a>可靠性框图/串并联系统</h2><h3 id="串联模型计算示意"><a href="#串联模型计算示意" class="headerlink" title="串联模型计算示意"></a>串联模型计算示意</h3><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194221235.png" class title="image-20220513194221235" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194253249.png" class title="image-20220513194253249" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194303160.png" class title="image-20220513194303160" loading="lazy">
+
 <p>任务A~F都是串联，各自的计算都是直接可靠度相乘</p>
 <p>下图注意红色部分：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194418261.png" alt="image-20220513194418261" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194418261.png" class title="image-20220513194418261" loading="lazy">
+
 <hr>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194119888.png" alt="image-20220513194119888" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194501972.png" alt="image-20220513194501972" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194119888.png" class title="image-20220513194119888" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194501972.png" class title="image-20220513194501972" loading="lazy">
+
 <p><strong>MTTF的倒数</strong>就是系统的<strong>失效率</strong></p>
 <p>==如果系统中每个模块的生存期<strong>服从指数分布</strong>，则系统整体的失效率是各部件的失效率之和==</p>
 <p>MTTF的叠加如同电阻的并联，越并越小</p>
-<h2 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h2><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194817799.png" alt="image-20220513194817799" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194946282.png" alt="image-20220513194946282" loading="lazy"></p>
+<h2 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h2><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194817799.png" class title="image-20220513194817799" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513194946282.png" class title="image-20220513194946282" loading="lazy">
+
 <p><strong>N个磁盘叠加，MTTF变为原来的1/N</strong></p>
 <h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p>重要的：RAID0、1、4、5、6、10、01</p>
 <p>考RAID，而且还要画框图，还要算可靠性，大概率考RAID0/1/01/10</p>
@@ -737,8 +778,10 @@
 <p>四到八个控制器做多活，ECC<br>DRAM，RAID6，parity（spare） declustering</p>
 <h1 id="第九章-互连网络"><a href="#第九章-互连网络" class="headerlink" title="第九章 互连网络"></a>第九章 互连网络</h1><p>互连网络是一种由开关元件按照一定的拓扑结构和控制方式构成的网络，用来实现计算机系统中结点之间的相互连接</p>
 <h2 id="互连函数"><a href="#互连函数" class="headerlink" title="互连函数"></a>互连函数</h2><p>函数反映的是<strong>输入端与输出端 端号</strong> 的连接关系</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513201720606.png" alt="image-20220513201720606" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515112513463.png" alt="image-20220515112513463" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513201720606.png" class title="image-20220513201720606" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220515112513463.png" class title="image-20220515112513463" loading="lazy">
+
 <h3 id="基本互连函数"><a href="#基本互连函数" class="headerlink" title="基本互连函数"></a>基本互连函数</h3><p><strong>恒等函数I</strong></p>
 <p><strong>交换函数E</strong></p>
 <p><strong>立方体互连函数Cube</strong></p>
@@ -750,37 +793,36 @@
 <p><strong>PM2I函数</strong></p>
 <ul>
 <li><p>恒等函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202057553.png" alt="image-20220513202057553" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202057553.png" class title="image-20220513202057553" loading="lazy"></li>
 <li><p>交换函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202110661.png" alt="image-20220513202110661" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202116758.png" alt="image-20220513202116758" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202131538.png" alt="image-20220513202131538" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202110661.png" class title="image-20220513202110661" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202116758.png" class title="image-20220513202116758" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202131538.png" class title="image-20220513202131538" loading="lazy">
+
 <p>立方体网络：</p>
 <img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202205518.png" alt="image-20220513202205518" style="zoom:50%;" loading="lazy"></li>
 <li><p>均匀洗牌函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202538231.png" alt="image-20220513202538231" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202407395.png" alt="image-20220513202407395" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202538231.png" class title="image-20220513202538231" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202407395.png" class title="image-20220513202407395" loading="lazy">
+
 <p><strong>子函数和超函数不是均分为两部分，而是取低k位和高k位</strong></p>
 </li>
 <li><p>逆均匀洗牌函数：</p>
 <p>将输入端的二进制编号<strong>循环右移</strong>一位而得到所连接的输出端编号</p>
 </li>
 <li><p>蝶式函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202944629.png" alt="image-20220513202944629" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513202944629.png" class title="image-20220513202944629" loading="lazy"></li>
 <li><p>反位序函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513203148475.png" alt="image-20220513203148475" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513203148475.png" class title="image-20220513203148475" loading="lazy"></li>
 <li><p>移数函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513203222335.png" alt="image-20220513203222335" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513203222335.png" class title="image-20220513203222335" loading="lazy"></li>
 <li><p>PM2I函数</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513203535069.png" alt="image-20220513203535069" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513203535069.png" class title="image-20220513203535069" loading="lazy"></li>
 <li><p>阵列计算机ILLIAC Ⅳ</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513204825206.png" alt="image-20220513204825206" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220513204825206.png" class title="image-20220513204825206" loading="lazy"></li>
 <li><h3 id="例9-1"><a href="#例9-1" class="headerlink" title="例9.1"></a>例9.1</h3><p>记清楚所有的互连函数即可</p>
 </li>
 </ul>
@@ -791,21 +833,24 @@
 <p><strong>等分宽度b</strong>：把由N个结点构成的网络切成结点数相同（N/2）的两半，在各种切法中，<strong>沿切口边数</strong>的最小值。</p>
 <h3 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h3><h2 id="静态互连网络"><a href="#静态互连网络" class="headerlink" title="静态互连网络"></a>静态互连网络</h2><p>各结点之间有固定的连接通路、且在运行中不能改变的网络</p>
 <p>所有类型的静态互连网络参数一览表</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514135753101.png" alt="image-20220514135753101" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514135753101.png" class title="image-20220514135753101" loading="lazy">
+
 <h2 id="动态互连网络"><a href="#动态互连网络" class="headerlink" title="动态互连网络"></a>动态互连网络</h2><h3 id="多级互连网络"><a href="#多级互连网络" class="headerlink" title="多级互连网络"></a>多级互连网络</h3><p>a×b开关：a个输入和b个输出</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514143827248.png" alt="image-20220514143827248" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514143911604.png" alt="image-20220514143911604" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514143827248.png" class title="image-20220514143827248" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514143911604.png" class title="image-20220514143911604" loading="lazy">
+
 <ul>
 <li><p>2×2开关</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514144103941.png" alt="image-20220514144103941" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514144103941.png" class title="image-20220514144103941" loading="lazy"></li>
 <li><p>多级互连网络的区别：</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514144157700.png" alt="image-20220514144157700" loading="lazy"></p>
-</li>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514144157700.png" class title="image-20220514144157700" loading="lazy"></li>
 </ul>
-<h3 id="Omega网络"><a href="#Omega网络" class="headerlink" title="Omega网络"></a>Omega网络</h3><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514144533768.png" alt="image-20220514144533768" loading="lazy"></p>
+<h3 id="Omega网络"><a href="#Omega网络" class="headerlink" title="Omega网络"></a>Omega网络</h3><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514144533768.png" class title="image-20220514144533768" loading="lazy">
+
 <p>还考过16×16的</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514154900180.png" alt="image-20220514154900180" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514154900180.png" class title="image-20220514154900180" loading="lazy">
+
 <h2 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h2><p><strong>恒等函数I</strong></p>
 <p><strong>交换函数E</strong></p>
 <p><strong>立方体互连函数Cube</strong></p>
@@ -824,24 +869,33 @@
 <hr>
 <p><strong>求距离，就是看最少经过几步 移位/取反 ，能得到目标数字</strong></p>
 <hr>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514153008384.png" alt="image-20220514153008384" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514153008384.png" class title="image-20220514153008384" loading="lazy">
+
 <p><strong>循环移数网络</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514152720087.png" alt="image-20220514152720087" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514152738378.png" alt="image-20220514152738378" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514152720087.png" class title="image-20220514152720087" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514152738378.png" class title="image-20220514152738378" loading="lazy">
+
 <hr>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514151726397.png" alt="image-20220514151726397" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514151743328.png" alt="image-20220514151743328" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514152332774.png" alt="image-20220514152332774" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514151726397.png" class title="image-20220514151726397" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514151743328.png" class title="image-20220514151743328" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514152332774.png" class title="image-20220514152332774" loading="lazy">
+
 <p>第三问用广度优先遍历，找到最远的处理机</p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514153419226.png" alt="image-20220514153419226" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514153419226.png" class title="image-20220514153419226" loading="lazy">
+
 <p>这个过程是对每层的每个数都要+1,-1,+2,-2,+4,-4,+8,-8,+16,-16取余,如果有新数，就写到下一层，否则跳过</p>
-<h3 id="9-13"><a href="#9-13" class="headerlink" title="9.13"></a>9.13</h3><p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514153634215.png" alt="image-20220514153634215" loading="lazy"></p>
+<h3 id="9-13"><a href="#9-13" class="headerlink" title="9.13"></a>9.13</h3><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514153634215.png" class title="image-20220514153634215" loading="lazy">
+
 <p>整个图都要画</p>
 <p>“走迷宫”</p>
 <h1 id="第十章-多处理机"><a href="#第十章-多处理机" class="headerlink" title="第十章 多处理机"></a>第十章 多处理机</h1><p>应该就考这个</p>
 <p><strong>$1GHz=1\times 10^9Hz$</strong></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514171039480.png" alt="image-20220514171039480" loading="lazy"></p>
-<p><img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514171046691.png" alt="image-20220514171046691" loading="lazy"></p>
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514171039480.png" class title="image-20220514171039480" loading="lazy">
+
+<img src="/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220514171046691.png" class title="image-20220514171046691" loading="lazy">
 </div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" title="计算机系统结构复习">https://wan-nan.github.io/2022/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2022/05/23/Pytorch%E5%AE%89%E8%A3%85/" rel="prev" title="Pytorch安装"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">Pytorch安装</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/05/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E7%AC%94%E8%AE%B0/" rel="next" title="数据库系统概论笔记"><span class="post-nav-text">数据库系统概论笔记</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-07-03T00:00:00');

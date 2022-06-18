@@ -48,7 +48,7 @@
 <li><p>语义分析是编译程序最实质性的工作；第一次对源程序的语义作出解释，引起源程序质的变化。</p>
 </li>
 <li><p>语义分析器所处的逻辑位置和输入输出如下图所示：</p>
-<img src="https://img-blog.csdnimg.cn/aee5dff887c8413da1dc9fe34fbab719.png" alt="语义分析" style="zoom:67%;" / loading="lazy"></li>
+<img src="https://img-blog.csdnimg.cn/aee5dff887c8413da1dc9fe34fbab719.png" alt="语义分析" style="zoom:67%;" loading="lazy"></li>
 <li><p>中间代码：介于源语言和目标代码之间的一种代码。</p>
 <p>引入中间代码：</p>
 <ul>
@@ -92,8 +92,8 @@
         <th>NodeTag</th>
         <th>语义分析函数</th>
         <th>说明</th>  
-    </tr >
-    <tr >
+    </tr>
+    <tr>
         <td rowspan="3">T_SelectStmt</td>
         <td>transformSelectStmt</td>
         <td>处理基本SELCET语句的语义</td>
@@ -107,11 +107,11 @@
         <td>处理带有UNION、INTERSECT、EXCEPT的SELECT语句的语义</td>
     </tr>
     <tr>
-        <td >T_InsertStmt</td>
+        <td>T_InsertStmt</td>
         <td>transformInsertStmt</td>
         <td>处理INSERT语句的语义</td>
     </tr>
-    <tr >        
+    <tr>        
         <td rowspan="3">T_SelectStmt</td>        
         <td>transformSelectStmt</td>        
         <td>处理基本SELCET语句的语义</td>    
@@ -125,44 +125,44 @@
         <td>处理带有UNION、INTERSECT、EXCEPT的SELECT语句的语义</td>    
     </tr>    
     <tr>        
-        <td >T_InsertStmt</td>        
+        <td>T_InsertStmt</td>        
         <td>transformInsertStmt</td>        
         <td>处理INSERT语句的语义</td>    
     </tr>
     <tr>
-        <td >T_DeleteStmt</td>
-        <td >transformDeleteStmt</td>
-        <td >处理DELETE语句的语义</td>
+        <td>T_DeleteStmt</td>
+        <td>transformDeleteStmt</td>
+        <td>处理DELETE语句的语义</td>
     </tr>
     <tr>
-        <td >T_UpdateStmt</td>
-        <td >transformUpdateStmt</td>
-        <td >处理UPDATE语句的语义</td>
+        <td>T_UpdateStmt</td>
+        <td>transformUpdateStmt</td>
+        <td>处理UPDATE语句的语义</td>
     </tr>
     <tr>
-        <td >T_MergeStmt</td>
-        <td >transformMergeStmt</td>
-        <td >处理MERGE语句的语义</td>
+        <td>T_MergeStmt</td>
+        <td>transformMergeStmt</td>
+        <td>处理MERGE语句的语义</td>
     </tr>
     <tr>
-        <td >T_DeclareCursorStmt</td>
-        <td >transformDeclareCursorStmt</td>
-        <td >处理DECLARE语句的语义</td>
+        <td>T_DeclareCursorStmt</td>
+        <td>transformDeclareCursorStmt</td>
+        <td>处理DECLARE语句的语义</td>
     </tr>
     <tr>
-        <td >T_ExplainStmt</td>
-        <td >transformExplainStmt</td>
-        <td >处理EXPLAIN语句的语义</td>
+        <td>T_ExplainStmt</td>
+        <td>transformExplainStmt</td>
+        <td>处理EXPLAIN语句的语义</td>
     </tr>
     <tr>
-        <td >T_CreateTableAsStmt</td>
-        <td >transformCreateTableAsStmt</td>
-        <td >处理CREATE TABLE AS，SELECT INTO和CREATE MATERIALIZED VIEW等语句的语义</td>
+        <td>T_CreateTableAsStmt</td>
+        <td>transformCreateTableAsStmt</td>
+        <td>处理CREATE TABLE AS，SELECT INTO和CREATE MATERIALIZED VIEW等语句的语义</td>
     </tr>
     <tr>
-        <td >其他</td>
-        <td >--</td>
-        <td >作为UTILITY类型处理，直接在分析树上封装Query返回</td>
+        <td>其他</td>
+        <td>--</td>
+        <td>作为UTILITY类型处理，直接在分析树上封装Query返回</td>
     </tr>
 </table></li>
 <li><p>对于<code>transformStmt</code>函数，以处理基本SELECT命令的<code>transformSelectStmt</code>函数为例，其处理流程如下：</p>
