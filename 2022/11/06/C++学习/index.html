@@ -1,0 +1,620 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>C++学习 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="多态（virtual） 泛型（template） 2 什么是面向对象 Objects &#x3D; Attributes + Services   data是被operation包在里面的  面向过程与面向对象  one example   3 面向对象基本原理 OOP Characteristics    What to do not how to do   An object has an interf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习">
+<meta property="og:url" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="多态（virtual） 泛型（template） 2 什么是面向对象 Objects &#x3D; Attributes + Services   data是被operation包在里面的  面向过程与面向对象  one example   3 面向对象基本原理 OOP Characteristics    What to do not how to do   An object has an interf">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221107200338758.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221107201718949.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109101928121.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109105443351.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109111337644.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109111542430.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109112932883.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221110155850999.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114125613969.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114130732340.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114132625655.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114135136488.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115071556101.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115071837094.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115075105219.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080007207.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080024846.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080150891.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080859631.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115081538782.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115094552984.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115213327681.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116201905461.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116203514313.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116204248473.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116204818887.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116205152020.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116205922464.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116210307686.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116210648731.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116212912488.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118191327439.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118191538472.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118192248236.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118192601454.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118193043535.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118193104478.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118193936618.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118195848533.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118200024251.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118201328080.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118201520415.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221121155542728.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221121155705940.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221121155929906.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122163142288.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122200908922.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122201009451.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122201234857.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122201545217.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221123211927920.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221124100956525.png">
+<meta property="article:published_time" content="2022-11-06T13:02:32.000Z">
+<meta property="article:modified_time" content="2022-11-24T13:40:28.838Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221107200338758.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">41</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">2 什么是面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">3 面向对象基本原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%87%AA%E5%8A%A8%E5%94%AE%E7%A5%A8%E6%9C%BA%E4%BE%8B%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">4 自动售票机例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">5 头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%97%B6%E9%92%9F%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">5.</span> <span class="toc-text">6 时钟的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">6.</span> <span class="toc-text">7 成员变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Field-parameters-local-variables"><span class="toc-number">6.1.</span> <span class="toc-text">Field, parameters, local variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">7.</span> <span class="toc-text">8 成员变量的秘密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84"><span class="toc-number">8.</span> <span class="toc-text">9 构造和析构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">9.</span> <span class="toc-text">10 对象初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-new-amp-delete"><span class="toc-number">10.</span> <span class="toc-text">11 new&amp;delete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E8%AE%BF%E9%97%AE%E9%99%90%E5%88%B6"><span class="toc-number">11.</span> <span class="toc-text">12 访问限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="toc-number">12.</span> <span class="toc-text">13 初始化列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%AF%B9%E8%B1%A1%E7%BB%84%E5%90%88"><span class="toc-number">13.</span> <span class="toc-text">14 对象组合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E7%BB%A7%E6%89%BF"><span class="toc-number">14.</span> <span class="toc-text">15 继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E7%88%B6%E7%B1%BB%E5%AD%90%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">15.</span> <span class="toc-text">16 父类子类的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E5%92%8C%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-number">16.</span> <span class="toc-text">17 函数重载和默认参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-number">17.</span> <span class="toc-text">18 内联函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-const"><span class="toc-number">18.</span> <span class="toc-text">19 const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-%E4%B8%8D%E5%8F%AF%E4%BF%AE%E9%A5%B0%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-number">19.</span> <span class="toc-text">20 不可修饰的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%BC%95%E7%94%A8"><span class="toc-number">20.</span> <span class="toc-text">21 引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%90%91%E4%B8%8A%E9%80%A0%E5%9E%8B"><span class="toc-number">21.</span> <span class="toc-text">22 向上造型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%A4%9A%E6%80%81%E6%80%A7"><span class="toc-number">22.</span> <span class="toc-text">23 多态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">23.</span> <span class="toc-text">24 多态的实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E5%BC%95%E7%94%A8%E5%86%8D%E7%A0%94%E7%A9%B6"><span class="toc-number">24.</span> <span class="toc-text">25 引用再研究</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0"><span class="toc-number">25.</span> <span class="toc-text">26 拷贝构造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-%E9%9D%99%E6%80%81%E5%AF%B9%E8%B1%A1"><span class="toc-number">26.</span> <span class="toc-text">28 静态对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-number">27.</span> <span class="toc-text">29 静态成员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="toc-number">28.</span> <span class="toc-text">30 运算符重载-基本规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E5%8E%9F%E5%9E%8B"><span class="toc-number">29.</span> <span class="toc-text">31 运算符重载-原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E8%B5%8B%E5%80%BC"><span class="toc-number">30.</span> <span class="toc-text">32 运算符重载-赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">31.</span> <span class="toc-text">33 运算符重载-类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-35-%E6%A8%A1%E6%9D%BF"><span class="toc-number">32.</span> <span class="toc-text">34&#x2F;35 模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-%E5%BC%82%E5%B8%B8%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">33.</span> <span class="toc-text">36 异常基本概念</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">C++学习</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-11-06 21:02:32" itemprop="dateCreated datePublished" datetime="2022-11-06T21:02:32+08:00">2022-11-06</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2022-11-24 21:40:28" itemprop="dateModified" datetime="2022-11-24T21:40:28+08:00">2022-11-24</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">4.8k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">19m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/C/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">C++</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p><strong>多态（virtual）</strong></p>
+<p><strong>泛型（template）</strong></p>
+<h2 id="2-什么是面向对象"><a href="#2-什么是面向对象" class="headerlink" title="2 什么是面向对象"></a>2 什么是面向对象</h2><ul>
+<li><p>Objects = Attributes + Services</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221107200338758.png" class title="image-20221107200338758" loading="lazy">
+
+<p>data是被operation包在里面的</p>
+</li>
+<li><p>面向过程与面向对象</p>
+</li>
+<li><p>one example</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221107201718949.png" class title="image-20221107201718949" loading="lazy"></li>
+</ul>
+<h2 id="3-面向对象基本原理"><a href="#3-面向对象基本原理" class="headerlink" title="3 面向对象基本原理"></a>3 面向对象基本原理</h2><ul>
+<li><p>OOP Characteristics</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109101928121.png" class title="image-20221109101928121" loading="lazy">
+
+<ul>
+<li>What to do not how to do</li>
+</ul>
+</li>
+<li><p>An object has an interface</p>
+<ul>
+<li>The interface is the way it receives messages</li>
+<li>It is define in the class the objecvt belong to</li>
+</ul>
+</li>
+<li><p>interface:</p>
+<ul>
+<li>Communication</li>
+<li>Protection</li>
+</ul>
+</li>
+<li><p>Encapsulation（封装）</p>
+<ul>
+<li>bundle data and  methods dealing with these data together in an object</li>
+<li>Hide the details of the data and the action</li>
+<li>Restrict only access to the publicized methods</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-自动售票机例子"><a href="#4-自动售票机例子" class="headerlink" title="4 自动售票机例子"></a>4 自动售票机例子</h2><h2 id="5-头文件"><a href="#5-头文件" class="headerlink" title="5 头文件"></a>5 头文件</h2><ul>
+<li><p>The header file</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109105443351.png" class title="image-20221109105443351" loading="lazy"></li>
+<li><p><code>.cpp</code>经过编译预处理→<code>.ii</code>，经过编译→<code>.s</code>，经过汇编→<code>.o</code>，经过ld链接→<code>.out</code></p>
+</li>
+<li><p><strong>Declarations vs. Definitions</strong></p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109111337644.png" class title="image-20221109111337644" loading="lazy">
+
+<p>如果在.h文件中variables不加<code>extern</code>关键字，则是对variables的定义，在多个.cpp链接该.h文件时会出现<code>ld:duplicate symbol</code>的错误</p>
+<p>加上<code>extern</code>关键字才是声明Declaration</p>
+</li>
+<li><p>#include:</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109111542430.png" class title="image-20221109111542430" loading="lazy"></li>
+<li><p>Standard header file structure:</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221109112932883.png" alt="image-20221109112932883" style="zoom: 50%;" loading="lazy"></li>
+<li><p>上面这一章讲的内容的一个相关概括性文章</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lanhaicode/p/10633125.html">多文件编程</a></p>
+</li>
+</ul>
+<h2 id="6-时钟的例子"><a href="#6-时钟的例子" class="headerlink" title="6 时钟的例子"></a>6 时钟的例子</h2><ul>
+<li><p>设计对象的时候划分的粒度</p>
+<p>抽象Abstract</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221110155850999.png" alt="image-20221110155850999" style="zoom:67%;" loading="lazy"></li>
+</ul>
+<h2 id="7-成员变量"><a href="#7-成员变量" class="headerlink" title="7 成员变量"></a>7 成员变量</h2><h3 id="Field-parameters-local-variables"><a href="#Field-parameters-local-variables" class="headerlink" title="Field, parameters, local variables"></a>Field, parameters, local variables</h3><p>成员变量，参数，本地变量</p>
+<ul>
+<li>成员变量的作用域是类的作用域，在类的函数中使用</li>
+<li>本地变量只能在其所在的函数中使用</li>
+</ul>
+<p>成员变量在类的每一个对象中</p>
+<p>parameters = local variables</p>
+<h2 id="8-成员变量的秘密"><a href="#8-成员变量的秘密" class="headerlink" title="8 成员变量的秘密"></a>8 成员变量的秘密</h2><ul>
+<li><p>函数是属于类的，不是属于对象的</p>
+</li>
+<li><p>this:hedden parameter</p>
+<p>this指针指向对象自身</p>
+</li>
+</ul>
+<h2 id="9-构造和析构"><a href="#9-构造和析构" class="headerlink" title="9 构造和析构"></a>9 构造和析构</h2><ul>
+<li><p>constructor function构造函数</p>
+<ul>
+<li><p>名字和类的名字相同</p>
+</li>
+<li><p>没有返回类型</p>
+</li>
+<li><p>在对象被创建的时候自动被调用</p>
+</li>
+</ul>
+</li>
+<li><p>destructor function析构函数</p>
+<ul>
+<li>在对象生命周期scope结束的时候自动调用</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-对象初始化"><a href="#10-对象初始化" class="headerlink" title="10 对象初始化"></a>10 对象初始化</h2><ul>
+<li><p>Storage Allocation</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114125613969.png" alt="image-20221114125613969" style="zoom: 50%;" loading="lazy">
+
+<p>空间在进了大括号之后就会分配</p>
+<p>构造函数则是到定义的那一行才会调用</p>
+</li>
+<li><p>有构造函数初始化的时候就要用构造函数，不能用括号（下图x2和y1初始化时的区别）</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114130732340.png" alt="image-20221114130732340" style="zoom:67%;" loading="lazy"></li>
+</ul>
+<h2 id="11-new-amp-delete"><a href="#11-new-amp-delete" class="headerlink" title="11 new&amp;delete"></a>11 new&amp;delete</h2><p>Dynamic memory allocation</p>
+<ul>
+<li><p>new运算符的返回值是地址</p>
+<p>new时会调用构造函数</p>
+<p>delete时会调用析构函数</p>
+</li>
+<li><p>delete带方括号是用来删除一段空间，例如数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> p;</span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br></pre></td></tr></table></figure></li>
+<li><p>Tips for new and delete</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114132625655.png" alt="image-20221114132625655" style="zoom: 50%;" loading="lazy"></li>
+<li><p>new了之后记得delete避免，内存泄露</p>
+</li>
+</ul>
+<h2 id="12-访问限制"><a href="#12-访问限制" class="headerlink" title="12 访问限制"></a>12 访问限制</h2><p>private-public</p>
+<ul>
+<li><p>C++ access control：public&lt;protected&lt;private</p>
+<ul>
+<li><p>public【能给所有人操作的数据或方法】</p>
+</li>
+<li><p>private：只有类的成员函数可以访问，但是同一个类的对象之间可以访问private成员【数据一般都设置为private】</p>
+<p>因为C++的object oriented特性只是在编译的时候做的，只在编译器中检查，运行时不检查</p>
+</li>
+<li><p>protected：private在派生类中不可以被访问，而protected可以【里面一般是留给子类来操作数据的接口】</p>
+</li>
+</ul>
+</li>
+<li><p>friend</p>
+</li>
+<li><p>class vs. struct</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221114135136488.png" alt="image-20221114135136488" style="zoom:43%;" loading="lazy"></li>
+</ul>
+<h2 id="13-初始化列表"><a href="#13-初始化列表" class="headerlink" title="13 初始化列表"></a>13 初始化列表</h2><p>对于类A的成员变量p，初始化列表为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">A</span>():<span class="built_in">p</span>(value)&#123;cout&lt;&lt;<span class="string">&quot;function body&quot;</span>&lt;&lt;endl;&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115071556101.png" alt="image-20221115071556101" style="zoom:50%;" loading="lazy">
+
+<blockquote>
+<p>initialization vs. assignment</p>
+<p>用initializer list进行初始化做的是initialization</p>
+<p>在constructor中赋值做的是先initialization（此时没给参数，相当于用的是default constructor；若类A有个类成员变量是一个类B的对象，且类B无default constructor，则会报错），再assignment</p>
+<p>【default constructor】指的是没有参数的构造函数</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115071837094.png" alt="image-20221115071837094" style="zoom:50%;" loading="lazy">
+</blockquote>
+<p><strong>总之，最好用initializer list初始化，而不要在constructor的function body中做赋值</strong></p>
+<p><strong>另外，父类的初始化也要放在初始化列表中</strong></p>
+<h2 id="14-对象组合"><a href="#14-对象组合" class="headerlink" title="14 对象组合"></a>14 对象组合</h2><ul>
+<li><p>Composition</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115075105219.png" alt="image-20221115075105219" style="zoom: 50%;" loading="lazy">
+
+<ul>
+<li><p>Fully和By reference是两种内存模型</p>
+<p>前者是类成员变量，后者是类成员变量指针</p>
+</li>
+</ul>
+</li>
+<li><p>一个对象组合的例子：</p>
+<p>声明：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080007207.png" alt="image-20221115080007207" style="zoom:50%;" loading="lazy">
+
+<p>构造函数写法：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080024846.png" alt="image-20221115080024846" style="zoom:50%;" loading="lazy"></li>
+<li><p>initialization list</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080150891.png" alt="image-20221115080150891" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="15-继承"><a href="#15-继承" class="headerlink" title="15 继承"></a>15 继承</h2><p>继承和组合不同，但都是软件重用的方式</p>
+<p>继承inheritance：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115080859631.png" alt="image-20221115080859631" style="zoom:50%;" loading="lazy">
+
+<p>一个类的interface指的是它对外公开的部分，即被public的member data和member function</p>
+<ul>
+<li><p>一些名词描述：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115081538782.png" alt="image-20221115081538782" style="zoom:40%;" loading="lazy"></li>
+<li><p>一个例子：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115094552984.png" alt="image-20221115094552984" style="zoom:40%;" loading="lazy"></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/duwenxing/p/7476469.html">C++：继承访问属性（public/protected/private）</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/summer00072/article/details/81180242">子类被创建时与父类构造方法的关系</a></p>
+</li>
+<li><p>实例代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>(<span class="keyword">int</span> ii) : <span class="built_in">i</span>(ii) &#123; cout &lt;&lt; <span class="string">&quot;A:A()&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="built_in">A</span>() &#123; cout &lt;&lt; <span class="string">&quot;A:A() with no arg&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="comment">//想让编译通过就得给一个无参的default constructor</span></span><br><span class="line">    <span class="comment">//在B b;时会调用A的构造函数，因为B没写构造函数</span></span><br><span class="line">    <span class="comment">//或者给B添加一个构造函数，在其初始化列表中给A中的i赋值</span></span><br><span class="line">    ~<span class="built_in">A</span>() &#123; cout &lt;&lt; <span class="string">&quot;A:~A()&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;i:&quot;</span> &lt;&lt; i &lt;&lt; endl; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> ii)</span> </span>&#123; i = ii; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> <span class="keyword">public</span> A</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    B() : A(10) &#123; cout &lt;&lt; &quot;B:B()&quot; &lt;&lt; endl; &#125;</span></span><br><span class="line"><span class="comment">    要在初始化列表中初始化父类A的成员变量i（即调用A的构造函数）</span></span><br><span class="line"><span class="comment">    有上面B的构造函数，就不会调用A的default constructor</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">set</span>(<span class="number">100</span>);</span><br><span class="line">        <span class="built_in">print</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    B b;</span><br><span class="line">    b.<span class="built_in">print</span>();</span><br><span class="line">    b.<span class="built_in">f</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="16-父类子类的关系"><a href="#16-父类子类的关系" class="headerlink" title="16 父类子类的关系"></a>16 父类子类的关系</h2><ul>
+<li><p>名字相同，但参数表不同，是对函数的重载（overload）</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221115213327681.png" class title="image-20221115213327681" loading="lazy">
+
+<p>上述的写法可以<strong>避免code duplication</strong></p>
+</li>
+<li><p><strong>name hiding</strong>（OOP语言中只有C++有这种特性）</p>
+<p>对C++来说，父类A有一个overloaded函数（假设为<code>func(int i)</code>和<code>func()</code>），子类B有一个同名的函数，假设为<code>func()</code>，则在子类中<code>func()</code>会覆盖掉父类继承来的<code>func()</code></p>
+<p>想调用父类的那个函数需要<code>b.A::func(777);</code></p>
+</li>
+</ul>
+<h2 id="17-函数重载和默认参数"><a href="#17-函数重载和默认参数" class="headerlink" title="17 函数重载和默认参数"></a>17 函数重载和默认参数</h2><p>返回值不同的话不能构成overload</p>
+<p>默认参数：<code>void stash(int size, int intiQuility = 0);</code></p>
+<ul>
+<li><p>default argument一定要从最右侧的参数往左开始default</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116201905461.png" alt="image-20221116201905461" style="zoom:50%;" loading="lazy"></li>
+<li><p>default argument只能在函数声明里写，不能在函数定义里写</p>
+<p>因为这是再编译的时候检查的，这个函数还是需要俩参数，但是有函数声明中对参数默认值的声明，相当于在编译阶说明了这个函数的其中一个参数的值。并非生来如此，是后来说明的</p>
+</li>
+</ul>
+<h2 id="18-内联函数"><a href="#18-内联函数" class="headerlink" title="18 内联函数"></a>18 内联函数</h2><ul>
+<li><p>Overhead for a function call（函数调用时的额外开销）</p>
+<p>堆栈push和pop等开销</p>
+</li>
+<li><p>inline函数可以不需要上述操作，像预处理宏一样</p>
+<p>把函数代码<strong>嵌入</strong>到调用的位置，但仍然保证函数的独立性，如函数独立的命名空间等等</p>
+</li>
+<li><p>inline function</p>
+<p><strong>Repeat inline keyword at declaration and definition</strong></p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116203514313.png" alt="image-20221116203514313" style="zoom:50%;" loading="lazy"></li>
+<li><p>inline函数的body只用放在header file，即.h文件中</p>
+<p>inline函数的定义相当于只是声明</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116204248473.png" alt="image-20221116204248473" style="zoom:50%;" loading="lazy"></li>
+<li><p>inline may not inline:compiler may not honor your request to make a function inline</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116204818887.png" alt="image-20221116204818887" style="zoom:50%;" loading="lazy"></li>
+<li><p><strong>成员函数</strong>在类class声明的时候，就给出函数的body，则这些函数都是inline的</p>
+</li>
+<li><p>inline or not？</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116205152020.png" alt="image-20221116205152020" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="19-const"><a href="#19-const" class="headerlink" title="19 const"></a>19 const</h2><ul>
+<li><p>Pointers and const：</p>
+<blockquote>
+<p><strong>对象是const：不能通过该指针来修改对象（对象本身不一定是const）</strong></p>
+<p>指针是const：指针本身所指的位置不能修改</p>
+</blockquote>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116205922464.png" alt="image-20221116205922464" style="zoom:50%;" loading="lazy">
+
+<ul>
+<li><p>区分的理由是：const写在星号*的前面还是后面</p>
+<p>const在星号前面，**const <em>p**，const修饰的是</em>p，i.e.对象是const</p>
+<p>const在星号后面，* <strong>const p</strong>，const修饰的是p，i.e.指针是const</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116210307686.png" alt="image-20221116210307686" style="zoom:50%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p>一些例子：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116210648731.png" alt="image-20221116210648731" style="zoom:67%;" loading="lazy"></li>
+<li><p>要把一个大的对象作为参数传进函数</p>
+<p>为了避免拷贝等操作耗时耗力，可以用指针</p>
+<p>为了避免因指针导致对象被修改，可以用const</p>
+</li>
+<li><p>对于C++中的类和对象：</p>
+<ul>
+<li><p>在<strong>对象</strong>定义/声明前面加const意味着这个对象中的所有变量都不能被修改</p>
+</li>
+<li><blockquote>
+<p>在<strong>类的成员函数</strong>声明/定义时加const意味着这个函数不能修改类的成员变量</p>
+<p>因为<code>int get_value() const &#123; return value; &#125;</code>中const意味着<strong>this是const的</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="20-不可修饰的对象"><a href="#20-不可修饰的对象" class="headerlink" title="20 不可修饰的对象"></a>20 不可修饰的对象</h2><p>接19 const</p>
+<ul>
+<li><p>下面的这个函数，加了const后实际上相当于<strong>overload</strong></p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221116212912488.png" class title="image-20221116212912488" loading="lazy">
+
+<p>运行结果是”f() const”</p>
+<p>两个函数相当于：</p>
+<ul>
+<li><code>void f(A* this) &#123; cout &lt;&lt; &quot;f() &lt;&lt; endl; &quot;&#125;</code></li>
+<li><code>void f(const A* this) &#123; cout &lt;&lt; &quot;f() &lt;&lt; endl; &quot;&#125;</code></li>
+</ul>
+<p>即参数不同</p>
+</li>
+<li><p>如果类中有个成员变量是const的，则需要在initializer list中初始化</p>
+</li>
+</ul>
+<h2 id="21-引用"><a href="#21-引用" class="headerlink" title="21 引用"></a>21 引用</h2><ul>
+<li><p>引用需要在定义的时候给定初始值</p>
+<p><strong>除了参数表，和类的成员变量</strong></p>
+</li>
+<li><p>函数的参数：引用和值传递不能重载，因为调用形式相同</p>
+</li>
+<li><p>引用不能再指向别的变量  </p>
+</li>
+<li><p>Restrictions：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118191327439.png" alt="image-20221118191327439" style="zoom:50%;" loading="lazy">
+
+<p>离变量最近的符号决定了变量的基本类型</p>
+</li>
+</ul>
+<h2 id="22-向上造型"><a href="#22-向上造型" class="headerlink" title="22 向上造型"></a>22 向上造型</h2><ul>
+<li><p>子类的对象具有父类的对象的所有东西，所以一个子类的对象可以当做一个父类的对象使用</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118191538472.png" alt="image-20221118191538472" style="zoom:50%;" loading="lazy"></li>
+<li><p>Upcasting：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118192248236.png" alt="image-20221118192248236" style="zoom:50%;" loading="lazy"></li>
+<li><p>Upcasting examples：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118192601454.png" alt="image-20221118192601454" style="zoom:50%;" loading="lazy">
+
+<p>上述例子中，**<code>ep-&gt;print(cout);</code>调用的是Employee的print，即父类的print**</p>
+<p>函数调的是父类的函数，而由于父类有的数据子类也一定会有，所以Upcasting不会出问题</p>
+</li>
+</ul>
+<h2 id="23-多态性"><a href="#23-多态性" class="headerlink" title="23 多态性"></a>23 多态性</h2><p>例子：A drawing program</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118193043535.png" alt="image-20221118193043535" style="zoom:50%;" loading="lazy">
+
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118193104478.png" alt="image-20221118193104478" style="zoom:50%;" loading="lazy">
+
+<ul>
+<li><p>只要祖先中某个函数是virtual的，其子类继承的该函数都永远是virtual的</p>
+<p><strong>virtual限制的函数，有动态绑定</strong>的特性，在调用该函数时【<strong>需要通过对象的指针或引用来调用</strong>】，就调用所指对象所属的类型的对应函数</p>
+<p><strong>（需要用指针或引用来调用）</strong>才有动态绑定，不然没有动态绑定</p>
+<p>称之为<strong>Polymorphism</strong></p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118193936618.png" alt="image-20221118193936618" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="24-多态的实现"><a href="#24-多态的实现" class="headerlink" title="24 多态的实现"></a>24 多态的实现</h2><p>书接上文，讲如何实现多态</p>
+<p>有virtual的类的对象，内存开头都有一个隐藏的vptr指针，指向一张叫做vtable的表</p>
+<p><img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118195848533.png" alt="image-20221118195848533" style="zoom:50%;" loading="lazy"><img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118200024251.png" alt="image-20221118200024251" style="zoom:50%;" loading="lazy"></p>
+<ul>
+<li><p>析构也要是virtual的：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118201328080.png" alt="image-20221118201328080" style="zoom: 50%;" loading="lazy"></li>
+<li><p>调父类的func()</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221118201520415.png" alt="image-20221118201520415" style="zoom:50%;" loading="lazy"></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/cpp-virtual-functions.html">C++ 虚函数和纯虚函数</a></p>
+</li>
+<li><p>==override还没太懂==</p>
+</li>
+</ul>
+<h2 id="25-引用再研究"><a href="#25-引用再研究" class="headerlink" title="25 引用再研究"></a>25 引用再研究</h2><ul>
+<li><p>类的成员变量是引用类型时，必须在初始化列表中初始化</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221121155542728.png" alt="image-20221121155542728" style="zoom:50%;" loading="lazy"></li>
+<li><p>引用作为返回值时，<strong>不能返回函数内的本地变量，只能返回全局变量</strong></p>
+<p>返回函数内的本地变量能过编译（有warning），但是会出现<code>segment fault</code></p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221121155705940.png" alt="image-20221121155705940" style="zoom:50%;" loading="lazy">
+
+<p>除此之外，引用作为返回值后函数可以作为左值：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221121155929906.png" alt="image-20221121155929906" style="zoom:50%;" loading="lazy"></li>
+<li><p>传一个很大的参数进函数：使用const reference，如<code>const int&amp; arg</code></p>
+<p>为了节省空间，不能传递值，可以传指针；</p>
+<p>为了避免函数修改外面调用者的变量的值，可以传const *pointer；</p>
+<p>为了更好的可读性，可以用reference</p>
+</li>
+<li><p>函数返回类型是自己定义的类，则该函数也可以作为左值</p>
+</li>
+</ul>
+<h2 id="26-拷贝构造"><a href="#26-拷贝构造" class="headerlink" title="26 拷贝构造"></a>26 拷贝构造</h2><ul>
+<li><p>一个对象初始化的时候用另外一个对象初始化，调用的是拷贝构造函数</p>
+</li>
+<li><p>如果没有自己定义拷贝构造，C++会提供default copy constructor</p>
+</li>
+<li><p>拷贝构造函数的写法应该是：<code>A(const A&amp; a)&#123;...&#125;</code>，即参数应该是引用</p>
+<p>参数如果是个对象，则会造成对拷贝构造函数的递归调用，编译器会报error</p>
+</li>
+<li><p>写一个类 必备的三个函数：</p>
+<ul>
+<li><p>default constructor</p>
+</li>
+<li><p>virtual destructor</p>
+</li>
+<li><p>copy constructor</p>
+</li>
+</ul>
+</li>
+<li><p>如果不希望你写的类被拷贝，就写个private的拷贝构造</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zxc024000/article/details/80216823">C++将拷贝构造函数和赋值构造函数声明为私有</a></p>
+<ul>
+<li><p>“双杀”：默认情况，编译器以“位拷贝”的方式自动生成缺省的构造函数和赋值函数。若类中有指针变量，那么缺省的构造函数会出现错误。</p>
+<p>因为这个指针变量所指的空间析构多次</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="28-静态对象"><a href="#28-静态对象" class="headerlink" title="28 静态对象"></a>28 静态对象</h2><ul>
+<li><p>static: two basic meanings</p>
+<ul>
+<li><p>static storage: allocate once at a fixed address</p>
+</li>
+<li><p>visibility of a name: internal linkage</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122163142288.png" alt="image-20221122163142288" style="zoom:50%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lizhichao410/article/details/124121253">C++ 中 static 静态对象的使用总结</a></p>
+<ul>
+<li><p>全局静态对象：</p>
+<ul>
+<li><p>全局对象在程序执行 main() 之前已经分配好存储空间 ，在 main() 执行完成后进行释放。</p>
+</li>
+<li><p>相当于编译器在 main 函数的显示代码之前和之后分别插入了一段代码用来管理全局对象</p>
+</li>
+</ul>
+</li>
+<li><p>局部静态对象：</p>
+<ul>
+<li>局部静态对象是从其所在函数第一次被调用时进行创建，直到整个程序结束才进行销毁；局部静态对象只有在第一次调用时进行初始化操作。</li>
+<li>利用局部静态对象只会初始化一次、并且不使用不创建的特点，可以用来实现单例模式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="29-静态成员"><a href="#29-静态成员" class="headerlink" title="29 静态成员"></a>29 静态成员</h2><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2227.html">C++ static静态成员变量详解</a></p>
+<blockquote>
+<ul>
+<li>注意：static 成员变量的内存既不是在声明类时分配，也不是在创建对象时分配，而是在<strong>（类外）初始化时分配</strong>。反过来说，没有在类外初始化的 static 成员变量不能使用。</li>
+<li>静态成员变量在初始化时<strong>不能再加 static</strong>，但必须要有数据类型。被 private、protected、public 修饰的静态成员变量都可以用这种方式初始化。</li>
+<li>不能在初始化列表中初始化static成员变量，只能在其定义的时候初始化（即在类外）<pre><code>&quot;message&quot;: `&quot;&#39;int A::i&#39; is a static data member; it can only be initialized at its definition&quot;`
+</code></pre>
+</li>
+<li>可以用<code>Student::m_total = 10;</code>来访问，即直接用类的名字来访问</li>
+</ul>
+</blockquote>
+<p>对于成员变量，Hidden的功能已经可以由private/protected来实现</p>
+<p>剩下的Persistent功能：Independent of instances</p>
+<ul>
+<li><p>静态成员变量在所有的对象中是保持一致（persistent）的</p>
+<blockquote>
+<p>有时候我们希望在多个对象之间共享数据，对象 a 改变了某份数据后对象 b 可以检测到。共享数据的典型使用场景是计数，以前面的 Student 类为例，如果我们想知道班级中共有多少名学生，就可以设置一份共享的变量，每次创建对象时让该变量加 1。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">A</span>() &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123; <span class="keyword">this</span>-&gt;i = arg; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="keyword">this</span>-&gt;i &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> A::i = <span class="number">0</span>;<span class="comment">//在类的外面定义的时候要初始化</span></span><br><span class="line">			 <span class="comment">//且要用&quot;className::varName&quot;来定义，不能只用一个i，不然会&quot;ld:undefined reference to &#x27;A::i&#x27;&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    A a;</span><br><span class="line">    a.<span class="built_in">read</span>();</span><br><span class="line">    a.<span class="built_in">write</span>(<span class="number">7</span>);</span><br><span class="line">    a.<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2228.html">C++ static静态成员函数详解</a></p>
+<blockquote>
+<ul>
+<li>静态成员函数与普通成员函数的根本区别在于：普通成员函数有 this 指针，可以访问类中的任意成员；而<strong>静态成员函数没有 this 指针</strong>，<u>只能访问静态成员</u>（包括静态成员变量和静态成员函数）。</li>
+<li>和静态成员变量类似，静态成员函数在声明时要加 static，在定义时不能加 static。静态成员函数可以通过类来调用（一般都是这样做），也可以通过对象来调用，上例仅仅演示了如何通过类来调用。</li>
+<li>其与类的对象存在与否无关，在对象不存在的时候就可以被调用</li>
+</ul>
+</blockquote>
+<h2 id="30-运算符重载-基本规则"><a href="#30-运算符重载-基本规则" class="headerlink" title="30 运算符重载-基本规则"></a>30 运算符重载-基本规则</h2><ul>
+<li><p>允许重载的运算符</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122200908922.png" alt="image-20221122200908922" style="zoom:50%;" loading="lazy"></li>
+<li><p>不允许重载的运算符</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122201009451.png" alt="image-20221122201009451" style="zoom:50%;" loading="lazy"></li>
+<li><p>Restriction限制：</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122201234857.png" alt="image-20221122201234857" style="zoom:50%;" loading="lazy"></li>
+<li><p>operator关键字+重载的运算符</p>
+<p><code>const String String::operator + (const String&amp; that);</code></p>
+<p><code>const String operator + (const String&amp; l, const String&amp; r);</code></p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221122201545217.png" alt="image-20221122201545217" style="zoom:50%;" loading="lazy">
+
+<p>作为member function，不能做z=3+y</p>
+<p>作为global function，能做z=3+y</p>
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221123211927920.png" alt="image-20221123211927920" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h2 id="31-运算符重载-原型"><a href="#31-运算符重载-原型" class="headerlink" title="31 运算符重载-原型"></a>31 运算符重载-原型</h2><p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/hymn1993/article/details/124421080">【翁恺】运算符重载-原型</a></strong></p>
+<p><strong>本章就看上面的记录即可</strong></p>
+<p>【是否返回引用】操作符对receiver自己做了修改，则返回引用（如++，–，=）；若返回了一个新的对象，则不返回引用，返回一个对象（如+，-，*，/）</p>
+<p>【是否返回const】返回值能不能做左值，能做左值的返回类型不带const（如=，[]），不能做左值的返回类型要带const（如+，a+b=6错误）</p>
+<p>【参数一定引用】重载一定对某个对象进行重载，所以传进去的参数一定是引用类型的。</p>
+<p>【参数是否const】参数能不能加const（member function对receiver自身的const加在函数原型尾部），修改算子的不能加const（如++，–，=），不修改算子的参数要加const，this加const（如+，-，*，/）</p>
+<h2 id="32-运算符重载-赋值"><a href="#32-运算符重载-赋值" class="headerlink" title="32 运算符重载-赋值"></a>32 运算符重载-赋值</h2><p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/hymn1993/article/details/124421885">【翁恺】运算符重载-赋值</a></strong></p>
+<p><strong>本章同样看上面的记录</strong></p>
+<p>讲的是运算符重载中，赋值运算符重载这个特殊的例子</p>
+<ul>
+<li><p>默认的赋值运算符：</p>
+<ul>
+<li>the compiler will automatically create a <strong>type::oprator=(type)</strong> if you don’t make one</li>
+<li>它做的是memberwise assignment，即所有成员变量直接赋值</li>
+</ul>
+</li>
+<li><p>赋值运算符重载的标准写法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">T&amp; T::<span class="keyword">operator</span>=(<span class="keyword">const</span> T&amp; rhs)&#123;</span><br><span class="line">    <span class="comment">//check for self assignment</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span> != &amp;rhs)&#123;<span class="comment">//如果是自己赋值给自己，可能在自己被赋值之前被释放，比如new到的东西</span></span><br><span class="line">        <span class="comment">//perform assignment</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;<span class="comment">//this checks address vs. check value (*this != rhs)</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/image-20221124100956525.png" class title="image-20221124100956525" loading="lazy"></li>
+</ul>
+<h2 id="33-运算符重载-类型转换"><a href="#33-运算符重载-类型转换" class="headerlink" title="33 运算符重载-类型转换"></a>33 运算符重载-类型转换</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hymn1993/article/details/124422860">【翁恺】运算符重载-类型转换</a></p>
+<ul>
+<li><p>compilers perform implicit conversions using:</p>
+<ul>
+<li><p>single-argument constructor</p>
+<ul>
+<li><p>即先调用单个参数的构造函数将参数构造为目标参数类型的对象，再调用目标函数，上面记录里有相关例子</p>
+</li>
+<li><p>要阻止隐式调用构造函数来进行类型转换，可以在构造函数前面加上关键字<code>explicit</code></p>
+</li>
+</ul>
+</li>
+<li><p>implicit type conversion operators</p>
+<ul>
+<li><p>operator name is any type descriptor</p>
+<p>操作符的名字是某一个类型，如double</p>
+</li>
+<li><p>return type is same as function name</p>
+<p>No return type：没有返回类型</p>
+</li>
+<li><p>No explicit arguments</p>
+<p>没有显式的参数</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">double</span><span class="params">()</span> <span class="keyword">const</span></span>;<span class="comment">//Rational to double  this 变成 double</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Rational::<span class="keyword">operator</span> <span class="title">double</span><span class="params">()</span> <span class="keyword">const</span></span>&#123; <span class="comment">// 没有返回类型</span></span><br><span class="line">    <span class="keyword">return</span> numerator_/(<span class="keyword">double</span>)denominator_;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Rational <span class="title">r</span><span class="params">(<span class="number">1</span>,<span class="number">3</span>)</span></span>;</span><br><span class="line"><span class="keyword">double</span> d = <span class="number">1.3</span>*r;<span class="comment">//r=&gt; double</span></span><br></pre></td></tr></table></figure>
+
+<p>用运算符重载的类型转换还是尽量别用， 因为他是implicit的，不容易理解，还是用专门的例如C++中的<code>to_string()</code>这种函数比较好</p>
+<h2 id="34-35-模板"><a href="#34-35-模板" class="headerlink" title="34/35 模板"></a>34/35 模板</h2><p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/hymn1993/article/details/124424520">【翁恺】模板</a></strong></p>
+<p>Template：use types as parameters in class or function definitions</p>
+<p>function template; templated function; class template; templated class</p>
+<p>例子如下：template生效的是跟在<code>template&lt;class T&gt;</code>后面的函数or类</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mySwap</span><span class="params">(T &amp;a, T &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    T tmp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = tmp;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">mySwap</span>(a, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果function template的参数表中没有用到T，则需要加一个尖括号，在尖括号中指出T的类型</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;...&#125;</span><br><span class="line">foo&lt;<span class="keyword">int</span>&gt;();<span class="comment">//type T is int</span></span><br><span class="line">foo&lt;<span class="keyword">float</span>&gt;();<span class="comment">//tyoe T is float</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<p><strong>class template</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(vector&lt;T&gt;&amp; arr)</span></span>&#123;  <span class="comment">// 函数模板  声明  </span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">size_t</span> last = arr.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; last; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = last; i &lt; j; j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &lt; arr[j<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="comment">//which swap?</span></span><br><span class="line">                <span class="built_in">swap</span>(arr[j], arr[j<span class="number">-1</span>]);</span><br><span class="line">                <span class="comment">//T要重载&quot;&lt;&quot;运算符，还要支持swap函数</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Pair类模板：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>,<span class="keyword">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pair</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T1 key;  <span class="comment">//关键字</span></span><br><span class="line">    T2 value;  <span class="comment">//值</span></span><br><span class="line">    <span class="built_in">Pair</span>(T1 k,T2 v):<span class="built_in">key</span>(k),<span class="built_in">value</span>(v) &#123; &#125;;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Pair&lt;T1,T2&gt; &amp; p) <span class="keyword">const</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>,<span class="keyword">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="keyword">bool</span> Pair&lt;T1,T2&gt;::<span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Pair&lt;T1,T2&gt; &amp; p) <span class="keyword">const</span></span><br><span class="line"><span class="comment">//Pair的成员函数 operator &lt;</span></span><br><span class="line">&#123; </span><br><span class="line">    <span class="keyword">return</span> key &lt; p.key;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Pair&lt;string,<span class="keyword">int</span>&gt; <span class="title">student</span><span class="params">(<span class="string">&quot;Tom&quot;</span>,<span class="number">19</span>)</span></span>; <span class="comment">//实例化出一个类 Pair&lt;string,int&gt;</span></span><br><span class="line">    cout &lt;&lt; student.key &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; student.value;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="36-异常基本概念"><a href="#36-异常基本概念" class="headerlink" title="36 异常基本概念"></a>36 异常基本概念</h2></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/" title="C++学习">https://wan-nan.github.io/2022/11/06/C++%E5%AD%A6%E4%B9%A0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/10/29/LEETCODE-TOP100/" rel="next" title="LEETCODE-TOP100"><span class="post-nav-text">LEETCODE-TOP100</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
