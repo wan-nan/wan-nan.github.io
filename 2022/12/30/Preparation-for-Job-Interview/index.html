@@ -22,17 +22,235 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta property="og:type" content="article">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="字节青训营青训营 - 后端练习题 - DAY1 第一题：36进制加法 nowcoder.36进制加法  第二题有点怪，暂且认为是一个DFS&#x2F;BFS，感觉题目描述的不清楚，没做    第三题：有效 IP 地址（小模拟）  LeetCode有简化版题目：93. 复原 IP 地址  HTTP和HTTPS的区别  Client 在使用 Https 协议访问网站进行通信的过程中，以下说法正确的是？A. 只用">
+<meta property="og:type" content="article">
 <meta property="og:title" content="冲！(for Job-Interview)">
 <meta property="og:url" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/index.html">
 <meta property="og:site_name" content="风物">
+<meta property="og:description" content="字节青训营青训营 - 后端练习题 - DAY1 第一题：36进制加法 nowcoder.36进制加法  第二题有点怪，暂且认为是一个DFS&#x2F;BFS，感觉题目描述的不清楚，没做    第三题：有效 IP 地址（小模拟）  LeetCode有简化版题目：93. 复原 IP 地址  HTTP和HTTPS的区别  Client 在使用 Https 协议访问网站进行通信的过程中，以下说法正确的是？A. 只用">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20221231194500759.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/19063731-5ec10e6ae2c32587.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/1142/format/webp">
 <meta property="article:published_time" content="2022-12-30T12:57:49.000Z">
-<meta property="article:modified_time" content="2022-12-30T13:01:03.287Z">
+<meta property="article:modified_time" content="2023-01-04T10:24:05.299Z">
 <meta property="article:author" content="wan_nan">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="daily">
-<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button sidebar-nav-active" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel sidebar-panel-active" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">42</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content">此文章未包含目录</div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">冲！(for Job-Interview)</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-12-30 20:57:49" itemprop="dateCreated datePublished" datetime="2022-12-30T20:57:49+08:00">2022-12-30</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">0</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">1m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/" title="冲！(for Job-Interview)">https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/" rel="next" title="C++学习"><span class="post-nav-text">C++学习</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">43</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5"><span class="toc-number">1.</span> <span class="toc-text">字节青训营</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY1"><span class="toc-number">1.1.</span> <span class="toc-text">青训营 - 后端练习题 - DAY1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY2"><span class="toc-number">1.2.</span> <span class="toc-text">青训营 - 后端练习题 - DAY2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY3"><span class="toc-number">1.3.</span> <span class="toc-text">青训营 - 后端练习题 - DAY3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY4"><span class="toc-number">1.4.</span> <span class="toc-text">青训营 - 后端练习题 - DAY4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY5"><span class="toc-number">1.5.</span> <span class="toc-text">青训营 - 后端练习题 - DAY5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY6"><span class="toc-number">1.6.</span> <span class="toc-text">青训营 - 后端练习题 - DAY6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY7"><span class="toc-number">1.7.</span> <span class="toc-text">青训营 - 后端练习题 - DAY7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY8"><span class="toc-number">1.8.</span> <span class="toc-text">青训营 - 后端练习题 - DAY8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY9"><span class="toc-number">1.9.</span> <span class="toc-text">青训营 - 后端练习题 - DAY9</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">冲！(for Job-Interview)</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-12-30 20:57:49" itemprop="dateCreated datePublished" datetime="2022-12-30T20:57:49+08:00">2022-12-30</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-01-04 18:24:05" itemprop="dateModified" datetime="2023-01-04T18:24:05+08:00">2023-01-04</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">2.3k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">8m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="字节青训营"><a href="#字节青训营" class="headerlink" title="字节青训营"></a>字节青训营</h2><h3 id="青训营-后端练习题-DAY1"><a href="#青训营-后端练习题-DAY1" class="headerlink" title="青训营 - 后端练习题 - DAY1"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7181290840403214373">青训营 - 后端练习题 - DAY1</a></h3><ul>
+<li><p>第一题：<strong>36进制加法</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/c5db069fd9d64e6e9cf5fd68860abcdd">nowcoder.36进制加法</a></p>
+</li>
+<li><p>第二题有点怪，暂且认为是一个<strong>DFS/BFS</strong>，感觉题目描述的不清楚，没做</p>
+</li>
+<li><ul>
+<li><input disabled type="checkbox"> 第三题：有效 IP 地址（小<strong>模拟</strong>）</li>
+</ul>
+<p>LeetCode有简化版题目：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/restore-ip-addresses/">93. 复原 IP 地址</a></p>
+</li>
+<li><p><strong>HTTP和HTTPS的区别</strong></p>
+<blockquote>
+<p>Client 在使用 Https 协议访问网站进行通信的过程中，以下说法正确的是？<br>A. 只用到了对称加密技术<br>B. 只用到了非对称加密技术<br>C. 没有用到任何加密技术<br>D. 同时用到了对称加密和非对称加密技术</p>
+</blockquote>
+<p>答案是D，详见<a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http_interview.html#http-%E4%B8%8E-https:~:text=%23-,HTTP%20%E4%B8%8E%20HTTPS,-%23">小林coding</a></p>
+</li>
+<li><p><strong>操作系统中堆和栈的区别</strong></p>
+<blockquote>
+<p>以下哪些是操作系统中堆和栈的区别？<br>A. 增长方向<br>B. 空间大小<br>C. 分配方式<br>D. 管理方式</p>
+</blockquote>
+<p>答案是ABCD，详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/dream0130__/article/details/105453234">操作系统中的堆栈区别</a></p>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY2"><a href="#青训营-后端练习题-DAY2" class="headerlink" title="青训营 - 后端练习题 - DAY2"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7181650524755165239">青训营 - 后端练习题 - DAY2</a></h3><ul>
+<li><p>Golang中切片初始化的方式：</p>
+<blockquote>
+<p>Go 中关于整型切片的初始化，以下正确的是？<br>A. s := []int{1, 2, 3, 4, 5}<br>B. s := make([]int)<br>C. s := make([]int, 0)<br>D. s := make([]int, 5, 10)</p>
+</blockquote>
+<p>答案是ACD，原因：</p>
+<ul>
+<li>因为 Golang 语言是静态语言，它不能像动态语言那样，在运行时可以通过分析变量的值，自动确定变量的内存边界，所以在 Golang 语言中，使用变量之前，需要先声明变量，且<strong>要求可以通过声明确定变量的内存边界</strong>。</li>
+</ul>
+</li>
+<li><p>组原</p>
+<blockquote>
+<p>以下哪些操作可能触发本地 CPU cache 失效？<br>A. 本地读取<br>B. 本地写入<br>C. 远端读取<br>D. 远端写入</p>
+</blockquote>
+<p>答案是D</p>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY3"><a href="#青训营-后端练习题-DAY3" class="headerlink" title="青训营 - 后端练习题 - DAY3"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182029273375440933">青训营 - 后端练习题 - DAY3</a></h3><ul>
+<li><p>解决哈希冲突的手段：</p>
+<blockquote>
+<p>以下哪些是解决哈希冲突的手段？<br>A. 拉链<br>B. 开放地址<br>C. 再散列<br>D. 滑动窗口</p>
+</blockquote>
+<p>四种方法解决哈希冲突：</p>
+<ul>
+<li><p>开放定址法</p>
+<p>在开放定址法中根据探查序列生成方式的不同，细分有：线性探查法、平方探查法、双散列函数探查法、伪随机探查法等。</p>
+</li>
+<li><p>链地址法</p>
+</li>
+<li><p>再哈希法（再散列法）</p>
+</li>
+<li><p>公共溢出区法</p>
+</li>
+</ul>
+<p>本题选ABC</p>
+</li>
+<li><p>TLS连接</p>
+<blockquote>
+<p>建立 TLS1.2 连接需要几次握手？<br>A. 3<br>B. 4<br>C. 6<br>D. 7</p>
+</blockquote>
+<ul>
+<li><p>TLS协议在协议栈中的位置</p>
+<img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png" alt="HTTP 与 HTTPS 网络层" style="zoom:50%;" loading="lazy"></li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http_interview.html#https-%E8%A7%A3%E5%86%B3%E4%BA%86-http-%E7%9A%84%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98:~:text=%23-,HTTPS%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E7%9A%84%EF%BC%9F%E5%85%B6%E9%97%B4%E4%BA%A4%E4%BA%92%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F,-SSL/TLS%20%E5%8D%8F%E8%AE%AE">TCP三次握手，TLS四次握手</a></strong></p>
+<p><a target="_blank" rel="noopener" href="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/23-HTTPS%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">图示连接</a></p>
+</li>
+</ul>
+<p>答案是D.7</p>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY4"><a href="#青训营-后端练习题-DAY4" class="headerlink" title="青训营 - 后端练习题 - DAY4"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182395327498944567">青训营 - 后端练习题 - DAY4</a></h3><ul>
+<li><p>MYSQL数据库</p>
+<blockquote>
+<p>MySQL 数据库中是通过以下哪种日志实现 MVCC 机制的？<br>A. Undo Log<br>B. Redo Log<br>C. Binary Log<br>D. Slow Log</p>
+</blockquote>
+<p>答案是A. <strong>Undo Log</strong></p>
+<ul>
+<li><p>MVCC（Multi-Version Concurrency Control），即多版本并发控制</p>
+</li>
+<li><p>几种log</p>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20221231194500759.png" class title="image-20221231194500759" loading="lazy"></li>
+</ul>
+</li>
+<li><p>排序</p>
+<blockquote>
+<p>关于排序算法以下结论正确的是？<br>A. 归并排序任何情况下都能保持时间复杂度为 O(n×log n)<br>B. 插入排序时间复杂度为 O(n×n)，所以在任何情况下都比快速排序慢<br>C. 快速排序的最坏情况下的时间复杂度为 O(n×n)<br>D. 希尔排序任何情况下都比插入排序更快</p>
+</blockquote>
+<p>答案是AC</p>
+<ul>
+<li><p>几种排序算法<a target="_blank" rel="noopener" href="https://blog.csdn.net/Real_Fool_/article/details/114692744">这里</a>都有介绍</p>
+<p><strong>直接插入排序细节容易忘记</strong>（nju面试还问过）</p>
+<p><strong>快排边界问题比较多</strong>（下面整理了模板）</p>
+<p><strong>基数排序、计数排序、桶排序</strong>是三大不常见的排序，都是对数据分布有苛刻的要求的，或是空间复杂度较高，不通用</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img" loading="lazy"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/submission/787/">快排</a>模板（<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/discussion/content/3430/">边界问题</a>太多，就记模板吧）：</p>
+<ul>
+<li>do-while循环多此一举的原因</li>
+</ul>
+</li>
+<li><p>do-while循环判断条件是&lt;和&gt;，不是≤和≥</p>
+<ul>
+<li>递归调用的是j和j+1</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = l - <span class="number">1</span>, j = r + <span class="number">1</span>, x = q[l + r &gt;&gt; <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span> i ++ ; <span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line">        <span class="keyword">do</span> j -- ; <span class="keyword">while</span> (q[j] &gt; x);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(q[i], q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(q, l, j), <span class="built_in">quick_sort</span>(q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY5"><a href="#青训营-后端练习题-DAY5" class="headerlink" title="青训营 - 后端练习题 - DAY5"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182766577958256698">青训营 - 后端练习题 - DAY5</a></h3><ul>
+<li><p>关系型数据库RDBMS（Relational Database Management System）</p>
+<blockquote>
+<p>以下哪些是 RDBMS 跟常见的对象存储系统的不同点？<br>A. 数据库支持事务<br>B. 数据库向用户暴露 put/get 接口<br>C. RDBMS 一般存储结构化数据<br>D. 数据库里的数据不能修改，只能删除后重新写入</p>
+</blockquote>
+<p>答案是AC</p>
+</li>
+<li><p>存储系统IO性能优化</p>
+<blockquote>
+<p>常见的存储系统 IO 性能优化方式有哪些？<br>A. 尽可能多设计随机读写逻辑<br>B. 预读<br>C. 减少 IO 路径上的内存拷贝<br>D. batch 写入</p>
+</blockquote>
+<p>答案是BCD</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a718515028/article/details/121091699">顺序读写和随机读写区别和实现</a></p>
+<p><strong>顺序读写要远远优于随机读写</strong></p>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY6"><a href="#青训营-后端练习题-DAY6" class="headerlink" title="青训营 - 后端练习题 - DAY6"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183133389908607013">青训营 - 后端练习题 - DAY6</a></h3><ul>
+<li><p>MD5</p>
+<blockquote>
+<p>关于 MD5 以下哪些说法是正确的？<br>A. MD5 可以用于加密密码<br>B. MD5 不可逆<br>C. 对于不同的输入， MD5 一定输出不一样的结果<br>D. 对于不同长度的输入，MD5 一定输出相同长度的结果</p>
+</blockquote>
+<p>答案是BD</p>
+<p>A：MD5加盐做密码检验是可以的，但是不能把他叫做加密，一个加密算法必须要有解密算法，MD5是信息摘要算法</p>
+<p>C：MD5已经被证实无法避免碰撞</p>
+</li>
+<li><p>红黑树</p>
+<blockquote>
+<p>关于红黑树以下说法正确的是？<br>A. 红黑树是平衡二叉树，任意两个子树的高度差不超过 1<br>B. 红黑树从一个节点到该节点的子孙节点的所有路径上包含相同数目的红色节点<br>C. <strong>红黑树插入节点时最多经过 3 次旋转达到平衡</strong><br>D. <strong>红黑树进行插入操作时需要解决红红冲突</strong></p>
+</blockquote>
+<p>答案是CD</p>
+<p>A：</p>
+<p>红黑树特性之一：<strong>从一个节点到该节点的子孙节点的所有路径上包含相同数目的黑节点</strong>，确保没有一条路径会比其他路径长出俩倍。因而，红黑树是<strong>相对接近平衡</strong>的二叉树。</p>
+<p>而“任意两个子树的高度差不超过1”是平衡二叉树的定义，红黑树是“长的子树长度不会超过短的长度的2倍”，所以<strong>红黑树牺牲了查找的性能，但是插入和删除的性能更好</strong>。</p>
+<p>B：</p>
+<p>应该是：相同数目的黑色节点</p>
+<p>C和D记一下；</p>
+<ul>
+<li>除此之外，补充一个：**<a target="_blank" rel="noopener" href="https://blog.csdn.net/w57w57w57/article/details/5921598">高度为n的平衡二叉树的最少节点数</a>**：$F(n) = F(n-1) + F(n -2 ) + 1$</li>
+</ul>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY7"><a href="#青训营-后端练习题-DAY7" class="headerlink" title="青训营 - 后端练习题 - DAY7"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183508747627528250">青训营 - 后端练习题 - DAY7</a></h3><ul>
+<li><p>排序</p>
+<blockquote>
+<p>在最好情况下，下列排序算法中，哪些排序算法所需比较的关键次数最少？<br>A. 冒泡<br>B. 归并<br>C. 快速<br>D. 直接插入</p>
+</blockquote>
+<p>排序的最好情况下的时间复杂度也要记</p>
+<p>冒泡和直接插入最好情况下都是$O(n)$</p>
+<p>归并和快速排序最好情况下都是$O(nlogn)$</p>
+<p>答案是AD</p>
+</li>
+<li><p>Golang</p>
+<blockquote>
+<p>以下哪些是 Go 支持的指针运算？<br>A. 通过 &amp; 取地址<br>B. 对指针进行自增<br>C. 下标运算<br>D. 通过 * 解引用</p>
+</blockquote>
+<p>答案是AD</p>
+<p>Go 语言支持指针，但只支持指针的取址运算符(&amp;) 和解址运算符(<em>)，*<em>不支持指针的算术运算</em></em></p>
+<p>但是<a target="_blank" rel="noopener" href="https://blog.csdn.net/yzf279533105/article/details/94745134">切片可以通过下标访问</a>（上面说的应该是不能给指针取下标）</p>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY8"><a href="#青训营-后端练习题-DAY8" class="headerlink" title="青训营 - 后端练习题 - DAY8"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183879970127609915">青训营 - 后端练习题 - DAY8</a></h3><ul>
+<li><p>计算机网络</p>
+<blockquote>
+<p>在 MTU=1500 字节的以太网中，TCP 报文的最大分段大小为多少字节？<br>A. 1440<br>B. 1460<br>C. 1420<br>D. 1480</p>
+</blockquote>
+<p>MTU这个概念是指数据帧中有效载荷的最大长度，不包括帧首部的长度。</p>
+<p>所以TCP报文的有效载荷=1500B-<strong>20B(IP数据报首部)</strong>-<strong>20B( TCP报文首部)</strong>=1460B</p>
+<p>答案是B</p>
+</li>
+<li><p>Skiplist</p>
+<blockquote>
+<p>关于经典的 Skiplist（原始论文实现）以下结论正确的是？<br>A. 每次的查找都从 head 节点的第 0 层（最底层）开始寻找<br>B. skiplist 的插入节点的层级都是固定的<br>C. skiplist 的元素都是有序的<br>D. skiplist 平均查询时间复杂度为 O(log n)</p>
+</blockquote>
+<p>答案是CD</p>
+<p>关于跳表（Skiplist）可以参考<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9d8296562806">这篇文章</a></p>
+<ul>
+<li><p>跳表是<strong>可以实现二分查找的有序链表</strong>。</p>
+</li>
+<li><p>查找示意图：每次的查找都从 head 节点的最顶层开始查找</p>
+<img src="https://upload-images.jianshu.io/upload_images/19063731-5ec10e6ae2c32587.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/1142/format/webp" alt="img" style="zoom:67%;" loading="lazy"></li>
+<li><p>跳表的插入节点的层级是随机的，使用randomLevel()概率算法来确定节点插入不同层级的概率，再确定最终插入层级</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="青训营-后端练习题-DAY9"><a href="#青训营-后端练习题-DAY9" class="headerlink" title="青训营 - 后端练习题 - DAY9"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7184241688041226299">青训营 - 后端练习题 - DAY9</a></h3><ul>
+<li><p>排序稳定性</p>
+<blockquote>
+<p>以下哪些排序算法是不稳定的？<br>A. 快速排序<br>B. 归并排序<br>C. 基数排序<br>D. 堆排序</p>
+</blockquote>
+<p>答案是AD</p>
+</li>
+<li><p>Golang语言</p>
+<blockquote>
+<p>关于 Go 语言以下结论正确的是？<br>A. 在多核机器中，核数越多，使用多个 goroutines 写入 sync.Map 的性能越好<br>B. <strong>只调用一次 rand.Seed，则之后 rand.Int 的生成序列是固定的</strong><br>C. <strong>放入 sync.Pool 中的结构体可能随时被回收</strong><br>D. <strong>Goroutine 的栈不仅会增长而且还会缩容</strong></p>
+</blockquote>
+<p>答案是BCD</p>
+</li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/" title="冲！(for Job-Interview)">https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2023/01/08/2022_%E8%B0%A2%E5%B9%95_%F0%9F%90%B1%E2%80%8D%F0%9F%92%BB/" rel="prev" title="2022_谢幕_🐱‍💻"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">2022_谢幕_🐱‍💻</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/" rel="next" title="C++学习"><span class="post-nav-text">C++学习</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2021-07-03T00:00:00');
   const now = new Date();
