@@ -22,24 +22,122 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="字节青训营青训营 - 后端练习题 - DAY1 第一题：36进制加法 nowcoder.36进制加法  第二题有点怪，暂且认为是一个DFS&#x2F;BFS，感觉题目描述的不清楚，没做    第三题：有效 IP 地址（小模拟）  LeetCode有简化版题目：93. 复原 IP 地址  HTTP和HTTPS的区别  Client 在使用 Https 协议访问网站进行通信的过程中，以下说法正确的是？A. 只用">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="面经八股自己的记录用于回答自己的经验等相关问题 平时用到的Linux命令 netstat  Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)及其相关查询等等。   ping  Linux ping 命令用于检测主机。 执行 ping 指令会使用 ICMP 传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冲！(for Job-Interview)">
 <meta property="og:url" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/index.html">
 <meta property="og:site_name" content="风物">
-<meta property="og:description" content="字节青训营青训营 - 后端练习题 - DAY1 第一题：36进制加法 nowcoder.36进制加法  第二题有点怪，暂且认为是一个DFS&#x2F;BFS，感觉题目描述的不清楚，没做    第三题：有效 IP 地址（小模拟）  LeetCode有简化版题目：93. 复原 IP 地址  HTTP和HTTPS的区别  Client 在使用 Https 协议访问网站进行通信的过程中，以下说法正确的是？A. 只用">
+<meta property="og:description" content="面经八股自己的记录用于回答自己的经验等相关问题 平时用到的Linux命令 netstat  Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)及其相关查询等等。   ping  Linux ping 命令用于检测主机。 执行 ping 指令会使用 ICMP 传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170031375.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170124328.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112214755152.png">
 <meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20221231194500759.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/19063731-5ec10e6ae2c32587.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/1142/format/webp">
 <meta property="article:published_time" content="2022-12-30T12:57:49.000Z">
-<meta property="article:modified_time" content="2023-01-04T10:24:05.299Z">
+<meta property="article:modified_time" content="2023-01-28T15:33:08.270Z">
 <meta property="article:author" content="wan_nan">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="daily">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">43</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5"><span class="toc-number">1.</span> <span class="toc-text">字节青训营</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY1"><span class="toc-number">1.1.</span> <span class="toc-text">青训营 - 后端练习题 - DAY1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY2"><span class="toc-number">1.2.</span> <span class="toc-text">青训营 - 后端练习题 - DAY2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY3"><span class="toc-number">1.3.</span> <span class="toc-text">青训营 - 后端练习题 - DAY3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY4"><span class="toc-number">1.4.</span> <span class="toc-text">青训营 - 后端练习题 - DAY4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY5"><span class="toc-number">1.5.</span> <span class="toc-text">青训营 - 后端练习题 - DAY5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY6"><span class="toc-number">1.6.</span> <span class="toc-text">青训营 - 后端练习题 - DAY6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY7"><span class="toc-number">1.7.</span> <span class="toc-text">青训营 - 后端练习题 - DAY7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY8"><span class="toc-number">1.8.</span> <span class="toc-text">青训营 - 后端练习题 - DAY8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5-%E5%90%8E%E7%AB%AF%E7%BB%83%E4%B9%A0%E9%A2%98-DAY9"><span class="toc-number">1.9.</span> <span class="toc-text">青训营 - 后端练习题 - DAY9</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">冲！(for Job-Interview)</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-12-30 20:57:49" itemprop="dateCreated datePublished" datetime="2022-12-30T20:57:49+08:00">2022-12-30</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-01-04 18:24:05" itemprop="dateModified" datetime="2023-01-04T18:24:05+08:00">2023-01-04</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">2.3k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">8m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="字节青训营"><a href="#字节青训营" class="headerlink" title="字节青训营"></a>字节青训营</h2><h3 id="青训营-后端练习题-DAY1"><a href="#青训营-后端练习题-DAY1" class="headerlink" title="青训营 - 后端练习题 - DAY1"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7181290840403214373">青训营 - 后端练习题 - DAY1</a></h3><ul>
+<meta name="twitter:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170031375.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">44</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E7%BB%8F%E5%85%AB%E8%82%A1"><span class="toc-number">1.</span> <span class="toc-text">面经八股</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">自己的记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84Linux%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.1.</span> <span class="toc-text">平时用到的Linux命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%9E%97coding-%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C"><span class="toc-number">1.2.</span> <span class="toc-text">小林coding-图解网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">TCP&#x2F;IP 网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E5%88%B0%E7%BD%91%E9%A1%B5%E6%98%BE%E7%A4%BA%EF%BC%8C%E6%9C%9F%E9%97%B4%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.2.</span> <span class="toc-text">键入网址到网页显示，期间发生了什么</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5%E6%96%87%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">青训营文章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E9%99%90%E6%B5%81"><span class="toc-number">2.1.</span> <span class="toc-text">并发场景下的限流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E4%B8%8Ewebsocket%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">HTTP协议与websocket协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka-%E7%A7%91%E6%99%AE"><span class="toc-number">2.3.</span> <span class="toc-text">Kafka 科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">字节青训营练习题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY1"><span class="toc-number">3.1.</span> <span class="toc-text">DAY1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY2"><span class="toc-number">3.2.</span> <span class="toc-text">DAY2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY3"><span class="toc-number">3.3.</span> <span class="toc-text">DAY3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY4"><span class="toc-number">3.4.</span> <span class="toc-text">DAY4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY5"><span class="toc-number">3.5.</span> <span class="toc-text">DAY5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY6"><span class="toc-number">3.6.</span> <span class="toc-text">DAY6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY7"><span class="toc-number">3.7.</span> <span class="toc-text">DAY7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY8"><span class="toc-number">3.8.</span> <span class="toc-text">DAY8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY9"><span class="toc-number">3.9.</span> <span class="toc-text">DAY9</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">冲！(for Job-Interview)</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-12-30 20:57:49" itemprop="dateCreated datePublished" datetime="2022-12-30T20:57:49+08:00">2022-12-30</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-01-28 23:33:08" itemprop="dateModified" datetime="2023-01-28T23:33:08+08:00">2023-01-28</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">3.8k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">14m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="面经八股"><a href="#面经八股" class="headerlink" title="面经八股"></a>面经八股</h1><h2 id="自己的记录"><a href="#自己的记录" class="headerlink" title="自己的记录"></a>自己的记录</h2><p>用于回答自己的经验等相关问题</p>
+<h3 id="平时用到的Linux命令"><a href="#平时用到的Linux命令" class="headerlink" title="平时用到的Linux命令"></a>平时用到的Linux命令</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.HTML">netstat</a></p>
+<blockquote>
+<p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)及其相关查询等等。</p>
+</blockquote>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230112170031375.png" alt="image-20230112170031375" style="zoom: 33%;" loading="lazy"></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-ping.html">ping</a></p>
+<blockquote>
+<p>Linux ping 命令用于检测主机。</p>
+<p>执行 ping 指令会使用 ICMP 传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。</p>
+</blockquote>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230112170124328.png" alt="image-20230112170124328" style="zoom: 33%;" loading="lazy"></li>
+<li><p>ssh</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kangyingjie/p/16259085.html#:~:text=%E8%BF%94%E5%9B%9E%E7%BB%99client%E3%80%82-,ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95%E5%8E%9F%E7%90%86,-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95">ssh免密登录详细原理</a>：包括client和server如何鉴别对方</p>
+<p>ssh免密登录的时候的简易流程：<u>即client在把公钥交给server之后双方用A的公钥和私钥相互传递一次信息</u></p>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230112214755152.png" alt="image-20230112214755152" style="zoom:50%;" loading="lazy">
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52135462/article/details/127366333#:~:text=%E5%90%A6%E5%88%99%EF%BC%8C%E8%AE%A4%E8%AF%81%E5%A4%B1%E8%B4%A5%E3%80%82-,ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95,-%E6%9C%AC%E5%9C%B0client%E7%94%9F%E6%88%90">ssh免密登录实操</a>：实际上只需要client生成秘钥后把公钥上传到server，上面的剩下的步骤就会自动完成</p>
+<p>但是上传所使用的<code>ssh-copy-id</code>命令需要输入密码登录</p>
+</li>
+</ul>
+<h2 id="小林coding-图解网络"><a href="#小林coding-图解网络" class="headerlink" title="小林coding-图解网络"></a>小林coding-图解网络</h2><h3 id="TCP-IP-网络模型"><a href="#TCP-IP-网络模型" class="headerlink" title="TCP/IP 网络模型"></a>TCP/IP 网络模型</h3><ul>
+<li><p>同一台设备上的进程间通信：管道、消息队列、共享内存、信号等方式</p>
+<p>不同设备上的进程间通信：网络通信（需要一套通用的网络协议）</p>
+</li>
+<li><p><strong>应用层</strong>的协议：</p>
+<p>HTTP（Hyper Text Transfer Protocol）超文本传输协议</p>
+<p>FTP（File Transfer Protocol）文件传输协议</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011549680/article/details/40581849">Telnet</a>（专有名词）远程登录服务器</p>
+<p>DNS（Domain Name System）域名系统</p>
+<p>SMTP（Simple Mail Transfer Protocol）简单邮件传输协议</p>
+<p>DHCP（Dynamic Host Configuration Protocol）动态主机配置协议  基于UDP</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7153255870447484936">DHCP潜讲</a>，<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/news/270493">DHCP深入</a>，<a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/492819076.html">DHCP服务器放在哪里合适</a></p>
+<p><strong>传输层</strong>的协议：</p>
+<p>TCP</p>
+<p>UDP</p>
+<p><strong>网络层</strong>的协议：</p>
+<p>IP</p>
+<p>ARP</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ICMP/572452">ICMP</a>（Internet Control Message Protocol）Internet控制报文协议</p>
+<blockquote>
+<p>ping 和 tracert是两个常用网络管理命令，ping 用来测试网络可达性，tracert 用来显示到达目的主机的路径。ping和 tracert 都利用 ICMP 协议来实现网络功能，它们是把网络协议应用到日常网络管理的典型实例</p>
+</blockquote>
+</li>
+<li><p>应用层是工作在操作系统中的<strong>用户态</strong>，传输层及以下则工作在内核态</p>
+<p>传输层：多路复用/分用服务、可靠数据传送、带宽保证及延迟保证等</p>
+<p>网络层：路由、存储转发</p>
+<p>（传输层和网络层都有CC和FC）</p>
+<p>传输层实现的是应用到应用的通信，真正的设备间通信是网络层负责的</p>
+</li>
+<li><p>IP地址 IPv4是32位，每8位一段分成四段</p>
+<p>还分为网络号和主机号，需要配合子网掩码来确定网络号和主机号</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21546408/answer/149670503">为什么有了MAC地址，还需要IP地址</a>：方便子网划分从而<strong>方便路由转发</strong></p>
+<p><u>为什么有了IP地址，还需要MAC地址</u>：因为 IP 地址是要设备上线以后，才能根据他进入了哪个子网来分配的，在设备还没有 IP 地址的时候（或者分配 IP 地址的过程中），我们还<strong>需要用 MAC 地址来区分不同的设备</strong>。</p>
+<p>另外，从始至终包头中的源IP和目的IP是不变的，但是每一跳源MAC地址和目的MAC地址都会改变</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jiPMUk6zUdOY6eKxAjNDbQ">整个网络流程</a></p>
+</li>
+</ul>
+<h3 id="键入网址到网页显示，期间发生了什么"><a href="#键入网址到网页显示，期间发生了什么" class="headerlink" title="键入网址到网页显示，期间发生了什么"></a>键入网址到网页显示，期间发生了什么</h3><h1 id="青训营文章"><a href="#青训营文章" class="headerlink" title="青训营文章"></a>青训营文章</h1><h2 id="并发场景下的限流"><a href="#并发场景下的限流" class="headerlink" title="并发场景下的限流"></a>并发场景下的限流</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7145435951899574302">新来个技术总监，把限流实现的那叫一个优雅，佩服！</a></p>
+<blockquote>
+<p>常见限流方式之一：计数器</p>
+<p>原理好理解，这里补充两种计数器的实现方式：互斥锁（<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9e5554617399">Golang实现</a><code>sync.Mutex</code>和<code>sync.RWMutex</code>）和原子操作（<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1882225">Golang实现</a><code>sync/atomic</code>）</p>
+<p>（补充：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kevin_tech/article/details/106678707">原子操作和互斥锁</a>）</p>
+<p>原子操作由<strong>底层硬件</strong>支持，而锁则由操作系统的<strong>调度器</strong>实现。锁应当用来保护一段逻辑，对于一个变量更新的保护，原子操作通常会更有效率，并且更能利用计算机多核的优势，如果要更新的是一个复合对象，则应当使用<code>atomic.Value</code>封装好的实现。</p>
+<p>常见限流方式之二：滑动窗口</p>
+<p>滑动窗口是将计数器的时间区间进一步划分多个格子，以格子为单位右移</p>
+<p>计数器是只有一个格子的滑动窗口，格子越多，精度越高，但更新频率越快，计算负担越大，同时无法根本上解决临界点的问题</p>
+<p>常见限流方式之三：漏桶</p>
+<p>相当于给业务加了个缓冲区队列，同步执行时等待线程会阻塞；异步执行时业务由水桶代理执行，调用方只能知道请求被接受了，不知道请求具体什么时候执行</p>
+<p>常见限流方式之四：令牌桶（Token Bucket）</p>
+<p>按照一定生成速率在桶中生成令牌，请求到来时从桶里拿令牌，桶为空则阻塞或拒绝请求</p>
+<p>令牌桶相对于漏桶的不同：</p>
+<ul>
+<li>漏桶限制的是最大流出速率</li>
+<li>令牌桶限制的是平均流入速率，并允许一定程度突发流量</li>
+</ul>
+<p>Golang中还有一种限流方式：借助channel进行限流，有点像令牌桶</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/asd1126163471/article/details/123453278">Golang官方也有自己的基于令牌桶的限流器</a>，见<code>time/rate</code>包的<code>Limiter</code>类型</p>
+</blockquote>
+<h2 id="HTTP协议与websocket协议"><a href="#HTTP协议与websocket协议" class="headerlink" title="HTTP协议与websocket协议"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7144161126652051464">HTTP协议与websocket协议</a></h2><blockquote>
+<ul>
+<li><p>TCP协议本身是<strong>全双工</strong>的，但我们最常用的HTTP1.1，虽然是基于TCP的协议，但它是<strong>半双工</strong>的，对于大部分需要服务器主动推送数据到客户端的场景，都不太友好，因此我们需要使用支持全双工的websocket协议。</p>
+</li>
+<li><p>在HTTP1.1里。只要客户端不问，服务端就不答。基于这样的特点，对于登录页面这样的简单场景，可以使用<strong>定时轮询或者长轮询</strong>的方式实现<strong>服务器推送</strong>(comet)的效果。</p>
+</li>
+<li><p>对于客户端和服务端之间需要频繁交互的复杂场景，比如网页游戏，都可以考虑使用websocket协议。</p>
+</li>
+<li><p>websocket和socket几乎没有任何关系，只是叫法相似。</p>
+</li>
+<li><p>正因为各个浏览器都支持HTTP协议，所以websocket会先利用HTTP协议加上一些特殊的header头进行握手升级操作，升级成功后就跟HTTP没有任何关系了，之后就用websocket的数据格式进行收发数据。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="Kafka-科普"><a href="#Kafka-科普" class="headerlink" title="Kafka 科普"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7146133960865611806">Kafka 科普</a></h2><h1 id="字节青训营练习题"><a href="#字节青训营练习题" class="headerlink" title="字节青训营练习题"></a>字节青训营练习题</h1><h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7181290840403214373">DAY1</a></h2><ul>
 <li><p>第一题：<strong>36进制加法</strong></p>
 <p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/c5db069fd9d64e6e9cf5fd68860abcdd">nowcoder.36进制加法</a></p>
 </li>
@@ -63,7 +161,7 @@
 <p>答案是ABCD，详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/dream0130__/article/details/105453234">操作系统中的堆栈区别</a></p>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY2"><a href="#青训营-后端练习题-DAY2" class="headerlink" title="青训营 - 后端练习题 - DAY2"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7181650524755165239">青训营 - 后端练习题 - DAY2</a></h3><ul>
+<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7181650524755165239">DAY2</a></h2><ul>
 <li><p>Golang中切片初始化的方式：</p>
 <blockquote>
 <p>Go 中关于整型切片的初始化，以下正确的是？<br>A. s := []int{1, 2, 3, 4, 5}<br>B. s := make([]int)<br>C. s := make([]int, 0)<br>D. s := make([]int, 5, 10)</p>
@@ -80,7 +178,7 @@
 <p>答案是D</p>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY3"><a href="#青训营-后端练习题-DAY3" class="headerlink" title="青训营 - 后端练习题 - DAY3"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182029273375440933">青训营 - 后端练习题 - DAY3</a></h3><ul>
+<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182029273375440933">DAY3</a></h2><ul>
 <li><p>解决哈希冲突的手段：</p>
 <blockquote>
 <p>以下哪些是解决哈希冲突的手段？<br>A. 拉链<br>B. 开放地址<br>C. 再散列<br>D. 滑动窗口</p>
@@ -108,12 +206,13 @@
 <img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png" alt="HTTP 与 HTTPS 网络层" style="zoom:50%;" loading="lazy"></li>
 <li><p><strong><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http_interview.html#https-%E8%A7%A3%E5%86%B3%E4%BA%86-http-%E7%9A%84%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98:~:text=%23-,HTTPS%20%E6%98%AF%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E7%9A%84%EF%BC%9F%E5%85%B6%E9%97%B4%E4%BA%A4%E4%BA%92%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F,-SSL/TLS%20%E5%8D%8F%E8%AE%AE">TCP三次握手，TLS四次握手</a></strong></p>
 <p><a target="_blank" rel="noopener" href="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/23-HTTPS%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">图示连接</a></p>
+<p>（HTTPS）</p>
 </li>
 </ul>
 <p>答案是D.7</p>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY4"><a href="#青训营-后端练习题-DAY4" class="headerlink" title="青训营 - 后端练习题 - DAY4"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182395327498944567">青训营 - 后端练习题 - DAY4</a></h3><ul>
+<h2 id="DAY4"><a href="#DAY4" class="headerlink" title="DAY4"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182395327498944567">DAY4</a></h2><ul>
 <li><p>MYSQL数据库</p>
 <blockquote>
 <p>MySQL 数据库中是通过以下哪种日志实现 MVCC 机制的？<br>A. Undo Log<br>B. Redo Log<br>C. Binary Log<br>D. Slow Log</p>
@@ -151,7 +250,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY5"><a href="#青训营-后端练习题-DAY5" class="headerlink" title="青训营 - 后端练习题 - DAY5"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182766577958256698">青训营 - 后端练习题 - DAY5</a></h3><ul>
+<h2 id="DAY5"><a href="#DAY5" class="headerlink" title="DAY5"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7182766577958256698">DAY5</a></h2><ul>
 <li><p>关系型数据库RDBMS（Relational Database Management System）</p>
 <blockquote>
 <p>以下哪些是 RDBMS 跟常见的对象存储系统的不同点？<br>A. 数据库支持事务<br>B. 数据库向用户暴露 put/get 接口<br>C. RDBMS 一般存储结构化数据<br>D. 数据库里的数据不能修改，只能删除后重新写入</p>
@@ -167,7 +266,7 @@
 <p><strong>顺序读写要远远优于随机读写</strong></p>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY6"><a href="#青训营-后端练习题-DAY6" class="headerlink" title="青训营 - 后端练习题 - DAY6"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183133389908607013">青训营 - 后端练习题 - DAY6</a></h3><ul>
+<h2 id="DAY6"><a href="#DAY6" class="headerlink" title="DAY6"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183133389908607013">DAY6</a></h2><ul>
 <li><p>MD5</p>
 <blockquote>
 <p>关于 MD5 以下哪些说法是正确的？<br>A. MD5 可以用于加密密码<br>B. MD5 不可逆<br>C. 对于不同的输入， MD5 一定输出不一样的结果<br>D. 对于不同长度的输入，MD5 一定输出相同长度的结果</p>
@@ -192,7 +291,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY7"><a href="#青训营-后端练习题-DAY7" class="headerlink" title="青训营 - 后端练习题 - DAY7"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183508747627528250">青训营 - 后端练习题 - DAY7</a></h3><ul>
+<h2 id="DAY7"><a href="#DAY7" class="headerlink" title="DAY7"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183508747627528250">DAY7</a></h2><ul>
 <li><p>排序</p>
 <blockquote>
 <p>在最好情况下，下列排序算法中，哪些排序算法所需比较的关键次数最少？<br>A. 冒泡<br>B. 归并<br>C. 快速<br>D. 直接插入</p>
@@ -211,7 +310,7 @@
 <p>但是<a target="_blank" rel="noopener" href="https://blog.csdn.net/yzf279533105/article/details/94745134">切片可以通过下标访问</a>（上面说的应该是不能给指针取下标）</p>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY8"><a href="#青训营-后端练习题-DAY8" class="headerlink" title="青训营 - 后端练习题 - DAY8"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183879970127609915">青训营 - 后端练习题 - DAY8</a></h3><ul>
+<h2 id="DAY8"><a href="#DAY8" class="headerlink" title="DAY8"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7183879970127609915">DAY8</a></h2><ul>
 <li><p>计算机网络</p>
 <blockquote>
 <p>在 MTU=1500 字节的以太网中，TCP 报文的最大分段大小为多少字节？<br>A. 1440<br>B. 1460<br>C. 1420<br>D. 1480</p>
@@ -236,7 +335,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="青训营-后端练习题-DAY9"><a href="#青训营-后端练习题-DAY9" class="headerlink" title="青训营 - 后端练习题 - DAY9"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7184241688041226299">青训营 - 后端练习题 - DAY9</a></h3><ul>
+<h2 id="DAY9"><a href="#DAY9" class="headerlink" title="DAY9"></a><a target="_blank" rel="noopener" href="https://juejin.cn/pin/7184241688041226299">DAY9</a></h2><ul>
 <li><p>排序稳定性</p>
 <blockquote>
 <p>以下哪些排序算法是不稳定的？<br>A. 快速排序<br>B. 归并排序<br>C. 基数排序<br>D. 堆排序</p>

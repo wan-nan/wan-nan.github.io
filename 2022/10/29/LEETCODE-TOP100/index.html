@@ -22,17 +22,17 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="打勾的是当时自己动手做出来的 加粗的是当时有问题的  来源：🔥 LeetCode 热题 HOT 100 &amp; 每日一题 &amp; 以前做过的题目  做题的时候尽量带着纸笔在纸上比比划划   很容易见到的方法 二分 很难逐步确定答案，但是可以确定答案的上下界，同时验证答案是否正确的复杂度很低  动态规划  双指针（滑动窗口）  二叉树（递归）  STL使用  Trie树       78">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="打勾的是当时自己动手做出来的 加粗的是当时有问题的  来源：🔥 LeetCode 热题 HOT 100 &amp; 每日一题 &amp; 以前做过的题目  做题的时候尽量带着纸笔在纸上比比划划   很容易见到的方法 二分 最简单的二分要求单调，但是也可以值域二分（最小化最大值） 6346 很难逐步确定答案，但是可以确定答案的上下界，同时验证答案是否正确的复杂度很低  动态规划  双指针（滑动窗">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LEETCODE-TOP100">
 <meta property="og:url" content="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/index.html">
 <meta property="og:site_name" content="风物">
-<meta property="og:description" content="打勾的是当时自己动手做出来的 加粗的是当时有问题的  来源：🔥 LeetCode 热题 HOT 100 &amp; 每日一题 &amp; 以前做过的题目  做题的时候尽量带着纸笔在纸上比比划划   很容易见到的方法 二分 很难逐步确定答案，但是可以确定答案的上下界，同时验证答案是否正确的复杂度很低  动态规划  双指针（滑动窗口）  二叉树（递归）  STL使用  Trie树       78">
+<meta property="og:description" content="打勾的是当时自己动手做出来的 加粗的是当时有问题的  来源：🔥 LeetCode 热题 HOT 100 &amp; 每日一题 &amp; 以前做过的题目  做题的时候尽量带着纸笔在纸上比比划划   很容易见到的方法 二分 最简单的二分要求单调，但是也可以值域二分（最小化最大值） 6346 很难逐步确定答案，但是可以确定答案的上下界，同时验证答案是否正确的复杂度很低  动态规划  双指针（滑动窗">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/image-20221102170200429.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/image-20230106172140290.png">
 <meta property="article:published_time" content="2022-10-29T02:51:46.000Z">
-<meta property="article:modified_time" content="2023-01-08T13:15:57.233Z">
+<meta property="article:modified_time" content="2023-02-05T06:19:27.014Z">
 <meta property="article:author" content="wan_nan">
 <meta property="article:tag" content="刷题">
 <meta property="article:tag" content="学习">
@@ -40,7 +40,7 @@
 <meta property="article:tag" content="daily">
 <meta property="article:tag" content="Internship">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/image-20221102170200429.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button sidebar-nav-active" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel sidebar-panel-active" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">43</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content">此文章未包含目录</div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LEETCODE-TOP100</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-10-29 10:51:46" itemprop="dateCreated datePublished" datetime="2022-10-29T10:51:46+08:00">2022-10-29</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-01-08 21:15:57" itemprop="dateModified" datetime="2023-01-08T21:15:57+08:00">2023-01-08</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">2.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">7m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%88%B7%E9%A2%98/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">刷题</span></a><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/Leetcode/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Leetcode</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a><a class="tag-item" href="/tags/Internship/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Internship</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><blockquote>
+<meta name="twitter:image" content="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/image-20221102170200429.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button sidebar-nav-active" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel sidebar-panel-active" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">44</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content">此文章未包含目录</div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">LEETCODE-TOP100</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-10-29 10:51:46" itemprop="dateCreated datePublished" datetime="2022-10-29T10:51:46+08:00">2022-10-29</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-02-05 14:19:27" itemprop="dateModified" datetime="2023-02-05T14:19:27+08:00">2023-02-05</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">3.4k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">13m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%88%B7%E9%A2%98/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">刷题</span></a><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/Leetcode/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Leetcode</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a><a class="tag-item" href="/tags/Internship/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Internship</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><blockquote>
 <p>打勾的是当时自己动手做出来的</p>
 <p>加粗的是当时有问题的</p>
 </blockquote>
@@ -51,17 +51,47 @@
 <ul>
 <li>很容易见到的方法<ul>
 <li><p><strong>二分</strong></p>
+<p>最简单的二分要求单调，但是也可以值域二分（最小化最大值）</p>
+<p>6346</p>
 <p>很难逐步确定答案，但是可以确定答案的上下界，同时验证答案是否正确的复杂度很低</p>
 </li>
 <li><p><strong>动态规划</strong></p>
 </li>
 <li><p><strong>双指针（滑动窗口）</strong></p>
 </li>
+<li><p><strong>预处理</strong></p>
+<p>6340、42</p>
+<ul>
+<li>前缀后缀</li>
+</ul>
+</li>
+<li><p><strong>单调栈</strong></p>
+<p>456</p>
+<p>（常常辅之以预处理）</p>
+</li>
 <li><p><strong>二叉树（递归）</strong></p>
+<p>1145</p>
+</li>
+<li><p><strong>贪心</strong></p>
+<p>1145</p>
 </li>
 <li><p><strong>STL使用</strong></p>
 </li>
 <li><p><strong>Trie树</strong></p>
+</li>
+<li><p><strong>字符串处理</strong></p>
+</li>
+<li><p>图论</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/cracking-the-safe/description/">欧拉回路</a></p>
+</li>
+<li><p><a href="https://wan-nan.github.io/2022/07/23/%E5%89%91%E6%8C%87Offer-II%E2%80%94%E2%80%94115.%E9%87%8D%E5%BB%BA%E5%BA%8F%E5%88%97%EF%BC%88%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%EF%BC%89/">拓扑排序</a></p>
+</li>
+<li><p><strong>DFS/BFS</strong></p>
+<p>n1、1210</p>
+<p>好久没遇到，以至于这种简单暴力的方法反而很陌生</p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -273,7 +303,128 @@
 <p>327th场周赛第三题，我直接怒写接近100行代码，实际上20行就能搞定，总是容易把题目想复杂</p>
 <p>可以再做一下，简单的模拟，但是容易写的很复杂</p>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/cracking-the-safe/description/">753. 破解保险箱</a></strong></p>
+<p><u>欧拉回路</u></p>
+<p>可以把题目转化成在每个节点的入度和出度都为k的有向图中，找到一条欧拉回路，可以<strong>用DFS找欧拉回路</strong></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/cracking-the-safe/solutions/275196/yi-bu-yi-bu-tui-dao-chu-0ms-jie-fa-tan-xin-gou-zao/">参考</a></p>
+<p>（注意回路和通路不一样）</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reconstruct-itinerary/description/">332. 重新安排行程</a></strong></p>
+<p>和上面的题类似，但这个找的是<u><strong>欧拉通路</strong></u>，不过也是用<strong>DFS</strong>的方法找</p>
+<ul>
+<li>欧拉是每条边都只能走一次（如这个使用机票的行程问题）</li>
+<li>哈密顿是每个点都只能走一次（暂时还没遇到这类问题）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; pq;</span><br></pre></td></tr></table></figure>
+
+<p>对<code>priority_queue</code>使用<code>greater</code>或<code>less</code>的方法如上，要注意<code>priority_queue</code>的<code>less</code>是大顶堆，<code>greater</code>是小顶堆，所以一般都用的是<code>greater</code></p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-different-subsequences-gcds/description/">1819. 序列中不同最大公约数的数目</a></strong></p>
+<p>枚举每个可能的数字x，检验x是否是某个子序列的最大公约数</p>
+<ul>
+<li><p>怎么检验？</p>
+<p>要想x是序列An的最大公约数，则An中所有能够整除x的数 的 最大公约数 一定是 x</p>
+<blockquote>
+<p>如An中只有2x,4x，则不成立，子序列的最大公约数只能是2x</p>
+<p>但An中有2x,4x,5x，则成立</p>
+</blockquote>
+<p>即枚举x后，找出An中的所有可以整除x的数，求他们的gcd是否为x</p>
+<p>求<strong>多个数的gcd</strong>，可以将g初始化为0，再依次$$g=gcd(g,a_i)$$</p>
+</li>
+</ul>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sentence-similarity-iii/description/">1813. 句子相似性 III</a></strong></p>
+<ul>
+<li><p><strong>字符串处理</strong>典型题目</p>
+</li>
+<li><p><strong>双指针</strong>新奇题目</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sentence-similarity-iii/solutions/2062566/ju-zi-xiang-si-xing-iii-by-leetcode-solu-vjy7/">这篇题解</a>中的字符串分词写法可以记一下</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/finding-the-users-active-minutes/description/">1817. 查找用户活跃分钟数</a></p>
+<ul>
+<li><p>对于自定义类型，重载关系运算符就是在其类型声明中写一个operator重载函数</p>
+</li>
+<li><p>但是对于已有类型，如vector，可以写一个<code>cmp()</code>函数，再<code>sort(logs.begin(),logs.end(),cmp);</code>这样调用即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; &amp;a, vector&lt;<span class="keyword">int</span>&gt; &amp;b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[<span class="number">0</span>]==b[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">1</span>]&lt;b[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意写在类中时要加<code>static</code>声明，表明其是<strong>类的静态函数成员</strong>，这样的函数没有<code>this</code>指针（<strong>一般的函数成员非静态，会有this指针，无法传入<code>sort</code>作为排序函数</strong>）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010982765/article/details/79021426">不加<code>static</code>的报错及解决</a></p>
+<p>或者将自定义比较函数<code>cmp()</code>写在类外面，也没有<code>this</code>指针</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AnnieKim/archive/2011/12/04/2275589.html">恼人的函数指针：指向类成员的指针</a></p>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-string-with-a-given-numeric-value/">1663. 具有给定数值的最小字符串</a></p>
+<p>在string前面添加字符，时间效率：</p>
+<p><code>string.append(int count, char c)</code> + <code>reverse</code></p>
+<p>&gt;</p>
+<p><code>string = char(c) + string</code> </p>
+<p><code>string.insert(int position, int count, char c)</code></p>
+<p><strong>使用+运算符来拼接字符串比较耗时</strong></p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-collisions-of-monkeys-on-a-polygon/description/">6338. 猴子碰撞的方法数</a></strong></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24016309/article/details/88585522"><strong>C++快速幂求模</strong></a></p>
+<blockquote>
+<p>$$a^b$$</p>
+<p>降低a的规模：<code>a = a % mode</code></p>
+<p>降低b的规模：（若b为偶数）$$a^b=(a^2)^{\frac{b}{2}}$$；（若b为奇数）$$a^b=(a^2)^{\frac{b-1}{2}}\times a$$；再降低a的规模即可</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Mode</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> mode)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">1</span>;</span><br><span class="line">    a = a % mode;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (b &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b % <span class="number">2</span> == <span class="number">1</span>)		<span class="comment">//判断是否是奇数，是奇数的话将多出来的数事先乘如sum</span></span><br><span class="line">            sum = (sum * a) % mode;</span><br><span class="line">        b /= <span class="number">2</span>;</span><br><span class="line">        a = (a * a) % mode;<span class="comment">// 不断的两两合并再取模，减小a和b的规模</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Python等直接用库函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">monkeyMove</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        MOD = <span class="number">10</span> ** <span class="number">9</span> + <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> (<span class="built_in">pow</span>(<span class="number">2</span>, n, MOD) - <span class="number">2</span>) % MOD</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>1324模式和132模式</strong></p>
+<ul>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/132-pattern/description/">456. 132 模式</a></strong></p>
+<p>  <strong>单调栈</strong>+预处理</p>
+<blockquote>
+<p>C++中<a target="_blank" rel="noopener" href="https://www.cnblogs.com/JCpeng/p/15101214.html">multiset容器</a>是STL模板<set>库中一个非常有用的类型，它可以看成一个序列，插入一个数，删除一个数都能够在<code>O(logn)</code>的时间内完成，而且他能时刻<strong>保证序列中的数是有序的</strong>，而且序列中<strong>可以存在重复的数</strong>（而set容器要求两两不同，且不保证有序）。</set></p>
+</blockquote>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-increasing-quadruplets/description/">6340. 统计上升四元组</a></strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mD4y1E7QK">视频题解</a></p>
+<p><strong>维护二维前后缀<u>预处理</u>的值</strong></p>
+<blockquote>
+<p>四元组：<code>(i, j, k, l)</code>满足<code>0 &lt;= i &lt; j &lt; k &lt; l &lt; n</code> 且<code>nums[i] &lt; nums[k] &lt; nums[j] &lt; nums[l]</code></p>
+<p>$$O(n^2)$$遍历<code>i</code>和<code>l</code>，<code>j</code>和<code>k</code>通过二维前后缀预处理维护</p>
+</blockquote>
+<ul>
+<li><p>还有种做法是借助132模式的结果，<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-increasing-quadruplets/solutions/2080664/by-destiny-god-4qc6/">题解</a>（非常巧妙）</p>
+<blockquote>
+<p>但是132模式的数据量是2e5,1324模式的数据量是4k，所以后者可以用n^2^的算法，前者只能nlogn或者n</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://juejin.cn/post/7195143020050645049/">n1. 寻友之旅</a></strong></p>
+<p>  <strong>BFS求最短路径</strong></p>
+<p>  很久没遇到忘记了</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26507799/article/details/89390989">Golang的循环输入</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b <span class="keyword">int</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    _, err := fmt.Scan(&amp;a, &amp;b)</span><br><span class="line">    <span class="keyword">if</span> err == io.EOF &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(a + b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/">42. 接雨水</a></strong></p>
+<p>  <strong>前后缀预处理</strong></p>
+<p>  <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/107792266">参考题解</a></p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-coloring-game/description/">1145. 二叉树着色游戏</a></strong></p>
+<p>  <strong>二叉树的DFS</strong>+<strong>贪心</strong></p>
+<p>  需要一点自己的思考</p>
+</li>
+<li><p><input disabled type="checkbox">  **<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/house-robber-iv/description/">6346. 打家劫舍 IV</a>**【周赛失利题目】</p>
+<p>  <strong>二分+贪心</strong>（check函数需要借助贪心来check）</p>
+<p>  虽然上来觉得不单调不能二分，但是这是另一种贪心的题型，<strong>最小化最大值</strong>，属于<strong>值域二分</strong>（另一种感觉可以叫<u>定义域二分</u>）</p>
+</li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-moves-to-reach-target-with-rotations/description/">1210. 穿过迷宫的最少移动次数</a></strong></p>
+<p>  <strong>BFS求最短路径</strong></p>
+<p>  不同之处是需要多一个维度来表示蛇的方向，其他都大同小异</p>
 </li>
 </ul>
 </div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/" title="LEETCODE-TOP100">https://wan-nan.github.io/2022/10/29/LEETCODE-TOP100/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2022/11/06/C++%E5%AD%A6%E4%B9%A0/" rel="prev" title="C++学习"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">C++学习</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/10/16/ns-3%E5%AD%A6%E4%B9%A0/" rel="next" title="ns-3学习"><span class="post-nav-text">ns-3学习</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {

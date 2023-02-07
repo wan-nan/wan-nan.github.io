@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>Golang学习 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="优雅地实现协程同步  实际使用：在开启n个协程的时候Add(n) 在每个协程结束都defer Done() 在主协程使用Wait()阻塞等待子协程结束 Go中的互斥锁和原子操作 互斥锁（Golang实现sync.Mutex和sync.RWMutex） 原子操作（Golang实现sync&#x2F;atomic） （补充：原子操作和互斥锁）  Go限流器官方的基于令牌桶的限流器，见time&#x2F;rate包的Lim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang学习">
+<meta property="og:url" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="优雅地实现协程同步  实际使用：在开启n个协程的时候Add(n) 在每个协程结束都defer Done() 在主协程使用Wait()阻塞等待子协程结束 Go中的互斥锁和原子操作 互斥锁（Golang实现sync.Mutex和sync.RWMutex） 原子操作（Golang实现sync&#x2F;atomic） （补充：原子操作和互斥锁）  Go限流器官方的基于令牌桶的限流器，见time&#x2F;rate包的Lim">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116183527890.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116184037355.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116185220667.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116185443255.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116190147295.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117205439116.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117205511427.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117212517080.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117210311872.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117210903156.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117211507119.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117211659507.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117211911694.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117222045206.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126153502225.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126154832414.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165348060.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165615645.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165640236.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165710927.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126170732333.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126171321147.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126171745361.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126172009386.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126173409944.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126173733746.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126173916953.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126174127142.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126174312023.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126180628190.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126181028947.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126181331485.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126181701934.png">
+<meta property="article:published_time" content="2023-01-16T10:32:52.000Z">
+<meta property="article:modified_time" content="2023-01-26T10:20:46.109Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="Golang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116183527890.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">44</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">38</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E9%9B%85%E5%9C%B0%E5%AE%9E%E7%8E%B0%E5%8D%8F%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="toc-number">1.</span> <span class="toc-text">优雅地实现协程同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E4%B8%AD%E7%9A%84%E4%BA%92%E6%96%A5%E9%94%81%E5%92%8C%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">Go中的互斥锁和原子操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E9%99%90%E6%B5%81%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">Go限流器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E5%8D%8F%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-number">4.</span> <span class="toc-text">Go协程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">Go中的依赖管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E6%A1%86%E6%9E%B6%E4%B8%89%E4%BB%B6%E5%A5%97"><span class="toc-number">6.</span> <span class="toc-text">Go框架三件套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">Go自动内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">8.</span> <span class="toc-text">Go内存分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Go%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">9.</span> <span class="toc-text">Go编译器优化</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Golang学习</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2023-01-16 18:32:52" itemprop="dateCreated datePublished" datetime="2023-01-16T18:32:52+08:00">2023-01-16</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-01-26 18:20:46" itemprop="dateModified" datetime="2023-01-26T18:20:46+08:00">2023-01-26</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">1.8k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">6m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E8%AE%B0%E5%BD%95/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">记录</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/Golang/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">Golang</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h3 id="优雅地实现协程同步"><a href="#优雅地实现协程同步" class="headerlink" title="优雅地实现协程同步"></a>优雅地实现协程同步</h3><img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116183527890.png" alt="image-20230116183527890" style="zoom:50%;" loading="lazy">
+
+<p>实际使用：在开启n个协程的时候<code>Add(n)</code></p>
+<p>在每个协程结束都<code>defer Done()</code></p>
+<p>在主协程使用<code>Wait()</code>阻塞等待子协程结束</p>
+<h3 id="Go中的互斥锁和原子操作"><a href="#Go中的互斥锁和原子操作" class="headerlink" title="Go中的互斥锁和原子操作"></a>Go中的互斥锁和原子操作</h3><blockquote>
+<p>互斥锁（<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9e5554617399">Golang实现</a><code>sync.Mutex</code>和<code>sync.RWMutex</code>）</p>
+<p>原子操作（<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1882225">Golang实现</a><code>sync/atomic</code>）</p>
+<p>（补充：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kevin_tech/article/details/106678707">原子操作和互斥锁</a>）</p>
+</blockquote>
+<h3 id="Go限流器"><a href="#Go限流器" class="headerlink" title="Go限流器"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/asd1126163471/article/details/123453278">Go限流器</a></h3><p>官方的基于<strong>令牌桶</strong>的限流器，见<code>time/rate</code>包的<code>Limiter</code>类型</p>
+<h3 id="Go协程通信"><a href="#Go协程通信" class="headerlink" title="Go协程通信"></a>Go协程通信</h3><ul>
+<li><p>Go提倡<strong>通过通信来共享内存</strong>，而不是<u>通过共享内存来通信</u></p>
+<p>前者就是channel</p>
+<p>尽管不提倡后者，但go也支持，即通过<code>sync.Mutex</code>来实现对临界区的并发安全保证</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116184037355.png" alt="image-20230116184037355" style="zoom:50%;" loading="lazy"></li>
+</ul>
+<h3 id="Go中的依赖管理"><a href="#Go中的依赖管理" class="headerlink" title="Go中的依赖管理"></a>Go中的依赖管理</h3><p><strong>GOPATH→Go Vendor→Go Module</strong></p>
+<ul>
+<li><p>GOPATH</p>
+<p>GOPATH是Go语言支持的一个环境变量，其value是Go项目的工作区</p>
+<p>弊端：无法实现package的多版本控制</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116185220667.png" alt="image-20230116185220667" style="zoom:50%;" loading="lazy"></li>
+<li><p>Go Vendor</p>
+<p>Vendor 是当前项目中的一个目录，其中存放了当前项目依赖的副本（等于是给每个项目添加了其依赖的副本）</p>
+<p>弊端：</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116185443255.png" alt="image-20230116185443255" style="zoom:50%;" loading="lazy"></li>
+<li><p>Go Module</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230116190147295.png" alt="image-20230116190147295" style="zoom:50%;" loading="lazy"></li>
+<li><p>新建项目后</p>
+<p><code>go mod init projectName</code></p>
+<p><code>go mod tidy</code></p>
+</li>
+</ul>
+<p>VSCode很难优雅地对Golang项目进行依赖管理，还得是<strong>Goland</strong></p>
+<h3 id="Go框架三件套"><a href="#Go框架三件套" class="headerlink" title="Go框架三件套"></a>Go框架三件套</h3><ul>
+<li><p><strong>gorm</strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/index.html">官方文档</a><strong>【</strong>具体使用看文档吧，下面的笔记感觉会有问题</strong>】</p>
+<p>ORM框架</p>
+<blockquote>
+<p>对象关系映射（Object Relational Mapping，简称<strong>ORM</strong>）模式是一种为了解决<strong>面向对象与关系数据库</strong>存在的互不匹配的现象的技术。简单的说，ORM是通过使用描述对象和数据库之间映射的元数据，<strong>将程序中的对象自动持久化到关系数据库中</strong>。</p>
+<p>ORM框架是连接数据库的桥梁</p>
+</blockquote>
+<ul>
+<li><p><code>db.First()</code>的使用踩坑<br>使用First 时，需要注意查询不到数据会返回<code>ErrRecordNotFound</code>。<br>使用Find查询多条数据，查询不到数据不会返回错误。</p>
+<p>所以一般使用<code>db.Find()</code>，在查询不到数据的时候会返回一个空切片，不会抛出错误</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117205439116.png" class title="image-20230117205439116" loading="lazy"></li>
+<li><p>使用结构体作为查询条件</p>
+<p>当使用结构作为条件查询时，GORM只会查询非零值字段。</p>
+<p>这意味着如果您的字段值为0、’’、false 或其他零值，该字段不会被用于构建查询条件，使用Map来构建查询条件</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117205511427.png" class title="image-20230117205511427" loading="lazy"></li>
+<li><p>更新时同理，如果要更新为零值，需要使用map；通过select选择字段</p>
+<p>{ID: 111}是兜底处理，当使用了 <code>Model</code> 方法，且该对象主键有值，该值会被用于构建条件</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117212517080.png" class title="image-20230117212517080" loading="lazy"></li>
+<li><p>删除数据</p>
+<p>物理删除<code>db.Delete()</code></p>
+<p>软删除：在结构体中加上<code>gorm.DeletedAt</code>字段</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117210311872.png" alt="image-20230117210311872" style="zoom:50%;" loading="lazy"></li>
+<li><p><strong>链式调用</strong>时，<code>Where()</code>这种api是用来拼SQL的</p>
+<p><code>First()</code>、<code>Find()</code>、<code>Create()</code>、<code>Update()</code>、<code>Delete()</code>这种api会直接执行SQL，后面再加<code>Where()</code>不会生效</p>
+</li>
+<li><p>事务</p>
+<p><code>db.Begin()</code>会返回固化链接，所以要使用tx，而不是db，db是golang维护的链接池</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117210903156.png" class title="image-20230117210903156" loading="lazy">
+
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117211507119.png" class title="image-20230117211507119" loading="lazy"></li>
+<li><p>Hook</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117211659507.png" class title="image-20230117211659507" loading="lazy"></li>
+<li><p>GORM性能提升</p>
+<ul>
+<li>关闭默认事务</li>
+<li>缓存预编译语句</li>
+<li>等等</li>
+</ul>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117211911694.png" class title="image-20230117211911694" loading="lazy"></li>
+</ul>
+</li>
+<li><p><strong>Kitex</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94983974">RPC框架</a></p>
+<blockquote>
+<p>RPC(Remote Procedure Call Protocol)——远程过程调用协议，它是一种<strong>通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术</strong>的协议。RPC协议假定某些传输协议的存在，如TCP/IP或UDP，为通信程序之间携带信息数据。RPC将原来的本地调用转变为调用远端的服务器上的方法，给系统的处理能力和吞吐量带来了近似于无限制提升的可能。在OSI网络通信模型中，RPC跨域了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。</p>
+</blockquote>
+<p>有点晕</p>
+</li>
+<li><p><strong>Hertz</strong></p>
+<p>Hertz是一个 Golang 微服务 HTTP 框架</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230117222045206.png" class title="image-20230117222045206" loading="lazy">
+
+<blockquote>
+<p>看文档吧，感觉就是在读文档，但是还没文档讲的细</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Go自动内存管理"><a href="#Go自动内存管理" class="headerlink" title="Go自动内存管理"></a>Go自动内存管理</h3><ul>
+<li><p>自动内存管理是对于<strong>动态内存</strong>而言的</p>
+<p>如程序在运行时根据需求动态分配的内存：<code>malloc()</code></p>
+</li>
+<li><p>自动内存管理(垃圾回收)：由程序语言的<strong>运行时系统</strong>管理<strong>动态内存</strong></p>
+<ul>
+<li><p>避免手动内存管理，专注于实现业务逻辑</p>
+</li>
+<li><p>保证内存使用的正确性和安全性：double-free problem, use-after free problem</p>
+</li>
+</ul>
+</li>
+<li><p>三个任务：</p>
+<ul>
+<li>为新对象分配空间</li>
+<li>找到存活对象</li>
+<li>回收死亡对象的内存空间</li>
+</ul>
+</li>
+<li><p>相关概念</p>
+<blockquote>
+<p>Mutator: 业务线程，分配新对象，修改对象指向关系</p>
+<p>Collector: GC线程，找到存活对象（内存标记），回收死亡对象的内存空间（内存回收）</p>
+<p>Serial GC: 只有一个collector</p>
+<p>Parallel GC: 支持多个collectors 同时回收的GC算法</p>
+<p>Concurrent GC: mutator(s)和collector(s)可以同时执行</p>
+</blockquote>
+<p>示意图：</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126153502225.png" alt="image-20230126153502225" style="zoom:67%;" loading="lazy">
+
+<ul>
+<li><p>concurrent GC的难点在于，<strong>collectors必须要感知到对象指向关系的改变</strong></p>
+<p>如下图中的GC过程中新添加的b，也需要被标记</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126154832414.png" alt="image-20230126154832414" style="zoom: 67%;" loading="lazy"></li>
+</ul>
+<blockquote>
+<ul>
+<li>评价GC算法<ul>
+<li>安全性(Safety): 不能回收存活的对象 <strong>基本要求</strong></li>
+<li>吞吐率(Throughput): $$1-\frac{GC时间}{程序执行总时间}$$</li>
+<li>暂停时间(Pause time): stop the world (STW) <strong>业务是否感知</strong></li>
+<li>内存开销(Space overhead) <strong>GC元数据开销</strong></li>
+</ul>
+</li>
+<li>追踪垃圾回收(Tracing garbage collection)</li>
+<li>引用计数(Reference counting)</li>
+</ul>
+</blockquote>
+</li>
+<li><p><strong>追踪垃圾回收</strong>(Tracing garbage collection)</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165348060.png" alt="image-20230126165348060" style="zoom:67%;" loading="lazy">
+
+<p>清理不可达对象时会有三种策略</p>
+<ul>
+<li><p>Copying GC</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165615645.png" alt="image-20230126165615645" style="zoom:67%;" loading="lazy"></li>
+<li><p>Mark-Sweep GC</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165640236.png" alt="image-20230126165640236" style="zoom: 67%;" loading="lazy"></li>
+<li><p>Mark-Compact（标记-压缩） GC</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126165710927.png" alt="image-20230126165710927" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</li>
+<li><p><strong>分代GC</strong>（Generational GC）场景</p>
+<blockquote>
+<p>分代假说：most objects die young</p>
+</blockquote>
+<p>年轻代采用copying GC，因为其存活时间短，所以使用copying GC不会特别耗时</p>
+<p>老年代采用Mark-sweep GC，对象存活时间长，反复复制开销较大</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126170732333.png" alt="image-20230126170732333" style="zoom:67%;" loading="lazy">
+
+<p>若发现碎片较多，可以采取一次Compact（压缩）</p>
+</li>
+<li><p>引用计数（Reference counting）</p>
+<p>计算该对象被多少个指针“引用”，即被多少个指针指向</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126171321147.png" alt="image-20230126171321147" style="zoom: 67%;" loading="lazy">
+
+<p>优点：</p>
+<ul>
+<li><p>内存管理的操作被平摊到程序执行过程中</p>
+</li>
+<li><p>内存管理不需要了解runtime的实现细节，如C++的智能指针（smart pointer）</p>
+<p>追踪垃圾回收(Tracing garbage collection)需要和runtime耦合的更紧密</p>
+</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li><p>维护引用计数的开销较大: 通过<strong>原子操作</strong>保证对引用计数操作的<strong>原子性</strong>和<strong>可见性</strong></p>
+</li>
+<li><p>无法回收环形数据结构，如下图中已经不可达的红色结点组成的环</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126171745361.png" alt="image-20230126171745361" style="zoom:67%;" loading="lazy">
+
+<p>通过<strong>weak reference</strong>解决这个问题</p>
+</li>
+<li><p>内存开销: 每个对象都引入的额外内存空间存储引用数目</p>
+</li>
+<li><p>回收内存时依然可能引发暂停，如下图中橙色圈出的节点释放后，会引起很多内存的回收，这个过程中仍然可能引发暂停</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126172009386.png" alt="image-20230126172009386" style="zoom:67%;" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<h3 id="Go内存分配"><a href="#Go内存分配" class="headerlink" title="Go内存分配"></a>Go内存分配</h3><ul>
+<li><p>分块</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126173409944.png" alt="image-20230126173409944" style="zoom:80%;" loading="lazy"></li>
+<li><p>缓存</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126173733746.png" alt="image-20230126173733746" style="zoom:80%;" loading="lazy"></li>
+<li><p>优化原因：</p>
+<ul>
+<li>分配路径过长</li>
+<li>小对象过多</li>
+</ul>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126173916953.png" alt="image-20230126173916953" style="zoom:67%;" loading="lazy">
+
+<p>优化案例：<strong>Balanced GC</strong>（指针碰撞风格对小对象进行分配）</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126174127142.png" alt="image-20230126174127142" style="zoom:67%;" loading="lazy">
+
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126174312023.png" alt="image-20230126174312023" style="zoom:67%;" loading="lazy"></li>
+</ul>
+<h3 id="Go编译器优化"><a href="#Go编译器优化" class="headerlink" title="Go编译器优化"></a>Go编译器优化</h3><img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126180628190.png" alt="image-20230126180628190" style="zoom: 67%;" loading="lazy">
+
+<ul>
+<li><p>函数内联</p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126181028947.png" alt="image-20230126181028947" style="zoom:67%;" loading="lazy"></li>
+<li><p><strong>Beast Mode</strong></p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126181331485.png" alt="image-20230126181331485" style="zoom:67%;" loading="lazy"></li>
+<li><p>逃逸分析：分析代码中指针的动态作用域，即指针在何处可以被访问</p>
+<p><strong>函数内联可以减少逃逸对象的数量</strong></p>
+<img src="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/image-20230126181701934.png" alt="image-20230126181701934" style="zoom:67%;" loading="lazy"></li>
+<li></li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/" title="Golang学习">https://wan-nan.github.io/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2023/01/08/2022_%E8%B0%A2%E5%B9%95_%F0%9F%90%B1%E2%80%8D%F0%9F%92%BB/" rel="next" title="2022_谢幕_🐱‍💻"><span class="post-nav-text">2022_谢幕_🐱‍💻</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
