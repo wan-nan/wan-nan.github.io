@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>消息队列笔记 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="消息队列的作用：  解耦 削峰 异步 日志处理   什么是消息队列？ 消息队列(MQ)指保存消息的一个容器，本质是个队列。 但这个队列，需要支持高吞吐，高并发，并且高可用。  业界常见的消息队列： Kafka：分布式的、分区的、多副本的日志提交服务，在高吞吐场景下发挥较为出色RocketMQ：低延迟、强一致、高性能、高可靠、万亿级容量和灵活的可扩展性，在一些实时场景中运用较广Pulsar：是下一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="消息队列笔记">
+<meta property="og:url" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="消息队列的作用：  解耦 削峰 异步 日志处理   什么是消息队列？ 消息队列(MQ)指保存消息的一个容器，本质是个队列。 但这个队列，需要支持高吞吐，高并发，并且高可用。  业界常见的消息队列： Kafka：分布式的、分区的、多副本的日志提交服务，在高吞吐场景下发挥较为出色RocketMQ：低延迟、强一致、高性能、高可靠、万亿级容量和灵活的可扩展性，在一些实时场景中运用较广Pulsar：是下一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208214837603.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208215040288.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208215356538.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208215857689.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208220122681.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208221532854.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208222938991.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208224302023.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208225407878.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208230722306.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208231940426.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208232407061.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208232837406.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209142048990.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209143856150.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209145026141.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209145637341.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209145744204.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209151735429.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209152002936.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209152413397.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209152939495.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209153325431.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209153646542.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209154050106.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209154657432.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209160850070.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209162915923.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209163132780.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164232759.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164103754.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164336108.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164412965.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209170228629.png">
+<meta property="article:published_time" content="2023-02-08T15:53:46.000Z">
+<meta property="article:modified_time" content="2023-02-09T09:14:44.581Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="工作面试">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208214837603.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">45</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">39</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka"><span class="toc-number">1.</span> <span class="toc-text">Kafka</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">基本架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E6%B6%88%E8%B4%B9%E6%B5%81%E7%A8%8B%EF%BC%88%E5%A5%BD%E7%9A%84%E7%89%B9%E6%80%A7%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">生产消费流程（好的特性）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">存在的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BMQ"><span class="toc-number">2.</span> <span class="toc-text">BMQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">架构模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">读写流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7"><span class="toc-number">2.3.</span> <span class="toc-text">高级特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RocketMQ"><span class="toc-number">3.</span> <span class="toc-text">RocketMQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">消息队列笔记</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2023-02-08 23:53:46" itemprop="dateCreated datePublished" datetime="2023-02-08T23:53:46+08:00">2023-02-08</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-02-09 17:14:44" itemprop="dateModified" datetime="2023-02-09T17:14:44+08:00">2023-02-09</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">4.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">14m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/%E5%B7%A5%E4%BD%9C%E9%9D%A2%E8%AF%95/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">工作面试</span></a><a class="tag-item" href="/tags/%E5%90%8E%E7%AB%AF/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">后端</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><ul>
+<li><p>消息队列的作用：</p>
+<ul>
+<li>解耦</li>
+<li>削峰</li>
+<li>异步</li>
+<li>日志处理</li>
+</ul>
+</li>
+<li><p>什么是消息队列？</p>
+<p>消息队列(MQ)指<strong>保存消息的一个容器</strong>，本质是个队列。</p>
+<p>但这个队列，需要支持<strong>高吞吐，高并发，并且高可用</strong>。</p>
+</li>
+<li><p>业界常见的消息队列：</p>
+<p><strong>Kafka</strong>：分布式的、分区的、多副本的日志提交服务，在高吞吐场景下发挥较为出色<br><strong>RocketMQ</strong>：低延迟、强一致、高性能、高可靠、万亿级容量和灵活的可扩展性，在一些实时场景中运用较广<br>Pulsar：是下一代云原生分布式消息流平台，集消息、存储、轻量化函数式计算为一体，采用存算分离的架构设计<br><strong>BMQ</strong>：和Pulsar架构类似，存算分离，初期定位是承接高吞吐的离线业务场景，逐步替换掉对应的Kafka集群</p>
+</li>
+</ul>
+<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><ul>
+<li><p>如何使用Kafka</p>
+<p>创建集群→新增Topic→编写生产者逻辑→编写消费者逻辑</p>
+</li>
+</ul>
+<h3 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h3><ul>
+<li><p>基本概念：</p>
+<p><strong>Topic</strong>：逻辑队列，不同Topic可以建立不同的Topic</p>
+<p><strong>Cluster</strong>：物理集群，每个集群中可以建立多个不同的Topic</p>
+<p><strong>Producer</strong>：生产者，负责将业务消总发送到Topic中</p>
+<p><strong>Consumer</strong>：消费者，负责消费Topic中的消息</p>
+<p><strong>ConsumerGroup</strong>：消费者组，<strong>不同组Consumer消费进度互不干涉</strong></p>
+<p><strong>Partition</strong>【分片】：通常topic会有多个分片，<strong>不同分片之间消息是可以并发来处理的</strong>，这样提高单个Topic的吞吐</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208214837603.png" class title="image-20230208214837603" loading="lazy">
+
+
+
+<p><strong>Offset</strong>：消息在partition内的相对位置信息，可以理解为唯一ID,在partition内部严格递增。</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208215040288.png" class title="image-20230208215040288" loading="lazy">
+
+
+
+<p><strong>Replica</strong>：分片的副本，分布在不同的机器上，可用来容灾，Leader对外服务 ，Follower异步去拉取leader的数据进行一个同步，如果Leader挂掉了，可以将Follower提升成Leader再对外进行服务；每个分片有多个Replica，Leader Replica将会从ISR（In-Sync Replicas）中选出</p>
+<p><strong>ISR</strong>：意思是同步中的副本，对于Follower来说， 始终和leader是有一定差距的，但只有当这个差距比较小的时候，我们才可以将这个follower副本加入到ISR中，不在ISR中的副本是不允许提升成Leader的（下图中的Replica3与Leader差距过大，不允许加入ISR）</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208215356538.png" class title="image-20230208215356538" loading="lazy"></li>
+<li><p><strong>Kafka中副本分布图示例</strong>：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208215857689.png" class title="image-20230208215857689" loading="lazy">
+
+<p>上面这幅图代表着Kafka中副本的分布图。图中一个Broker代表一个Kafka的节点， 所有的Broker节点最终组成了一个集群。</p>
+<p>图中整个集群，包含了4个Broker机器节点，集群有两个Topic，分别是Topic1和Topic2, Topic1有两个分片， Topic2有1个分片，每个分片都是三副本的状态。</p>
+<p>这里中间有一个Broker同时也扮演 了<strong>Controller</strong>的角色，Controller是整个集群的大脑，负责对副本和Broker进行分配。</p>
+</li>
+<li><p>Kafka整体架构：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208220122681.png" class title="image-20230208220122681" loading="lazy">
+
+<p><u>在集群的基础上，还有一个模块是<strong>ZooKeeper</strong>, 这个模块存储了集群的元数据信息，比如副本的分配信息等等，Controller计算好的方案都会放到这个地方</u></p>
+</li>
+</ul>
+<h3 id="生产消费流程（好的特性）"><a href="#生产消费流程（好的特性）" class="headerlink" title="生产消费流程（好的特性）"></a>生产消费流程（好的特性）</h3><ul>
+<li><p>一条消息的“自述”：</p>
+<p>Producer→Broker→Consumer</p>
+<ul>
+<li><p>Producer批量发送消息（Batch）</p>
+<p>批量发送可以减少IO次数，从而加强发送能力</p>
+<p><strong>增大吞吐</strong></p>
+</li>
+<li><p>Producer数据压缩</p>
+<p>通过压缩，减少消息大小，<strong>降低带宽流量</strong>，以应对可能出现的<strong>网络带宽不足</strong>的问题。目前支持Snappy、 Gzip、LZ4、ZSTD压缩算法</p>
+</li>
+<li><p>Broker采用顺序写（末尾追加）的方式进行写入，以<strong>提高写入效率</strong></p>
+</li>
+<li><p>Broker消息索引（稀疏索引）</p>
+<p><strong>寻找消息的机制</strong></p>
+</li>
+<li><p>Broker零拷贝：</p>
+<p><strong>减少拷贝次数，加快消息数据传输速度</strong></p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208221532854.png" class title="image-20230208221532854" loading="lazy">
+
+<p>Consumer从Broker中读取数据，通过sendfile的方式， 将磁盘读到os内核缓冲区后，直接转到NIC buffer进行网络发送<br>Producer生产的数据持久化到broker,采用mmap文件映射，实现顺序的快速写入（从用户态直接写入磁盘，不用再写内核态，减少内存拷贝次数）</p>
+</li>
+<li><p>Consumer的rebalance（关于<strong>Consumer如何分配Partition</strong>）</p>
+<p><code>背景是Consumer可以并发消费Partition，那么一个Consumer要如何确定自己该消费哪个Partition呢？</code></p>
+<p>（Low Level）手动分配：在启动consumer的时候预先设定好该consumer会消费的partition；优点是快，但是这样有许多弊端，不能容灾，且不够灵活</p>
+<p>（High Level）<strong>自动分配</strong>：对于不同的Consumer Group来讲，都会在Broker集群中选取一台Broker当做<strong>Coordinator</strong>,而Coordinator的作用就是帮助Consumer Group进行分片的分配，也叫做分片的<u>rebalance</u>，使用这种方式，如果ConsumerGroup中有发生宕机，或者有新的Consumer加入，整个partition和Consumer都会重新进行分配来达到一个稳定的消费状态</p>
+<ul>
+<li><p>Consumer Rebalance过程示意图</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208222938991.png" class title="image-20230208222938991" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：<strong>可以帮助Kafka提高吞吐或者稳定性的功能</strong>？<br>Producer：批量发送、数据压缩<br>Broker：顺序写，消息索引，零拷贝<br>Consumer：Rebalance</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
+<li><p>Kafka数据复制问题：</p>
+<p>由一些特殊场景下的节点大量【重启/替换/扩容/缩容】（<strong>Kafka集群的这类运维操作都会导致节点的变动，都会有数据复制带来的时间成本问题</strong>）引发的，会使某个Broker承载大量帮其他节点进行数据同步的时间开销</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208224302023.png" class title="image-20230208224302023" loading="lazy"></li>
+<li><p>Kafka负载不均衡：</p>
+<p>场景：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208225407878.png" class title="image-20230208225407878" loading="lazy">
+
+<p>这个场景当中，同一个Topic有4个分片，两副本（<u>因为Partition分布在两个Broker上，即两个机器上</u>），可以看到，对于分片1来说，数据量是明显比其他分片要大的，当我们机器IO达到瓶颈的时候，可能就需要把第一台Broker上面的Partition3迁移到其他负载小的Broker上面，但<strong>这个为了降低Broker1的IO，平衡副本之间负载的迁徙操作同样是数据复制操作，同样会引起Broker1的IO升高</strong>。所以就需要权衡IO设计出一个极其复杂的负载均衡策略。</p>
+</li>
+<li><p><strong>Kafka问题总结</strong>：</p>
+<blockquote>
+<ol>
+<li><p>运维成本高</p>
+</li>
+<li><p>对于负载不均衡的场景，解决方案复杂</p>
+</li>
+<li><p>没有自己的缓存，完全依赖Page Cache</p>
+</li>
+<li><p>Controller和Coordinator和Broker在同一进程中，大量IO会造成其性能下降</p>
+<p>【Controller是整个集群的大脑，负责对副本和Broker进行分配】</p>
+<p>【Coordinator的作用就是帮助Consumer Group进行分片的分配，也叫做分片的<u>rebalance</u>】</p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h2 id="BMQ"><a href="#BMQ" class="headerlink" title="BMQ"></a>BMQ</h2><p><code>兼容Kafka协议，存算分离，云原生消息队列</code></p>
+<h3 id="架构模型"><a href="#架构模型" class="headerlink" title="架构模型"></a>架构模型</h3><ul>
+<li><p>BMQ架构图</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208230722306.png" class title="image-20230208230722306" loading="lazy">
+
+<p>特点：</p>
+<ul>
+<li><p>兼容Kafka，所以Producer和Consumer都兼容</p>
+</li>
+<li><p>加入Proxy Cluster和Broker Cluster，且Controller和Coordinator被独立出来进行部署</p>
+</li>
+<li><p>存算分离，可以在底层用另外的分布式存储系统Distributed Storage System进行</p>
+</li>
+<li><p>Meta Storage System类似Kafka中的Zoo Keeper，用于存储集群的元数据信息，比如副本的分配信息等等，Controller计算好的方案都会放到这个地方</p>
+</li>
+<li><p><strong>读写分离</strong>（类似数据库）：Proxy Cluster处理读请求，Broker Cluster处理写请求</p>
+<p>得益于<strong>存算分离+读写分离</strong>，Proxy和Broker都是<strong>无状态</strong>的，不会存数据，没有数据复制，降低了运维成本：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208231940426.png" class title="image-20230208231940426" loading="lazy"></li>
+</ul>
+</li>
+<li><p><strong>BMQ不会出现Kafka中的负载不均问题</strong></p>
+<p>BMQ底层是借助HDFS进行存储的，HDFS写文件流程：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208232407061.png" class title="image-20230208232407061" loading="lazy">
+
+<p>通过前面的介绍，我们知道了，同一个副本是由多个segment组成，我们来看看BMQ对于单个文件写入的机制是怎么样的，首先客户端写入前会选择一定数量的DataNode，这个数量是副本数，然后将一个文件写入到这三个节点上， 切换到下一个segment之后，又会重新选择三个节点进行写入。这样一来，对于单个副本的所有segment来讲，会随机的分配到分布式文件系统的整个集群中</p>
+<ul>
+<li><p>和Kafka比较：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230208232837406.png" class title="image-20230208232837406" loading="lazy">
+
+<p>对于Kafka分片数据的写入，是通过先在Leader上面写好文件，然后同步到Follower上，所以对于同一个副本的所有Segment都在同一台机器上面。这样就会存在之前我们所说到的单分片过大导致负载不均衡的问题。</p>
+<p>但在BMQ集群中，因为对于单个副本来讲，segment是随机分配到不同的节点上面的，因此<strong>BMQ不会存在Kafka的负载不均问题</strong>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="读写流程"><a href="#读写流程" class="headerlink" title="读写流程"></a>读写流程</h3><ul>
+<li><p>Broker-Partition状态机【写入过程】</p>
+<p><strong>保证任意分片在同一时刻只能在一个Broker上存活</strong></p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209142048990.png" class title="image-20230209142048990" loading="lazy">
+
+<p>对于写入的逻辑来说，我们还有一个状态机的机制，用来保证不会出现同一个分片在两个Broker上同时启动的情况，另外也能够保证一个分片的正常运行。</p>
+<p>首先，Controller做好分片的分配之后，如果当前分片分到了某个Broker，首先会start这个分片，然后进入Recover状态，这个状态主要有两个目的：</p>
+<ol>
+<li><strong>获取分片写入权利</strong>：也就是说，对于hdfs来讲，只会允许我一个分片进行写入，只有拿到这个权利的分片才能写入</li>
+<li>应对<strong>异常情况下的恢复</strong>：第二个目的是如果上次分片是异常中断的，没有进行save checkpoint，这里会重新进行一次save checkpoint，然后就进入了正常的写流程状态，创建文件，写入数据，到一定大小之后又开始建立新的文件进行写入。</li>
+</ol>
+<hr>
+<p>状态机图中的<strong>Recover状态</strong>详解：</p>
+<p>Writer Thread下面的流程对应上一张图白框里的流程</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209143856150.png" class title="image-20230209143856150" loading="lazy">
+
+<p>数据校验: CRC, 验证参数是否合法<br>校验完成后，会把数据放入Buffer中，通过一个异步的Write Thread线程将数据最终写入到底层的存储系统当中<br>这里有一个地方需要注意一下， 就是对于业务的写入来说，可以<strong>配置返回方式</strong>，可以在写完缓存之后直接返回，另外也可以等数据真正写入存储系统后再返回，对于这两个来说前者损失了数据的可靠性，带来了吞吐性能的优势，因为只写入内存是比较快的，但如果在下一次flush前发生宕机了， 这个时候数据就有可能丢失了，后者的话，因为数据已经写入了存储系统，这个时候也不需要担心数据丢失，相应的来说吞吐就会小一些。<br>我们再来看看Thread的具体逻辑，（Write Data）首先会将Buffer中的数据取出来， 调用底层写入逻辑，（flush）在一定的时间周期上去flush, （Build Index）flush完成后开始建立Index,也就是offset和timestamp对于消息具体位置的映射关系；Index建立好以后，会save一次checkpoint, 也就表示，checkpoint后的数据是可以被消费的，我们想一下， <strong>如果没有checkpoint的情况下会发生什么问题</strong>，如果flush完成之后宕机，index还没有建立，这个数据是不应该被消费的，可能会导致数据和index不对应。有了checkpoint就可以保证宕机发生后，也会先Build Index，再进行数据的写入。</p>
+<p>最后当文件到达一定大小之后，需要建立一个新的segment文件来写入。</p>
+<hr>
+<p>状态机图中的<strong>Failover状态</strong>详解：</p>
+<p>如果在向HDFS中写入segment时出现某个DataNode不能写入，这个时候不会等待这个DataNode恢复，为了保证高可用性，会重新寻找可以写入的DataNode进行写入</p>
+</li>
+<li><p>Proxy【读取流程】</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209145026141.png" class title="image-20230209145026141" loading="lazy">
+
+<p><strong>Wait阶段</strong>详解：</p>
+<p>consumer发送的Fetch Request如果没有fetch到指定大小的数据，proxy会先等待一段时间，再返回用户侧，这样就<strong>可以降低fetch请求的IO次数</strong>。</p>
+<p>经过Wait流程后，Proxy会先到Cache中查找数据，找到直接返回，未找到再去存储系统中查找，首先open file，再通过Index找到数据的位置，再读取数据并返回。</p>
+</li>
+<li><p>BMQ多机房部署：</p>
+<p>线上高可用服务除了防止单机故障的意外影响，也要防止机房级别故障带来的影响。</p>
+<p>Proxy对Broker是一对多跨机房访问的</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209145637341.png" class title="image-20230209145637341" loading="lazy"></li>
+</ul>
+<h3 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h3><p>泳道→Databus→Mirror→Index→Parquet</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209145744204.png" class title="image-20230209145744204" loading="lazy">
+
+<ul>
+<li><p>泳道：</p>
+<p>解决主干泳道流量隔离问题以及泳道资源重复创建问题</p>
+<p>为了测试环境重新建立一个Topic</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209151735429.png" class title="image-20230209151735429" loading="lazy"></li>
+<li><p>DataBus</p>
+<p>Kafka生产者代码：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209152002936.png" class title="image-20230209152002936" loading="lazy">
+
+<p>直接使用原生SDK会有什么问题?</p>
+<p>1.客户端配置较为复杂</p>
+<p>2.不支持动态配置，更改配置需要停掉服务</p>
+<p>3.对于latency不是很敏感的业务，batch 效果不佳</p>
+<p>Databus的架构：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209152413397.png" class title="image-20230209152413397" loading="lazy">
+
+<p>对应上面原生SDK的缺陷，Databus的优势：</p>
+<p>1.简化消息队列客户端复杂度</p>
+<p>2.解耦业务与Topic</p>
+<p>3.缓解集群压力，提高吞吐（对于高吞吐的业务比较友好，但是对于latency要求高的业务不太友好）</p>
+</li>
+<li><p>Mirror</p>
+<p>解决跨Region的问题（Region是较大的地区概念，比如不同国家）</p>
+<p>不能采取之前多机房部署的方式，那样写数据的延迟会非常高。</p>
+<p>可以在不同Region之间部署Mirror，进行Region之间的<strong>异步</strong>同步，如下图所示：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209152939495.png" class title="image-20230209152939495" loading="lazy">
+
+<p>使用Mirror通过<strong>最终一致</strong>的方式，解决跨Region读写问题</p>
+</li>
+<li><p>Index</p>
+<p>如果希望通过写入的LogID、UserID或者其他业务字段进行消息的查询，应该怎么做？</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209153325431.png" class title="image-20230209153325431" loading="lazy">
+
+<p>直接在BMQ中将<u>数据结构化</u>，配置索引DDL，<strong>异步</strong>构建索引后，通过Index Query服务读出数据。</p>
+</li>
+<li><p>Parquet</p>
+<p>Apache Parquet是Hadoop生态圈中一种新型列式存储格式，它可以兼容Hadoop生态圈中大多数计算框架(Hadoop、Spark等)， 被多种查询引擎支持(Hive、Impala、 Dill等)。</p>
+<ul>
+<li><p>行式存储和列式存储：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209153646542.png" class title="image-20230209153646542" loading="lazy">
+
+<ul>
+<li>行式存储在查询某个表中所有的列数据时更快，如<code>select * from table where id = 1</code></li>
+<li>列式存储在查询某个特定的列时更快</li>
+</ul>
+<p>显然目前列式存储相应的查询方式更为多见</p>
+</li>
+</ul>
+<p>对于Producer生产的消息，原本的存储方式更像是列存储，可以通过存入Parquet Engine，将数据结构化，使用不同的方式构建Parquet格式文件，方便后续的数据分析</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209154050106.png" class title="image-20230209154050106" loading="lazy"></li>
+</ul>
+<p>总结：</p>
+<ol>
+<li>BMQ的架构模型(解决Kafka存在的问题)</li>
+<li>BMQ读写流程(Failover 机制，写入状态机)</li>
+<li>BMQ高级特性(泳道、Databus、Mirror、Index、 Parquet)</li>
+</ol>
+<h2 id="RocketMQ"><a href="#RocketMQ" class="headerlink" title="RocketMQ"></a>RocketMQ</h2><ul>
+<li><p>RocketMQ基本概念</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209154657432.png" class title="image-20230209154657432" loading="lazy"></li>
+<li><p>RocketMQ架构</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209160850070.png" class title="image-20230209160850070" loading="lazy">
+
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209162915923.png" class title="image-20230209162915923" loading="lazy">
+
+<p>数据流也是通过Producer发送给Broker集群，再由Consumer进行消费</p>
+<p>Broker节点有Master和Slave的概念</p>
+<p>NameServer为集群提供轻量级服务发现和路由</p>
+</li>
+<li><p>RocketMQ存储模型：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209163132780.png" class title="image-20230209163132780" loading="lazy">
+
+<p>接下来我们来看看RocketMQ消息的存储模型，对于一个Broker来说所有的消息的会append到一个CommitLog 上面，然后按照不同的Queue，重新<br>Dispatch到不同的Consumer中，这样Consumer就可以按照Queue进行拉取消费 ，但需要注意的是，这里的ConsumerQueue所存储的并不是真实的数据，真实的数据其实只存在CommitLog中，这里存的仅仅是这个Queue所有消息在CommitLog上面的位置，相当于是这个Queue的一个<strong>密集索引</strong></p>
+</li>
+<li><p>RocketMQ高级特性</p>
+<p><strong>事务场景</strong>：</p>
+<p>在下面的场景中，【库存记录-1】和【消息队列】两步需要保证在同一个事务内</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164232759.png" alt="image-20230209164232759" style="zoom:50%;" loading="lazy">
+
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164103754.png" class title="image-20230209164103754" loading="lazy">
+
+<p>即在Producer添加了一个两阶段提交</p>
+<p><strong>延迟发送</strong>：</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164336108.png" alt="image-20230209164336108" style="zoom:50%;" loading="lazy">
+
+<p>可以延迟发送消息队列中的消息</p>
+<p>原理是添加了ScheduleTopic来单独处理需要延迟发送的消息，在到了延迟的时间后再回写进CommitLog</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209164412965.png" class title="image-20230209164412965" loading="lazy">
+
+<p><strong>处理失败</strong>：</p>
+<p>消费消息失败之后会进行重试，超过一定的重试次数会送入Dead Letter死信队列，不会再重试尝试发送</p>
+<img src="/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/image-20230209170228629.png" class title="image-20230209170228629" loading="lazy"></li>
+<li><p>RocketMQ小结：</p>
+<ol>
+<li>RocketMQ的基本概念(Queue, Tag)</li>
+<li>RocketMQ的底层原理(架构模型、存储模型)</li>
+<li>RocketMQ的高级特性(事务消息、重试和死信队列，延迟队列)</li>
+</ol>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>前世今生：消息队列发展历程</li>
+<li>Kafka：基本概念、架构设计、底层原理、架构缺点</li>
+<li>BMQ：架构设计、底层原理、Kafka 比较、高级特性</li>
+<li>RocketMQ：架构设计、底层原理、高级特性</li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/" title="消息队列笔记">https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2023/01/16/Golang%E5%AD%A6%E4%B9%A0/" rel="next" title="Golang学习"><span class="post-nav-text">Golang学习</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
