@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wan_nan"><meta name="copyright" content="wan_nan"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>RDBMS笔记 | 风物</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><link rel="icon" href="/dino.png"><link rel="mask-icon" href="/dino.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wan-nan.github.io","root":"/","title":"风物的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="数据库事务的ACID特性： 原子性（Atomicity）：【一个事务必须都发生或都不发生（基于日志的Undo log机制）】 事务是一个不可再分割的工作单元，一个事务中的操作要么都发生，要么都不发生。 一致性（Consistency）：【终极目标】 数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。 隔离性（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（加锁）（M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RDBMS笔记">
+<meta property="og:url" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/index.html">
+<meta property="og:site_name" content="风物">
+<meta property="og:description" content="数据库事务的ACID特性： 原子性（Atomicity）：【一个事务必须都发生或都不发生（基于日志的Undo log机制）】 事务是一个不可再分割的工作单元，一个事务中的操作要么都发生，要么都不发生。 一致性（Consistency）：【终极目标】 数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。 隔离性（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（加锁）（M">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211162936606.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211163347225.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211164212376.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211164536431.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211164816809.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211165319282.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211165551539.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211170106023.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211170809362.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172039450.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172201048.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172418784.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172836375.png">
+<meta property="og:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211173048953.png">
+<meta property="article:published_time" content="2023-02-11T08:18:49.000Z">
+<meta property="article:modified_time" content="2023-02-11T09:46:41.465Z">
+<meta property="article:author" content="wan_nan">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="工作面试">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211162936606.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">47</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">39</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">关键技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%9D%A1SQL%E7%9A%84%E4%B8%80%E7%94%9F"><span class="toc-number">1.1.</span> <span class="toc-text">一条SQL的一生</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E5%BC%95%E6%93%8E"><span class="toc-number">2.</span> <span class="toc-text">SQL引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Parser"><span class="toc-number">2.1.</span> <span class="toc-text">Parser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Optimizer"><span class="toc-number">2.2.</span> <span class="toc-text">Optimizer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Executor"><span class="toc-number">2.3.</span> <span class="toc-text">Executor</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E-InnoDB"><span class="toc-number">3.</span> <span class="toc-text">存储引擎 - InnoDB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%BC%95%E6%93%8E"><span class="toc-number">4.</span> <span class="toc-text">事务引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%81%E4%B8%9A%E5%AE%9E%E8%B7%B5"><span class="toc-number">5.</span> <span class="toc-text">企业实践</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">RDBMS笔记</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2023-02-11 16:18:49" itemprop="dateCreated datePublished" datetime="2023-02-11T16:18:49+08:00">2023-02-11</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">1.5k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">5m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/%E5%B7%A5%E4%BD%9C%E9%9D%A2%E8%AF%95/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">工作面试</span></a><a class="tag-item" href="/tags/%E5%90%8E%E7%AB%AF/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">后端</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><ul>
+<li><p>数据库事务的ACID特性：</p>
+<p><strong>原子性</strong>（Atomicity）：【一个事务必须都发生或都不发生（<a target="_blank" rel="noopener" href="https://blog.csdn.net/l_ik_y/article/details/121791171">基于日志的Undo log机制</a>）】</p>
+<p>事务是一个不可再分割的工作单元，<u>一个事务中的操作要么都发生，要么都不发生</u>。</p>
+<p><strong>一致性</strong>（Consistency）：【终极目标】</p>
+<p>数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。</p>
+<p><strong>隔离性</strong>（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1883156">加锁</a>）（<a href>MVCC也借助了Undo log</a>）】</p>
+<p>多个事务并发访问时，事务之间是隔离的，一个事务不应该影响其它事务运行效果。</p>
+<p><strong>持久性</strong>（Durability）：【保证数据不会因宕机等故障而消失（<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_32553639/article/details/113599164">Redo log</a>)】</p>
+<p>在事务完成以后，该事务所对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</p>
+<hr>
+<blockquote>
+<p>在转账的例子中，A-100，B+100，如果只是A-100，B的账户没有变，这时认为<strong>同时违反了原子性和一致性</strong></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/stone94/p/10409669.html">原子性和一致性的区别是什么？</a></p>
+<p>在事务处理的ACID属性中，<strong>一致性是最基本的属性，其它的三个属性都为了保证一致性而存在的。</strong></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h2><p>一条SQL的一生；SQL引擎；存储引擎；事务引擎</p>
+<h3 id="一条SQL的一生"><a href="#一条SQL的一生" class="headerlink" title="一条SQL的一生"></a>一条SQL的一生</h3><img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211162936606.png" class title="image-20230211162936606" loading="lazy">
+
+<p>SQL引擎：</p>
+<ul>
+<li>Parser查询解析：SQL 语言接近自然语言，入门容易。 但是各种关键字、操作符组合起来， 可以表达丰富的语意。因此想要处理SQL命令， 首先将文本解析成结构化数据，也就是抽象语法树(AST)</li>
+<li>Optimizer查询优化：SQL 是一门表意的语言，只是说「要做什么」，而不说「怎么做」。所以需要一些复 杂的逻辑选择「如何拿数据」，也就是选择一个好的查询计划。优化器的作用根据AST优化产生最优执行计划(Plan Tree)</li>
+<li>Executor查询执行：根据查询计划，完成数据读取、处理、写入等操作。</li>
+</ul>
+<p>事务引擎：处理事务一致性、并发、读写隔离等</p>
+<p>存储引擎：内存中的数据缓存区、数据文件（Data File）、日志文件（Log File）</p>
+<h2 id="SQL引擎"><a href="#SQL引擎" class="headerlink" title="SQL引擎"></a>SQL引擎</h2><h3 id="Parser"><a href="#Parser" class="headerlink" title="Parser"></a>Parser</h3><p>解析器(Parser)一般分为词法分析(Lexical analysis)、语法分析(Syntax analysis)、语义分析(Semantic analyzer)等步骤。</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211163347225.png" class title="image-20230211163347225" loading="lazy">
+
+<p>所有的代码在执行之前，都存在一个解析编译的过程， 差异点无非在于是静态解析编译还是动态的。</p>
+<p>SQL语言也类似，在SQL查询执行前的第一步就是查询解析。</p>
+<p><strong>词法分析</strong>：将一条SQL 语句对应的字符串分割为一个个token，这些token可以简单分类。</p>
+<p><strong>语法分析</strong>：把词法分析的结果转为语法树。根据token序列匹配不同的语法规则，比如这里匹配的是update语法规则，类似的还有insert、 delete、 select、 create、 drop等等语法规则。根据语法规则匹配SQL语句中的关键字，最终输出一个结构化的数据</p>
+<p><strong>语义分析</strong>：对语法树中的信息进行合法性校验。</p>
+<h3 id="Optimizer"><a href="#Optimizer" class="headerlink" title="Optimizer"></a>Optimizer</h3><ul>
+<li><p>基于规则的优化（RBO：Rule Base Optimizer）</p>
+<p>规则是预先定义好的，如</p>
+<ul>
+<li>条件化简</li>
+<li>表连接优化中的：总是小表先进行连接</li>
+<li>Scan优化中的：先进行唯一索引，再进行普通索引，再进行全表扫描</li>
+</ul>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211164212376.png" class title="image-20230211164212376" loading="lazy"></li>
+<li><p>基于代价的优化（CBO：Cost Base Optimizer）</p>
+<p>代价可能的考量标准：时间、IO、CPU、网络、存储</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211164536431.png" class title="image-20230211164536431" loading="lazy"></li>
+</ul>
+<h3 id="Executor"><a href="#Executor" class="headerlink" title="Executor"></a>Executor</h3><ul>
+<li><p>火山模型：</p>
+<p>执行时由抽象的<strong>Operator算子拼接</strong></p>
+<p>Plan Tree为基础<br>调用关系是由根到叶<br>数据流是从叶到根</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211164816809.png" class title="image-20230211164816809" loading="lazy"></li>
+<li><p>向量化模型：</p>
+<p>（<strong>Batch N行数据一起计算</strong>）</p>
+<p>向量化执行更适合于大批量数据处理，对于很多单行数据处理并没有<br>优势。而且往往搭配列式存储使用。</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211165319282.png" class title="image-20230211165319282" loading="lazy"></li>
+<li><p>编译执行模型：</p>
+<p>（将所有操作封装在一个函数中）</p>
+<p>类比火山模型，就是将所有算子都合并在一起，这样可以大幅降低函数调用的代价</p>
+<p>代码生成之后数据库运行时仍然是一个for循环，只不过这个循环内部的代码从简单的一个虚函数调用<code>plan.next()</code>展开成了一系列具体的运算逻辑，这样数据就不用再各个operator之间进行传递，而且有些数据还可以直接被存放在寄存器中，进一步提升系统性能。整个操作有点像inline函数，把所有的操作inline到一个函数中去。</p>
+<p>LLVM动态编译执行技术，根据优化器产生的计划，动态的生成执行代码。</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211165551539.png" class title="image-20230211165551539" loading="lazy"></li>
+</ul>
+<h2 id="存储引擎-InnoDB"><a href="#存储引擎-InnoDB" class="headerlink" title="存储引擎 - InnoDB"></a>存储引擎 - InnoDB</h2><p>架构图如下图：</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211170106023.png" class title="image-20230211170106023" loading="lazy">
+
+<ul>
+<li><p>Buffer Pool</p>
+<p>其中两个重要的部分：HashMap和LRU淘汰</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211170809362.png" class title="image-20230211170809362" loading="lazy">
+
+<p>HashMap：&lt;page_id, block&gt;的映射</p>
+<p>LRU：MySQL对传统的LRU进行了优化，对Buffer Poll的数据进行了冷热分离；刚替换进内存的page存放在冷数据区，如果1s<strong>后</strong>被访问，加入热数据去；否则就放在冷数据区；</p>
+</li>
+<li><p>Page</p>
+<p>没听懂捏</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172039450.png" class title="image-20230211172039450" loading="lazy"></li>
+<li><p>B+ Tree</p>
+<p>很迷糊捏</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172201048.png" class title="image-20230211172201048" loading="lazy"></li>
+</ul>
+<h2 id="事务引擎"><a href="#事务引擎" class="headerlink" title="事务引擎"></a>事务引擎</h2><ul>
+<li><p><strong>Atomicity 与 Undo Log</strong></p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172418784.png" class title="image-20230211172418784" loading="lazy"></li>
+<li><p><strong>Isolation 与 锁</strong>（<strong>也是借助Undo log</strong>）</p>
+<ul>
+<li><p>读读：Share Lock</p>
+</li>
+<li><p>写写：Exclusive Lock，需要等待</p>
+</li>
+<li><p>读写：MVCC机制（相当于可以读到旧版本的数据）（<strong>也是借助Undo log</strong>）</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211172836375.png" class title="image-20230211172836375" loading="lazy"></li>
+</ul>
+</li>
+<li><p><strong>Durability 与 Redo Log</strong></p>
+<p>WAL（Write-ahead Logging）借助Redo log</p>
+<img src="/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/image-20230211173048953.png" class title="image-20230211173048953" loading="lazy"></li>
+</ul>
+<h2 id="企业实践"><a href="#企业实践" class="headerlink" title="企业实践"></a>企业实践</h2><ul>
+<li><p><strong>Binlog</strong></p>
+<p>binlog是MySQL用来记录数据库表结构变更以及表数据修改的的二进制日志，<strong>它只会记录表的变更操作，但不会记录select和show这种查询操作</strong>。</p>
+<p><strong>数据恢复</strong>：误删数据之后可以通过mysqlbinlog工具恢复数据</p>
+<p><strong>主从复制</strong>：主库将binlog传给从库，从库接收到之后读取内容写入从库，实现主库和从库数据一致性</p>
+<p><strong>审计</strong>：可以通过二进制日志中的信息进行审计，判断是否对数据库进行注入攻击</p>
+</li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>wan_nan</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/" title="RDBMS笔记">https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2023/02/10/RPC%E6%A1%86%E6%9E%B6%E7%AC%94%E8%AE%B0/" rel="next" title="RPC框架笔记"><span class="post-nav-text">RPC框架笔记</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2023 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wan_nan</span></div><div class="live_time"><span>本博客已悄悄运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
