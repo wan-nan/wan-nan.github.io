@@ -22,36 +22,46 @@
   }
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(bp, s);
-})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="面经八股 数据库事务的ACID特性： 原子性（Atomicity）：【一个事务必须都发生或都不发生（基于日志的Redo&#x2F;Undo机制）】 事务是一个不可再分割的工作单元，一个事务中的操作要么都发生，要么都不发生。 一致性（Consistency）：【终极目标】 数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。 隔离性（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（">
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="面经八股 数据库事务的ACID特性： 原子性（Atomicity）：【一个事务必须都发生或都不发生（基于日志的Undo log机制）】 事务是一个不可再分割的工作单元，一个事务中的操作要么都发生，要么都不发生。 一致性（Consistency）：【终极目标】 数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。 隔离性（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（加">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冲！(for Job-Interview)">
 <meta property="og:url" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/index.html">
 <meta property="og:site_name" content="风物">
-<meta property="og:description" content="面经八股 数据库事务的ACID特性： 原子性（Atomicity）：【一个事务必须都发生或都不发生（基于日志的Redo&#x2F;Undo机制）】 事务是一个不可再分割的工作单元，一个事务中的操作要么都发生，要么都不发生。 一致性（Consistency）：【终极目标】 数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。 隔离性（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（">
+<meta property="og:description" content="面经八股 数据库事务的ACID特性： 原子性（Atomicity）：【一个事务必须都发生或都不发生（基于日志的Undo log机制）】 事务是一个不可再分割的工作单元，一个事务中的操作要么都发生，要么都不发生。 一致性（Consistency）：【终极目标】 数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。 隔离性（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（加">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170031375.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170124328.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112214755152.png">
+<meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/mysql/sql%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/mysql%E6%9F%A5%E8%AF%A2%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230220190030677.png">
+<meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/mysql/row_format/%E5%A4%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E6%83%85%E5%86%B5.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230221162254414.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230221165254201.png">
+<meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E5%B0%81%E8%A3%85.png">
+<meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/11.jpg">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230220211944680.png">
+<meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230220214805151.png">
+<meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E6%94%B6%E5%8F%91%E6%B5%81%E7%A8%8B.png">
 <meta property="og:image" content="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP/19-HTTPS%E4%B8%8EHTTP.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20221231194500759.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png">
 <meta property="og:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230208031624020.png">
 <meta property="article:published_time" content="2022-12-30T12:57:49.000Z">
-<meta property="article:modified_time" content="2023-02-11T07:52:01.726Z">
+<meta property="article:modified_time" content="2023-02-24T08:00:10.377Z">
 <meta property="article:author" content="wan_nan">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="daily">
 <meta property="article:tag" content="工作面试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170031375.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">47</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">39</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E7%BB%8F%E5%85%AB%E8%82%A1"><span class="toc-number">1.</span> <span class="toc-text">面经八股</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">自己的记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.1.1.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84Linux%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.2.</span> <span class="toc-text">平时用到的Linux命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%9E%97coding-%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C"><span class="toc-number">1.2.</span> <span class="toc-text">小林coding-图解网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">TCP&#x2F;IP 网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E5%88%B0%E7%BD%91%E9%A1%B5%E6%98%BE%E7%A4%BA%EF%BC%8C%E6%9C%9F%E9%97%B4%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.2.</span> <span class="toc-text">键入网址到网页显示，期间发生了什么</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5%E6%96%87%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">青训营文章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E9%99%90%E6%B5%81"><span class="toc-number">2.1.</span> <span class="toc-text">并发场景下的限流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E4%B8%8Ewebsocket%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">HTTP协议与websocket协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka-%E7%A7%91%E6%99%AE"><span class="toc-number">2.3.</span> <span class="toc-text">Kafka 科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">字节青训营练习题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY1"><span class="toc-number">3.1.</span> <span class="toc-text">DAY1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY2"><span class="toc-number">3.2.</span> <span class="toc-text">DAY2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY3"><span class="toc-number">3.3.</span> <span class="toc-text">DAY3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY4"><span class="toc-number">3.4.</span> <span class="toc-text">DAY4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY5"><span class="toc-number">3.5.</span> <span class="toc-text">DAY5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY6"><span class="toc-number">3.6.</span> <span class="toc-text">DAY6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY7"><span class="toc-number">3.7.</span> <span class="toc-text">DAY7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY8"><span class="toc-number">3.8.</span> <span class="toc-text">DAY8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY9"><span class="toc-number">3.9.</span> <span class="toc-text">DAY9</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">冲！(for Job-Interview)</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-12-30 20:57:49" itemprop="dateCreated datePublished" datetime="2022-12-30T20:57:49+08:00">2022-12-30</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-02-11 15:52:01" itemprop="dateModified" datetime="2023-02-11T15:52:01+08:00">2023-02-11</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">4.2k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">15m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a><a class="tag-item" href="/tags/%E5%B7%A5%E4%BD%9C%E9%9D%A2%E8%AF%95/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">工作面试</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="面经八股"><a href="#面经八股" class="headerlink" title="面经八股"></a>面经八股</h1><ul>
+<meta name="twitter:image" content="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/image-20230112170031375.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wan_nan"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wan_nan"><span class="site-author-status" title="sleeping">😴</span></a><div class="site-author-name"><a href="/about/">wan_nan</a></div><span class="site-name">风物</span><sub class="site-subtitle">Yeah!</sub><div class="site-desciption">个人博客</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">47</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">39</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2213324970&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wan-nan" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E7%BB%8F%E5%85%AB%E8%82%A1"><span class="toc-number">1.</span> <span class="toc-text">面经八股</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">自己的记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.1.1.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RDBMS"><span class="toc-number">1.1.2.</span> <span class="toc-text">RDBMS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E6%97%B6%E7%94%A8%E5%88%B0%E7%9A%84Linux%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.3.</span> <span class="toc-text">平时用到的Linux命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3MySQL"><span class="toc-number">1.2.</span> <span class="toc-text">图解MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#how-select"><span class="toc-number">1.2.1.</span> <span class="toc-text">how_select</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#row-format"><span class="toc-number">1.2.2.</span> <span class="toc-text">row_format</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-%E7%9A%84-NULL-%E5%80%BC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%98%E6%94%BE%E7%9A%84%EF%BC%9F"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">MySQL 的 NULL 值是怎么存放的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-%E6%80%8E%E4%B9%88%E7%9F%A5%E9%81%93-varchar-n-%E5%AE%9E%E9%99%85%E5%8D%A0%E7%94%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%A7%E5%B0%8F%EF%BC%9F"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">MySQL 怎么知道 varchar(n) 实际占用数据的大小？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#varchar-n-%E4%B8%AD-n-%E6%9C%80%E5%A4%A7%E5%8F%96%E5%80%BC%E4%B8%BA%E5%A4%9A%E5%B0%91%EF%BC%9F"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">varchar(n) 中 n 最大取值为多少？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E6%BA%A2%E5%87%BA%E5%90%8E%EF%BC%8CMySQL-%E6%98%AF%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E7%9A%84%EF%BC%9F"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">行溢出后，MySQL 是怎么处理的？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-interview"><span class="toc-number">1.2.3.</span> <span class="toc-text">index_interview</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-MySQL-InnoDB-%E9%80%89%E6%8B%A9-B-tree-%E4%BD%9C%E4%B8%BA%E7%B4%A2%E5%BC%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">为什么 MySQL InnoDB 选择 B+tree 作为索引的数据结构？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5%E5%89%8D%E5%8A%A0%E4%B8%8Aexplain%E5%BE%97%E5%88%B0%E7%9A%84%E7%BB%93%E6%9E%9C%E7%9A%84%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">SQL语句前加上explain得到的结果的参数解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8C%96%E7%B4%A2%E5%BC%95%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">有什么优化索引的方法？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#page"><span class="toc-number">1.2.4.</span> <span class="toc-text">page</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.</span> <span class="toc-text">图解网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP-model"><span class="toc-number">1.3.1.</span> <span class="toc-text">TCP&#x2F;IP model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#what-happen-url"><span class="toc-number">1.3.2.</span> <span class="toc-text">what_happen_url</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#how-os-deal-network-package"><span class="toc-number">1.3.3.</span> <span class="toc-text">how_os_deal_network_package</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E4%B8%80%E6%AC%A1%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E4%BC%9A%E6%B6%89%E5%8F%8A%E5%87%A0%E6%AC%A1%E5%86%85%E5%AD%98%E6%8B%B7%E8%B4%9D%E6%93%8D%E4%BD%9C%EF%BC%9F"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">发送一次网络数据的时候，会涉及几次内存拷贝操作？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http-interview"><span class="toc-number">1.3.4.</span> <span class="toc-text">http_interview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http-optimize"><span class="toc-number">1.3.5.</span> <span class="toc-text">http_optimize</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%92%E8%AE%AD%E8%90%A5%E6%96%87%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">青训营文章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E9%99%90%E6%B5%81"><span class="toc-number">2.1.</span> <span class="toc-text">并发场景下的限流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E4%B8%8Ewebsocket%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">HTTP协议与websocket协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka-%E7%A7%91%E6%99%AE"><span class="toc-number">2.3.</span> <span class="toc-text">Kafka 科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E9%9D%92%E8%AE%AD%E8%90%A5%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">字节青训营练习题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY1"><span class="toc-number">3.1.</span> <span class="toc-text">DAY1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY2"><span class="toc-number">3.2.</span> <span class="toc-text">DAY2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY3"><span class="toc-number">3.3.</span> <span class="toc-text">DAY3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY4"><span class="toc-number">3.4.</span> <span class="toc-text">DAY4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY5"><span class="toc-number">3.5.</span> <span class="toc-text">DAY5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY6"><span class="toc-number">3.6.</span> <span class="toc-text">DAY6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY7"><span class="toc-number">3.7.</span> <span class="toc-text">DAY7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY8"><span class="toc-number">3.8.</span> <span class="toc-text">DAY8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAY9"><span class="toc-number">3.9.</span> <span class="toc-text">DAY9</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wan-nan.github.io/2022/12/30/Preparation-for-Job-Interview/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wan_nan"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="风物"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">冲！(for Job-Interview)</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-12-30 20:57:49" itemprop="dateCreated datePublished" datetime="2022-12-30T20:57:49+08:00">2022-12-30</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-02-24 16:00:10" itemprop="dateModified" datetime="2023-02-24T16:00:10+08:00">2023-02-24</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">7.6k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">27m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E7%AC%94%E8%AE%B0/" style="--text-color:dimgray" itemprop="url" rel="index"><span itemprop="text">笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">学习</span></a><a class="tag-item" href="/tags/daily/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">daily</span></a><a class="tag-item" href="/tags/%E5%B7%A5%E4%BD%9C%E9%9D%A2%E8%AF%95/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">工作面试</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="面经八股"><a href="#面经八股" class="headerlink" title="面经八股"></a>面经八股</h1><ul>
 <li><p>数据库事务的ACID特性：</p>
-<p><strong>原子性</strong>（Atomicity）：【一个事务必须都发生或都不发生（<a target="_blank" rel="noopener" href="https://blog.csdn.net/l_ik_y/article/details/121791171">基于日志的Redo/Undo机制</a>）】</p>
+<p><strong>原子性</strong>（Atomicity）：【一个事务必须都发生或都不发生（<a target="_blank" rel="noopener" href="https://blog.csdn.net/l_ik_y/article/details/121791171">基于日志的Undo log机制</a>）】</p>
 <p>事务是一个不可再分割的工作单元，<u>一个事务中的操作要么都发生，要么都不发生</u>。</p>
 <p><strong>一致性</strong>（Consistency）：【终极目标】</p>
 <p>数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。</p>
-<p><strong>隔离性</strong>（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1883156">加锁</a>）】</p>
+<p><strong>隔离性</strong>（Solation）：【并发的事务之间不影响（脏读、幻读和不可重复读）（<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1883156">加锁</a>）（<a href>MVCC也借助了Undo log</a>）】</p>
 <p>多个事务并发访问时，事务之间是隔离的，一个事务不应该影响其它事务运行效果。</p>
-<p><strong>持久性</strong>（Durability）：【保证数据不会因宕机等故障儿消失（<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_32553639/article/details/113599164">Redo log</a>)】</p>
+<p><strong>持久性</strong>（Durability）：【保证数据不会因宕机等故障而消失（<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_32553639/article/details/113599164">Redo log</a>)】</p>
 <p>在事务完成以后，该事务所对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</p>
 <hr>
 <blockquote>
@@ -66,6 +76,7 @@
 </ul>
 <h2 id="自己的记录"><a href="#自己的记录" class="headerlink" title="自己的记录"></a>自己的记录</h2><p>用于回答自己的经验等相关问题</p>
 <h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><p><a href="https://wan-nan.github.io/2023/02/08/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%AC%94%E8%AE%B0/">根据青训营的课专门整理了一篇笔记</a></p>
+<h3 id="RDBMS"><a href="#RDBMS" class="headerlink" title="RDBMS"></a>RDBMS</h3><p><a href="https://wan-nan.github.io/2023/02/11/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3RDBMS/">根据青训营的课专门整理了一篇笔记</a></p>
 <h3 id="平时用到的Linux命令"><a href="#平时用到的Linux命令" class="headerlink" title="平时用到的Linux命令"></a>平时用到的Linux命令</h3><ul>
 <li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.HTML">netstat</a></p>
 <blockquote>
@@ -87,7 +98,111 @@
 <p>但是上传所使用的<code>ssh-copy-id</code>命令需要输入密码登录</p>
 </li>
 </ul>
-<h2 id="小林coding-图解网络"><a href="#小林coding-图解网络" class="headerlink" title="小林coding-图解网络"></a>小林coding-图解网络</h2><h3 id="TCP-IP-网络模型"><a href="#TCP-IP-网络模型" class="headerlink" title="TCP/IP 网络模型"></a>TCP/IP 网络模型</h3><ul>
+<h2 id="图解MySQL"><a href="#图解MySQL" class="headerlink" title="图解MySQL"></a>图解MySQL</h2><h3 id="how-select"><a href="#how-select" class="headerlink" title="how_select"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/base/how_select.html#mysql-%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84">how_select</a></h3><blockquote>
+<p>执行一条 SQL 查询语句，期间发生了什么？</p>
+<ul>
+<li>连接器：建立连接，管理连接、校验用户身份；</li>
+<li>查询缓存：查询语句如果命中查询缓存则直接返回，否则继续往下执行。MySQL 8.0 已删除该模块；</li>
+<li>解析 SQL，通过解析器对 SQL 查询语句进行词法分析、语法分析，然后构建语法树，方便后续模块读取表名、字段、语句类型；</li>
+<li>执行 SQL：执行 SQL 共有三个阶段：<ul>
+<li>预处理阶段：检查表或字段是否存在；将 <code>select *</code> 中的 <code>*</code> 符号扩展为表上的所有列。</li>
+<li>优化阶段：基于查询成本的考虑， 选择查询成本最小的执行计划；</li>
+<li>执行阶段：根据执行计划执行 SQL 查询语句，从存储引擎读取记录，返回给客户端；</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/mysql/sql%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/mysql%E6%9F%A5%E8%AF%A2%E6%B5%81%E7%A8%8B.png" alt="img" loading="lazy"></p>
+</blockquote>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/thesprit/article/details/112989674">MySQL的二级索引</a></p>
+<p>建立二级索引的方法及其搜索过程</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/CgWblog/p/14929888.html">有MySQL联合索引(A, B, C)，那么AC查询会用到索引吗？</a>【BC查询呢？】</p>
+<p>AC和BC都会用到，但是原因不一样</p>
+</li>
+</ul>
+<h3 id="row-format"><a href="#row-format" class="headerlink" title="row_format"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/base/row_format.html">row_format</a></h3><blockquote>
+<h4 id="MySQL-的-NULL-值是怎么存放的？"><a href="#MySQL-的-NULL-值是怎么存放的？" class="headerlink" title="MySQL 的 NULL 值是怎么存放的？"></a>MySQL 的 NULL 值是怎么存放的？</h4></blockquote>
+<p>MySQL 的 Compact 行格式中会用「<strong>NULL值列表</strong>」来标记值为 NULL 的列，NULL 值并不会存储在行格式中的真实数据部分。</p>
+<p>NULL值列表会占用 <strong>1 字节空间</strong>，当表中所有字段都定义成 NOT NULL，行格式中就不会有 NULL值列表，这样可节省 1 字节的空间。</p>
+<blockquote>
+<h4 id="MySQL-怎么知道-varchar-n-实际占用数据的大小？"><a href="#MySQL-怎么知道-varchar-n-实际占用数据的大小？" class="headerlink" title="MySQL 怎么知道 varchar(n) 实际占用数据的大小？"></a>MySQL 怎么知道 varchar(n) 实际占用数据的大小？</h4></blockquote>
+<p>MySQL 的 Compact 行格式中会用「<strong>变长字段长度列表</strong>」存储变长字段实际占用的数据大小。</p>
+<p>值得一提的是，「变长字段长度列表」要逆序存放，这样可以<strong>使得位置靠前的记录的真实数据和数据对应的字段长度信息可以同时在一个 CPU Cache Line 中，这样就可以提高 CPU Cache 的命中率</strong>。</p>
+<p><strong>占用空间：</strong></p>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230220190030677.png" alt="image-20230220190030677" style="zoom: 67%;" loading="lazy">
+
+<blockquote>
+<h4 id="varchar-n-中-n-最大取值为多少？"><a href="#varchar-n-中-n-最大取值为多少？" class="headerlink" title="varchar(n) 中 n 最大取值为多少？"></a>varchar(n) 中 n 最大取值为多少？</h4></blockquote>
+<p>一行记录最大能存储 65535 字节的数据，但是这个是包含「变长字段字节数列表所占用的字节数」和「NULL值列表所占用的字节数」。所以， 我们在算 varchar(n) 中 n 最大值时，需要减去这两个列表所占用的字节数。</p>
+<p>如果一张表只有一个 varchar(n) 字段，且允许为 NULL，字符集为 ascii。varchar(n) 中 n 最大取值为 <strong>65532</strong>。</p>
+<p>计算公式：65535 - 变长字段字节数列表所占用的字节数 - NULL值列表所占用的字节数 = 65535 - 2 - 1 = 65532。</p>
+<p>如果有多个字段的话，要保证所有字段的长度 + 变长字段字节数列表所占用的字节数 + NULL值列表所占用的字节数 &lt;= 65535。</p>
+<p>多个字段的例子：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/mysql/row_format/%E5%A4%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E6%83%85%E5%86%B5.png" alt="img" loading="lazy"></p>
+<blockquote>
+<h4 id="行溢出后，MySQL-是怎么处理的？"><a href="#行溢出后，MySQL-是怎么处理的？" class="headerlink" title="行溢出后，MySQL 是怎么处理的？"></a>行溢出后，MySQL 是怎么处理的？</h4></blockquote>
+<p>如果一个数据页存不了一条记录，InnoDB 存储引擎会自动将溢出的数据存放到「<strong>溢出页</strong>」中。</p>
+<p>Compact 行格式针对行溢出的处理是这样的：当发生行溢出时，在记录的真实数据处只会保存该列的一部分数据，而把剩余的数据放在「溢出页」链表中，然后真实数据处用 <strong>20 字节</strong>存储指向溢出页的地址，从而可以找到剩余数据所在的页。</p>
+<p>Compressed 和 Dynamic 这两种格式采用完全的行溢出方式，记录的真实数据处<u>不会</u>存储该列的一部分数据，只存储 20 个字节的指针来指向溢出页。而实际的数据都存储在溢出页中。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/548715540">多个溢出页之间采用链表关联</a></li>
+</ul>
+<h3 id="index-interview"><a href="#index-interview" class="headerlink" title="index_interview"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/index/index_interview.html">index_interview</a></h3><ul>
+<li><h4 id="为什么-MySQL-InnoDB-选择-B-tree-作为索引的数据结构？"><a href="#为什么-MySQL-InnoDB-选择-B-tree-作为索引的数据结构？" class="headerlink" title="为什么 MySQL InnoDB 选择 B+tree 作为索引的数据结构？"></a>为什么 MySQL InnoDB 选择 B+tree 作为索引的数据结构？</h4><blockquote>
+<p><strong>相同深度下，能查询更多的节点</strong></p>
+<p><strong>相同节点数量时，深度更小，查询更快</strong></p>
+<p><strong>叶子结点采用双链表连接，适合顺序查询</strong></p>
+</blockquote>
+<p><em><strong>1、B+Tree vs B Tree</strong></em></p>
+<p>B+Tree 只在叶子节点存储数据，而 B 树 的非叶子节点也要存储数据，所以 B+Tree 的单个节点的数据量更小，B+Tree一个节点在存储引擎中占用一个16KB的页，一个页能包含的节点个数（即子节点的个数）更多，相同深度的树包含的节点数目更多；在相同的磁盘 I/O 次数下，就能查询更多的节点。</p>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230221162254414.png" class title="image-20230221162254414" loading="lazy">
+
+<p>另外，B+Tree 叶子节点采用的是双链表连接，适合 MySQL 中常见的基于范围的顺序查找，而 B 树无法做到这一点。</p>
+<p><em><strong>2、B+Tree vs 二叉树</strong></em></p>
+<p>对于有 N 个叶子节点的 B+Tree，其搜索复杂度为$$O(log_dN)$$，其中 d 表示节点允许的最大子节点个数为 d 个。</p>
+<p>在实际的应用当中， d 值是大于100的，这样就保证了，即使数据达到千万级别时，B+Tree 的高度依然维持在 3<del>4 层左右，也就是说一次数据查询操作只需要做 3</del>4 次的磁盘 I/O 操作就能查询到目标数据。</p>
+<p>而二叉树的每个父节点的儿子节点个数只能是 2 个，意味着其搜索复杂度为 $$O(log_2N)$$，这已经比 B+Tree 高出不少，因此二叉树检索到目标数据所经历的磁盘 I/O 次数要更多。</p>
+<p><em><strong>3、B+Tree vs Hash</strong></em></p>
+<p>Hash 在做等值查询的时候效率贼快，搜索复杂度为 O(1)。</p>
+<p>但是 Hash 表不适合做范围查询，它更适合做等值的查询，这也是 B+Tree 索引要比 Hash 表索引有着更广泛的适用场景的原因。</p>
+</li>
+<li><p><strong>联合索引的两项优化</strong>：</p>
+<ul>
+<li><p><strong>索引下推</strong>：</p>
+<p>索引下推能够减少<strong>二级索引</strong>在查询时的回表操作，提高查询的效率，因为它将 Server 层部分负责的事情，交给存储引擎层去处理了。</p>
+<p>原本需要Server层中的执行器来判断读取到的记录是否符合查询条件，这种判断就包含判断【联合索引中范围查询之后的查询的条件是否符合】；但是索引下推<strong>可以在联合索引遍历过程中，对联合索引中包含的字段先做判断，直接过滤掉不满足条件的记录，减少回表次数</strong>。</p>
+</li>
+<li><p><strong>索引区分度</strong>：</p>
+<p>另外，建立联合索引时的字段顺序，对索引效率也有很大影响。越靠前的字段被用于索引过滤的概率越高，实际开发工作中<strong>建立联合索引时，要把区分度大的字段排在前面，这样区分度大的字段越有可能被更多的 SQL 使用到</strong>。</p>
+<p>区分度就是某个字段 column 不同值的个数「除以」表的总行数，如性别的区分度就很小，而UUID的区分度就比较大，适合做索引或排在联合索引列的靠前的位置。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>索引的适用场景/不适用场景</strong>：</p>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230221165254201.png" alt="image-20230221165254201" style="zoom: 80%;" loading="lazy"></li>
+<li><h4 id="SQL语句前加上explain得到的结果的参数解释"><a href="#SQL语句前加上explain得到的结果的参数解释" class="headerlink" title="SQL语句前加上explain得到的结果的参数解释"></a>SQL语句前加上explain得到的结果的参数解释</h4></li>
+<li><h4 id="有什么优化索引的方法？"><a href="#有什么优化索引的方法？" class="headerlink" title="有什么优化索引的方法？"></a>有什么优化索引的方法？</h4><ul>
+<li><p>前缀索引优化；</p>
+<p>减小索引字段大小，增加一个索引页中存储的索引值，提高查询速度</p>
+<p>局限性是order by无法使用前缀索引，且前缀索引无法使用覆盖索引</p>
+</li>
+<li><p>覆盖索引优化；</p>
+<p>尽量从二级索引中获取query的目标，避免回表，减少I/O操作</p>
+</li>
+<li><p>主键索引最好是自增的；</p>
+<p>插入新数据时都是追加操作，不需要移动原有数据；且避免产生页分裂，避免影响查询效率</p>
+</li>
+<li><p>防止索引失效</p>
+<p>索引失效的查询语句就不会走索引</p>
+</li>
+<li><p>索引列用NOT NULL约束</p>
+<p>索引列存在 NULL 时难以优化，且NULL值会占用空间</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="page"><a href="#page" class="headerlink" title="page"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/index/page.html">page</a></h3><h2 id="图解网络"><a href="#图解网络" class="headerlink" title="图解网络"></a>图解网络</h2><h3 id="TCP-IP-model"><a href="#TCP-IP-model" class="headerlink" title="TCP/IP model"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/1_base/tcp_ip_model.html">TCP/IP model</a></h3><ul>
 <li><p>同一台设备上的进程间通信：管道、消息队列、共享内存、信号等方式</p>
 <p>不同设备上的进程间通信：网络通信（需要一套通用的网络协议）</p>
 </li>
@@ -124,8 +239,101 @@
 <p>另外，从始至终包头中的源IP和目的IP是不变的，但是每一跳源MAC地址和目的MAC地址都会改变</p>
 <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jiPMUk6zUdOY6eKxAjNDbQ">整个网络流程</a></p>
 </li>
+<li><p>每一层的封装格式</p>
+<img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E5%B0%81%E8%A3%85.png" alt="img" style="zoom:50%;" loading="lazy"></li>
 </ul>
-<h3 id="键入网址到网页显示，期间发生了什么"><a href="#键入网址到网页显示，期间发生了什么" class="headerlink" title="键入网址到网页显示，期间发生了什么"></a>键入网址到网页显示，期间发生了什么</h3><h1 id="青训营文章"><a href="#青训营文章" class="headerlink" title="青训营文章"></a>青训营文章</h1><h2 id="并发场景下的限流"><a href="#并发场景下的限流" class="headerlink" title="并发场景下的限流"></a>并发场景下的限流</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7145435951899574302">新来个技术总监，把限流实现的那叫一个优雅，佩服！</a></p>
+<h3 id="what-happen-url"><a href="#what-happen-url" class="headerlink" title="what_happen_url"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/1_base/what_happen_url.html">what_happen_url</a></h3><ul>
+<li><p>MTU和MSS</p>
+<img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/11.jpg" alt="MTU 与 MSS" style="zoom: 50%;" loading="lazy"></li>
+<li><p><strong>源端口号和目的端口号</strong>封装在TCP报文中（传输层）</p>
+<p><strong>源IP和目的IP</strong>封装在IP报文中（网络层）</p>
+</li>
+<li><blockquote>
+<p>当存在多个网卡时，在填写源地址 IP 时，就需要判断到底应该填写哪个地址。这个判断相当于在多块网卡中判断应该使用哪个一块网卡来发送包。</p>
+<p>这个时候就需要根据<strong>路由表</strong>规则，来判断哪一个网卡作为源地址 IP。</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.2cto.com/net/201310/253096.html">ARP过程分为两种情况</a>：目的主机在同一子网和目的主机不在同一子网</p>
+<p>这两种情况<strong>需要源主机自行根据掩码判断</strong>属于哪一种</p>
+<p>如果发现不在同一子网，需要先发到网关路由器，于是需要ARP来获取网关的MAC地址</p>
+</li>
+<li><p>数据链路层的网卡要在包头和包尾都封装的原因是：</p>
+<p><strong>开头加上报头和起始帧分界符，在末尾加上用于检测错误的帧校验序列</strong>。</p>
+</li>
+<li><p>交换机是做什么工作的？</p>
+<ol>
+<li><p>将电信号转换成数字信号（即包的接收）</p>
+</li>
+<li><p>通过包末尾的FCS校验错误</p>
+</li>
+</ol>
+<p>1和2都与网卡的作用想同，但是交换机与网卡的不同之处在于（<strong>所以目标MAC地址至少也是下一条路由器的地址了</strong>）</p>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230220211944680.png" alt="image-20230220211944680" style="zoom:67%;" loading="lazy">
+
+<p>除此之外，还有</p>
+<ol start="3">
+<li><p>根据（MAC地址-端口）的映射表进行包的转发</p>
+<p>如果没有对应的MAC地址，交换机会把数据包发送到除了源端口之外的所有端口（接收方MAC地址是广播地址时交换机也会这么做）</p>
+</li>
+</ol>
+</li>
+<li><p>路由器</p>
+<p>路由器的转发表中一条记录会同时有<strong>目的地址</strong>和<strong>网关</strong>两项内容</p>
+<ul>
+<li>如果网关是一个 IP 地址，则这个IP 地址就是我们要转发到的目标地址，<strong>还未抵达终点</strong>，还需继续需要路由器转发。</li>
+<li>如果网关为空，则 IP 头部中的接收方 IP 地址就是要转发到的目标地址，也是就终于找到 IP 包头里的目标地址了，说明<strong>已抵达终点</strong>。</li>
+</ul>
+</li>
+<li><p>数据包到达服务器之后一步步“拆封”的过程：</p>
+<ul>
+<li><p>检验MAC地址是不是自己</p>
+</li>
+<li><p>检验IP地址是不是自己，并根据 IP 头中协议项，确认传输层协议类型</p>
+</li>
+<li><p>（如果是TCP）检验TCP报头中的序列号是不是自己想要的</p>
+<p>由于TCP的建立是基于（ip, port）的，所以已经限定好了端口，即相应端口的应用从自己的TCP连接队列中检验新到的包的序列号是否符合预期</p>
+</li>
+</ul>
+<img src="/2022/12/30/Preparation-for-Job-Interview/image-20230220214805151.png" alt="image-20230220214805151" style="zoom:67%;" loading="lazy"></li>
+<li><p>“如果知道你电脑的mac地址，我可以直接给你发消息吗？”</p>
+<p>MAC地址只能是同一子网内两个设备之间通信时使用的，如果你要从大老远给我发消息，是离不开 IP 的。</p>
+</li>
+</ul>
+<h3 id="how-os-deal-network-package"><a href="#how-os-deal-network-package" class="headerlink" title="how_os_deal_network_package"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/1_base/how_os_deal_network_package.html">how_os_deal_network_package</a></h3><blockquote>
+<p>电脑与电脑之间通常都是通过网卡、交换机、路由器等网络设备连接到一起，那由于网络设备的异构性，国际标准化组织定义了一个七层的 OSI 网络模型，但是这个模型由于比较复杂，实际应用中并没有采用，而是采用了更为简化的 TCP/IP 模型，Linux 网络协议栈就是按照了该模型来实现的。</p>
+<p>TCP/IP 模型主要分为应用层、传输层、网络层、网络接口层四层，每一层负责的职责都不同，这也是 Linux 网络协议栈主要构成部分。</p>
+</blockquote>
+<ul>
+<li><p>图示发送和接收的过程：</p>
+<img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E6%94%B6%E5%8F%91%E6%B5%81%E7%A8%8B.png" alt="img" style="zoom: 40%;" loading="lazy"></li>
+<li><h4 id="发送一次网络数据的时候，会涉及几次内存拷贝操作？"><a href="#发送一次网络数据的时候，会涉及几次内存拷贝操作？" class="headerlink" title="发送一次网络数据的时候，会涉及几次内存拷贝操作？"></a>发送一次网络数据的时候，会涉及几次内存拷贝操作？</h4><p><strong>第一次</strong>，调用发送数据的系统调用的时候，内核会申请一个<strong>内核态</strong>的 sk_buff 内存，将用户待发送的数据拷贝到 sk_buff 内存，并将其加入到发送缓冲区。</p>
+<p><strong>第二次</strong>，在使用 <strong>TCP 传输协议</strong>的情况下，从传输层进入网络层的时候，每一个 sk_buff 都会被克隆一个新的副本出来。副本 sk_buff 会被送往网络层，等它发送完的时候就会释放掉，然后原始的 sk_buff 还保留在传输层，目的是为了实现 TCP 的可靠传输，等收到这个数据包的 ACK 时，才会释放原始的 sk_buff 。</p>
+<p><strong>第三次</strong>，当 <strong>IP 层发现 sk_buff 大于 MTU</strong> 时才需要进行。会再申请额外的 sk_buff，并将原来的 sk_buff 拷贝为多个小的 sk_buff。</p>
+</li>
+</ul>
+<h3 id="http-interview"><a href="#http-interview" class="headerlink" title="http_interview"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http_interview.html">http_interview</a></h3><ul>
+<li><p>目前HTTPS是绝对安全的，只要</p>
+<ul>
+<li><p>服务器私钥不被泄露</p>
+<p>服务器私钥被泄露的话，持有服务器私钥的第三方就可以伪装成服务器，因为数字证书大家都可以获取，有了服务器私钥，第三方就可以解密客户端用服务器公钥加密的数据；【ECDHE解决这个问题】</p>
+</li>
+<li><p>客户端不信任非法网站的安全证书</p>
+<p>上述操作会导致第三方可以冒充服务器，作为中间人转发+监听客户端和服务器之间的通信</p>
+<p>（这种情况下，客户端就相当于在用第三方的公钥加密自己的数据）</p>
+</li>
+</ul>
+</li>
+<li><p>TLS/SSL</p>
+<blockquote>
+<p>SSL 是洋文 “<em>Secure Sockets Layer</em>” 的缩写，中文叫做「安全套接层」。</p>
+<p>SSL标准化之后的名称改为 TLS（是 “<em>Transport Layer Security</em>” 的缩写），中文叫做 「传输层安全协议」。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="http-optimize"><a href="#http-optimize" class="headerlink" title="http_optimize"></a><a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http_optimize.html">http_optimize</a></h3><ul>
+<li></li>
+</ul>
+<h1 id="青训营文章"><a href="#青训营文章" class="headerlink" title="青训营文章"></a>青训营文章</h1><h2 id="并发场景下的限流"><a href="#并发场景下的限流" class="headerlink" title="并发场景下的限流"></a>并发场景下的限流</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7145435951899574302">新来个技术总监，把限流实现的那叫一个优雅，佩服！</a></p>
 <blockquote>
 <p>常见限流方式之一：计数器</p>
 <p>原理好理解，这里补充两种计数器的实现方式：互斥锁（<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9e5554617399">Golang实现</a><code>sync.Mutex</code>和<code>sync.RWMutex</code>）和原子操作（<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1882225">Golang实现</a><code>sync/atomic</code>）</p>
